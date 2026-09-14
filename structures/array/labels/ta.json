@@ -1,0 +1,31 @@
+{
+  "title": "Array",
+  "summary": "அடுத்தடுத்து இருக்கும் number கொண்ட boxes, cinema hall-இன் ஒரு row-இல் உள்ள seats போல.",
+  "viz": {
+    "indexPlaceholder": "index",
+    "valuePlaceholder": "value",
+    "get": "get",
+    "insert": "insert",
+    "remove": "remove",
+    "search": "search",
+    "reset": "reset",
+    "size": "size",
+    "capacity": "{n} values-க்கு இடம்",
+    "hello": "இந்த array-இல் {n} values-க்கு இடம் உள்ளது, size = {size}. ஒரு index-ஐயும் ஒரு value-ஐயும் type செய்து, பிறகு insert, remove, get அல்லது search செய்து பாருங்கள்.",
+    "needIndex": "முதலில் ஒரு index-ஐ type செய்யுங்கள்: 0-இலிருந்து தொடங்கும் box number.",
+    "got": "get({index}): box {index}-இல் {value} உள்ளது. Computer நேராக அங்கே செல்கிறது, loop தேவையில்லை.",
+    "shiftRight": "insert({index}, {value}): கடைசியிலிருந்து தொடங்கி {count} values ஒரு box வலப்பக்கம் நகர்கின்றன.",
+    "noShift": "insert({index}, {value}): இது array-இன் கடைசி, அதனால் எதையும் நகர்த்த வேண்டியதில்லை.",
+    "inserted": "{value} இப்போது box {index}-இல் உள்ளது, size {size}.",
+    "removed": "remove({index}): {value} நீக்கப்பட்டது. {count} values ஒரு box இடப்பக்கம் நகர்ந்தன, size இப்போது {size}.",
+    "ghost": "மங்கலான number, நகர்த்திய பிறகு மிஞ்சிய பழைய copy. அது size-க்கு வெளியே உள்ளது, அதனால் இனி array-இன் பகுதி அல்ல.",
+    "found": "search({value}): {checked} boxes-ஐப் பார்த்து index {index}-இல் கண்டுபிடித்தது.",
+    "notFound": "search({value}): எல்லா {checked} boxes-ஐயும் பார்த்தது. Value இங்கே இல்லை, அதனால் பதில் -1.",
+    "errFull": "insert({index}, {value}): எல்லா boxes-உம் பயன்பாட்டில் உள்ளன (size = capacity = {n}). Array நிரம்பியது.",
+    "errRange": "{op}({index}): index out of range. இப்போது 0 முதல் {max} வரை பயன்படுத்தலாம்.",
+    "errEmpty": "{op}({index}): array காலியாக உள்ளது, அதனால் எந்த index-இலும் எதுவும் இல்லை.",
+    "removedLast": "remove({index}): {value} நீக்கப்பட்டது. அது கடைசி value, அதனால் எதையும் நகர்த்த வேண்டியதில்லை, size இப்போது {size}.",
+    "foundFirst": "search({value}): முதல் box-இலேயே, index {index}-இல் கிடைத்தது.",
+    "resetDone":"காலி array-உடன் மீண்டும் தொடங்கப்பட்டது."
+  }
+}

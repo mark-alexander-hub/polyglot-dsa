@@ -1,0 +1,29 @@
+{
+  "title": "Linked list",
+  "summary": "Nodes की एक chain, जिसमें हर node अगले की ओर point करता है, जैसे train के coaches।",
+  "viz": {
+    "valuePlaceholder": "value",
+    "addFirst": "add-first",
+    "addLast": "add-last",
+    "find": "find",
+    "remove": "remove",
+    "reset": "reset",
+    "head": "head",
+    "current": "current",
+    "previous": "previous",
+    "newNode": "नया",
+    "null": "null",
+    "hello": "इस list में {n} nodes हैं और head {value} की ओर point करता है। add-first, add-last, find या remove आज़माइए।",
+    "addedFirst": "add-first({value}): नया node पुराने head की ओर point करता है, फिर head {value} पर आ जाता है। बाक़ी कुछ नहीं हिला।",
+    "addedEmpty": "List खाली थी, इसलिए अब {value} अकेला node है और head उसी की ओर point करता है।",
+    "addedLast": "add-last({value}): आख़िरी node तक {steps} step चले, फिर {value} को उसके बाद जोड़ा।",
+    "found": "find({value}): हाँ, node नंबर {steps} पर मिल गया।",
+    "notFound": "find({value}): नहीं। सभी {steps} nodes जाँचे और null तक पहुँच गए।",
+    "removedHead": "remove({value}): ये head था, इसलिए head बस अगले node पर चला गया।",
+    "removed": "remove({value}): उससे पहले वाला node अब उसे छोड़कर {next} की ओर point करता है।",
+    "removeMissing": "remove({value}): null तक चले पर value नहीं मिली। Error: value not found।",
+    "emptyList": "List खाली है (head = null)। पहले एक node जोड़िए।",
+    "full": "इस playground के लिए इतने nodes काफ़ी हैं ({max})। पहले एक हटाइए।",
+    "resetDone": "खाली list के साथ फिर से शुरू किया।"
+  }
+}

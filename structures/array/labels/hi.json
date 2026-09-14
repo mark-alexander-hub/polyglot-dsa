@@ -1,0 +1,31 @@
+{
+  "title": "Array",
+  "summary": "एक-दूसरे से सटे number वाले boxes, जैसे cinema की एक row की seats।",
+  "viz": {
+    "indexPlaceholder": "index",
+    "valuePlaceholder": "value",
+    "get": "get",
+    "insert": "insert",
+    "remove": "remove",
+    "search": "search",
+    "reset": "reset",
+    "size": "size",
+    "capacity": "{n} values की जगह",
+    "hello": "इस array में {n} values की जगह है और size = {size} है। एक index और एक value लिखिए, फिर insert, remove, get या search आज़माइए।",
+    "needIndex": "पहले एक index लिखिए: box का number, जो 0 से शुरू होता है।",
+    "got": "get({index}): box {index} में {value} है। Computer सीधे वहाँ पहुँचता है, कोई loop नहीं।",
+    "shiftRight": "insert({index}, {value}): {count} values आख़िर से शुरू करके एक box दाईं ओर खिसकती हैं।",
+    "noShift": "insert({index}, {value}): ये array का आख़िर है, इसलिए कुछ भी नहीं खिसकाना पड़ता।",
+    "inserted": "{value} अब box {index} में है, और size {size} है।",
+    "removed": "remove({index}): {value} निकाला। {count} values एक box बाईं ओर खिसकीं, और size अब {size} है।",
+    "ghost": "हल्के रंग वाला number खिसकाने के बाद बची पुरानी copy है। वो size के बाहर है, इसलिए अब array का हिस्सा नहीं है।",
+    "found": "search({value}): {checked} boxes देखे और value index {index} पर मिली।",
+    "notFound": "search({value}): सारे {checked} boxes देखे। Value यहाँ नहीं है, इसलिए जवाब -1 है।",
+    "errFull": "insert({index}, {value}): हर box इस्तेमाल में है (size = capacity = {n})। Array भरा हुआ है।",
+    "errRange": "{op}({index}): index out of range। अभी आप 0 से {max} तक इस्तेमाल कर सकते हैं।",
+    "errEmpty": "{op}({index}): array खाली है, इसलिए किसी भी index पर कुछ नहीं है।",
+    "removedLast": "remove({index}): {value} निकाला। ये आख़िरी value थी, इसलिए कुछ नहीं खिसकाना पड़ा, और size अब {size} है।",
+    "foundFirst": "search({value}): पहले ही box में मिल गई, index {index} पर।",
+    "resetDone":"खाली array के साथ फिर से शुरू किया।"
+  }
+}

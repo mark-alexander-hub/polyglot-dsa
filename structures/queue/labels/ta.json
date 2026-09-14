@@ -1,0 +1,23 @@
+{
+  "title": "Queue",
+  "summary": "முதலில் வந்தது முதலில் போகும், டிக்கெட் கவுண்டரில் வரிசையில் நிற்பவர்கள் போல.",
+  "viz": {
+    "valuePlaceholder": "value",
+    "enqueue": "enqueue",
+    "dequeue": "dequeue",
+    "peek": "peek",
+    "reset": "reset",
+    "front": "front",
+    "rear": "rear",
+    "hello": "இந்த queue-இல் {n} values-க்கு இடம் உள்ளது. front = {front}, count = {count}. enqueue, dequeue அல்லது peek செய்து பாருங்கள்.",
+    "enqueued": "enqueue({value}): அடுத்த காலி box ({front} + {count}) % {n} = {index}, அதனால் {value} அங்கே வைக்கப்பட்டது. இப்போது count {newCount}.",
+    "enqueueWrapped": "rear கடைசி box-ஐத் தாண்டியது, அதனால் % அதைச் சுற்றி box {index}-க்குக் கொண்டு வந்தது.",
+    "dequeued": "dequeue(): box {index}-இலிருந்து {value} எடுக்கப்பட்டது. front {front}-க்கு நகர்ந்தது, இப்போது count {count}.",
+    "dequeueWrapped": "front கடைசி box-ஐத் தாண்டியது, அதனால் % அதைச் சுற்றி box 0-க்குக் கொண்டு வந்தது.",
+    "peeked": "peek(): front value {value}, box {index}-இல் உள்ளது. எதுவும் நகரவில்லை.",
+    "full": "enqueue({value}): count = {n}, அதாவது எல்லா boxes-உம் பயன்பாட்டில் உள்ளன. Queue நிரம்பியது.",
+    "empty": "Queue காலியாக உள்ளது (count = 0), எடுக்க எதுவும் இல்லை.",
+    "ghost": "மங்கலான numbers பழைய values. ஒரு enqueue அவற்றின் மேல் எழுதும் வரை அவை box-இலேயே இருக்கும்.",
+    "resetDone": "காலியான queue-உடன் மீண்டும் தொடங்கப்பட்டது: front = 0, count = 0."
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "title": "Array",
+  "summary": "Numbered boxes side by side, like seats in a cinema row.",
+  "viz": {
+    "indexPlaceholder": "index",
+    "valuePlaceholder": "value",
+    "get": "get",
+    "insert": "insert",
+    "remove": "remove",
+    "search": "search",
+    "reset": "reset",
+    "size": "size",
+    "capacity": "room for {n}",
+    "hello": "This array has room for {n} values and size = {size}. Type an index and a value, then try insert, remove, get or search.",
+    "needIndex": "Type an index first: a box number, starting from 0.",
+    "got": "get({index}): box {index} holds {value}. The computer goes straight there, no loop.",
+    "shiftRight": "insert({index}, {value}): {count} values move one box right, starting from the end.",
+    "noShift": "insert({index}, {value}): this is the end of the array, so nothing has to move.",
+    "inserted": "{value} is now in box {index}, and size is {size}.",
+    "removed": "remove({index}): took out {value}. {count} values moved one box left, and size is {size}.",
+    "ghost": "The faded number is an old copy left behind by the shift. It is past size, so it is not part of the array any more.",
+    "found": "search({value}): checked {checked} boxes and found it at index {index}.",
+    "notFound": "search({value}): checked all {checked} boxes. It is not there, so the answer is -1.",
+    "errFull": "insert({index}, {value}): every box is in use (size = capacity = {n}). The array is full.",
+    "errRange": "{op}({index}): index out of range. Right now you can use 0 to {max}.",
+    "errEmpty": "{op}({index}): the array is empty, so there is nothing at any index.",
+    "removedLast": "remove({index}): took out {value}. It was the last value, so nothing had to move, and size is {size}.",
+    "foundFirst": "search({value}): found it in the very first box, index {index}.",
+    "resetDone":"Started again with an empty array."
+  }
+}

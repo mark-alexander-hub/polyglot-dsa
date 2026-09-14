@@ -1,0 +1,21 @@
+{
+  "title": "Stack",
+  "summary": "கடைசியாக வந்தது முதலில் போகும், அடுக்கி வைத்த தட்டுகள் போல.",
+  "viz": {
+    "valuePlaceholder": "value",
+    "push": "push",
+    "pop": "pop",
+    "peek": "peek",
+    "reset": "reset",
+    "top": "top",
+    "capacity": "{n} இடங்கள்",
+    "hello": "இந்த stack-இல் {n} values-க்கு இடம் உள்ளது, top = {top}. push, pop அல்லது peek செய்து பாருங்கள்.",
+    "pushed": "push({value}): top மேலே {index}-க்கு நகர்ந்தது, {value} அந்த box-இல் வைக்கப்பட்டது.",
+    "popped": "pop(): box {index}-இலிருந்து {value} எடுக்கப்பட்டது. top கீழே {top}-க்கு நகர்ந்தது.",
+    "peeked": "peek(): top value {value}. எதுவும் நகரவில்லை.",
+    "overflow": "push({value}): stack நிரம்பியது, {index}-க்கு மேலே box இல்லை. இதுதான் overflow.",
+    "underflow": "stack காலியாக உள்ளது (top = -1), எடுக்க எதுவும் இல்லை. இதுதான் underflow.",
+    "ghost": "மங்கலான numbers பழைய values. ஒரு push அவற்றின் மேல் எழுதும் வரை அவை box-இலேயே இருக்கும்.",
+    "resetDone": "காலியான stack-உடன் மீண்டும் தொடங்கப்பட்டது."
+  }
+}

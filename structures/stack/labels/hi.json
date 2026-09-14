@@ -1,0 +1,21 @@
+{
+  "title": "Stack",
+  "summary": "जो आख़िर में आया, वो सबसे पहले जाएगा, बिल्कुल प्लेटों के ढेर की तरह।",
+  "viz": {
+    "valuePlaceholder": "value",
+    "push": "push",
+    "pop": "pop",
+    "peek": "peek",
+    "reset": "reset",
+    "top": "top",
+    "capacity": "{n} की जगह",
+    "hello": "इस stack में {n} values की जगह है और top = {top} है। push, pop या peek करके देखिए।",
+    "pushed": "push({value}): top ऊपर खिसककर {index} पर आया, और {value} उस box में रखा गया।",
+    "popped": "pop(): box {index} से {value} निकाला। top नीचे खिसककर {top} पर आ गया।",
+    "peeked": "peek(): top value {value} है। कुछ भी नहीं हिला।",
+    "overflow": "push({value}): stack भरा हुआ है, {index} के ऊपर कोई box नहीं है। इसे overflow कहते हैं।",
+    "underflow": "stack खाली है (top = -1), इसलिए निकालने के लिए कुछ नहीं है। इसे underflow कहते हैं।",
+    "ghost": "हल्के रंग वाले numbers पुरानी values हैं। वे तब तक box में रहती हैं जब तक कोई push उन पर नई value नहीं लिख देता।",
+    "resetDone": "खाली stack के साथ फिर से शुरू किया।"
+  }
+}

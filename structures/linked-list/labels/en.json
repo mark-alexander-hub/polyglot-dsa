@@ -1,0 +1,29 @@
+{
+  "title": "Linked list",
+  "summary": "A chain of nodes, each one pointing to the next, like the coaches of a train.",
+  "viz": {
+    "valuePlaceholder": "value",
+    "addFirst": "add-first",
+    "addLast": "add-last",
+    "find": "find",
+    "remove": "remove",
+    "reset": "reset",
+    "head": "head",
+    "current": "current",
+    "previous": "previous",
+    "newNode": "new",
+    "null": "null",
+    "hello": "This list has {n} nodes and head points at {value}. Try add-first, add-last, find or remove.",
+    "addedFirst": "add-first({value}): the new node points at the old head, then head moves to {value}. Nothing else moved.",
+    "addedEmpty": "The list was empty, so {value} is now the only node and head points at it.",
+    "addedLast": "add-last({value}): walked {steps} step(s) to the last node, then linked {value} after it.",
+    "found": "find({value}): yes, found it at node number {steps}.",
+    "notFound": "find({value}): no. Checked all {steps} nodes and reached null.",
+    "removedHead": "remove({value}): it was the head, so head simply moved to the next node.",
+    "removed": "remove({value}): the node before it now points past it, to {next}.",
+    "removeMissing": "remove({value}): walked all the way to null without finding it. Error: value not found.",
+    "emptyList": "The list is empty (head = null). Add a node first.",
+    "full": "That is enough nodes for this playground ({max}). Remove one first.",
+    "resetDone": "Started again with an empty list."
+  }
+}

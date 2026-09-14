@@ -1,0 +1,14 @@
+Linked list, starting empty: null
+add first 20: 20 -> null
+add first 10: 10 -> 20 -> null
+add last 30: 10 -> 20 -> 30 -> null
+add last 40: 10 -> 20 -> 30 -> 40 -> null
+size: 4
+find 30: yes
+find 99: no
+remove 10: 20 -> 30 -> 40 -> null
+remove 30: 20 -> 40 -> null
+remove 99: error: value not found
+remove 40: 20 -> null
+remove 20: null
+size: 0

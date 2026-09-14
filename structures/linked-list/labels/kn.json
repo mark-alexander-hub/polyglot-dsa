@@ -1,0 +1,29 @@
+{
+  "title": "Linked list",
+  "summary": "ಪ್ರತಿ node ಮುಂದಿನದರ ಕಡೆ point ಮಾಡುವ nodes ಗಳ chain, train ನ coaches ತರಹ.",
+  "viz": {
+    "valuePlaceholder": "value",
+    "addFirst": "add-first",
+    "addLast": "add-last",
+    "find": "find",
+    "remove": "remove",
+    "reset": "reset",
+    "head": "head",
+    "current": "current",
+    "previous": "previous",
+    "newNode": "ಹೊಸ",
+    "null": "null",
+    "hello": "ಈ list ನಲ್ಲಿ {n} nodes ಇವೆ, head {value} ಕಡೆ point ಮಾಡುತ್ತದೆ. add-first, add-last, find ಅಥವಾ remove ಪ್ರಯತ್ನಿಸಿ.",
+    "addedFirst": "add-first({value}): ಹೊಸ node ಹಳೆಯ head ಕಡೆ point ಮಾಡುತ್ತದೆ, ನಂತರ head {value} ಗೆ ಸರಿಯುತ್ತದೆ. ಬೇರೆ ಏನೂ ಸರಿಯಲಿಲ್ಲ.",
+    "addedEmpty": "List ಖಾಲಿ ಇತ್ತು, ಆದ್ದರಿಂದ ಈಗ {value} ಒಂದೇ node, head ಅದರ ಕಡೆ point ಮಾಡುತ್ತದೆ.",
+    "addedLast": "add-last({value}): ಕೊನೆಯ node ವರೆಗೆ {steps} step ನಡೆದು, ನಂತರ {value} ಅನ್ನು ಅದರ ನಂತರ ಜೋಡಿಸಿದೆವು.",
+    "found": "find({value}): ಹೌದು, node ಸಂಖ್ಯೆ {steps} ನಲ್ಲಿ ಸಿಕ್ಕಿತು.",
+    "notFound": "find({value}): ಇಲ್ಲ. ಎಲ್ಲಾ {steps} nodes ಪರಿಶೀಲಿಸಿ null ತಲುಪಿದೆವು.",
+    "removedHead": "remove({value}): ಅದು head ಆಗಿತ್ತು, ಆದ್ದರಿಂದ head ಸುಮ್ಮನೆ ಮುಂದಿನ node ಗೆ ಸರಿಯಿತು.",
+    "removed": "remove({value}): ಅದರ ಹಿಂದಿನ node ಈಗ ಅದನ್ನು ದಾಟಿ {next} ಕಡೆ point ಮಾಡುತ್ತದೆ.",
+    "removeMissing": "remove({value}): null ವರೆಗೂ ನಡೆದರೂ ಸಿಗಲಿಲ್ಲ. Error: value not found.",
+    "emptyList": "List ಖಾಲಿ ಇದೆ (head = null). ಮೊದಲು ಒಂದು node ಸೇರಿಸಿ.",
+    "full": "ಈ playground ಗೆ ಇಷ್ಟು nodes ಸಾಕು ({max}). ಮೊದಲು ಒಂದನ್ನು ತೆಗೆಯಿರಿ.",
+    "resetDone": "ಖಾಲಿ list ಜೊತೆ ಮತ್ತೆ ಶುರು ಮಾಡಿದೆವು."
+  }
+}

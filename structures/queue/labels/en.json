@@ -1,0 +1,23 @@
+{
+  "title": "Queue",
+  "summary": "First in, first out, like the line at a ticket counter.",
+  "viz": {
+    "valuePlaceholder": "value",
+    "enqueue": "enqueue",
+    "dequeue": "dequeue",
+    "peek": "peek",
+    "reset": "reset",
+    "front": "front",
+    "rear": "rear",
+    "hello": "This queue has room for {n} values. front = {front} and count = {count}. Try enqueue, dequeue or peek.",
+    "enqueued": "enqueue({value}): the next free box is ({front} + {count}) % {n} = {index}, so {value} went there. count is now {newCount}.",
+    "enqueueWrapped": "The rear went past the last box, so % wrapped it around to box {index}.",
+    "dequeued": "dequeue(): took {value} from box {index}. front moved to {front}, and count is now {count}.",
+    "dequeueWrapped": "front went past the last box, so % wrapped it around to box 0.",
+    "peeked": "peek(): the front value is {value}, in box {index}. Nothing moved.",
+    "full": "enqueue({value}): count = {n}, so every box is in use. The queue is full.",
+    "empty": "The queue is empty (count = 0), so there is nothing to take.",
+    "ghost": "Faded numbers are old values. They stay in their box until an enqueue writes over them.",
+    "resetDone": "Started again with an empty queue: front = 0 and count = 0."
+  }
+}

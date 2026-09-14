@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Translation guide
+    url: https://github.com/mark-alexander-hub/polyglot-dsa/blob/main/docs/translation-guide.md
+    about: Style rules and glossary for Hindi, Kannada and Tamil.

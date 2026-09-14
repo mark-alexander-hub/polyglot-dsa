@@ -1,0 +1,22 @@
+name: Add a language
+description: Offer to bring the lessons to a new language.
+title: "Add language: "
+labels: [new-language]
+body:
+  - type: input
+    id: language
+    attributes:
+      label: Language
+      description: Its name in the language itself and in English, for example "मराठी (Marathi)".
+    validations:
+      required: true
+  - type: textarea
+    id: plan
+    attributes:
+      label: What can you do?
+      description: Translate, review someone else's translation, or both? Which lessons first?
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: The steps are in [CONTRIBUTING.md](../blob/main/CONTRIBUTING.md#add-a-language). You can open a pull request after translating just the website labels and one lesson.

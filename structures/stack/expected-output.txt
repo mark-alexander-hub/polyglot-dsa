@@ -1,0 +1,18 @@
+Stack with room for 5 items (the top is on the right)
+push 10 -> [10]
+push 20 -> [10, 20]
+push 30 -> [10, 20, 30]
+peek -> 30
+pop -> 30, stack is now [10, 20]
+size -> 2
+push 40 -> [10, 20, 40]
+push 50 -> [10, 20, 40, 50]
+push 60 -> [10, 20, 40, 50, 60]
+push 70 -> error: stack is full
+pop -> 60, stack is now [10, 20, 40, 50]
+pop -> 50, stack is now [10, 20, 40]
+pop -> 40, stack is now [10, 20]
+pop -> 20, stack is now [10]
+pop -> 10, stack is now []
+is empty? -> yes
+pop -> error: stack is empty

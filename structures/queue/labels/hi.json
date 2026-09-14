@@ -1,0 +1,23 @@
+{
+  "title": "Queue",
+  "summary": "जो पहले आया, वो पहले जाएगा, बिल्कुल टिकट खिड़की की लाइन की तरह।",
+  "viz": {
+    "valuePlaceholder": "value",
+    "enqueue": "enqueue",
+    "dequeue": "dequeue",
+    "peek": "peek",
+    "reset": "reset",
+    "front": "front",
+    "rear": "rear",
+    "hello": "इस queue में {n} values की जगह है। front = {front} और count = {count} है। enqueue, dequeue या peek करके देखिए।",
+    "enqueued": "enqueue({value}): अगला खाली box ({front} + {count}) % {n} = {index} है, इसलिए {value} वहाँ रखा गया। अब count {newCount} है।",
+    "enqueueWrapped": "rear आख़िरी box से आगे निकल गया, इसलिए % ने उसे घुमाकर box {index} पर पहुँचा दिया।",
+    "dequeued": "dequeue(): box {index} से {value} निकाला। front खिसककर {front} पर आया, और अब count {count} है।",
+    "dequeueWrapped": "front आख़िरी box से आगे निकल गया, इसलिए % ने उसे घुमाकर box 0 पर पहुँचा दिया।",
+    "peeked": "peek(): front value {value} है, box {index} में। कुछ भी नहीं हिला।",
+    "full": "enqueue({value}): count = {n}, यानी हर box भरा हुआ है। queue भरी हुई है।",
+    "empty": "queue खाली है (count = 0), इसलिए निकालने के लिए कुछ नहीं है।",
+    "ghost": "हल्के रंग वाले numbers पुरानी values हैं। वे तब तक box में रहती हैं जब तक कोई enqueue उन पर नई value नहीं लिख देता।",
+    "resetDone": "खाली queue के साथ फिर से शुरू किया: front = 0 और count = 0।"
+  }
+}

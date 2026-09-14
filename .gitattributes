@@ -1,0 +1,5 @@
+# Keep every text file LF so translation hashes are identical on Windows, macOS and Linux.
+* text=auto eol=lf
+*.png binary
+*.jpg binary
+*.ico binary

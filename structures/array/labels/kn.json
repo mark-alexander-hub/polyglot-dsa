@@ -1,0 +1,31 @@
+{
+  "title": "Array",
+  "summary": "ಅಕ್ಕಪಕ್ಕದಲ್ಲಿರುವ number ಇರುವ boxes, cinema hall ನ ಒಂದು row ನಲ್ಲಿರುವ seats ಹಾಗೆ.",
+  "viz": {
+    "indexPlaceholder": "index",
+    "valuePlaceholder": "value",
+    "get": "get",
+    "insert": "insert",
+    "remove": "remove",
+    "search": "search",
+    "reset": "reset",
+    "size": "size",
+    "capacity": "{n} values ಗೆ ಜಾಗ",
+    "hello": "ಈ array ನಲ್ಲಿ {n} values ಗೆ ಜಾಗ ಇದೆ, size = {size}. ಒಂದು index ಮತ್ತು ಒಂದು value ಬರೆಯಿರಿ, ನಂತರ insert, remove, get ಅಥವಾ search ಮಾಡಿ ನೋಡಿ.",
+    "needIndex": "ಮೊದಲು ಒಂದು index ಬರೆಯಿರಿ: 0 ಯಿಂದ ಶುರುವಾಗುವ box ನ number.",
+    "got": "get({index}): box {index} ನಲ್ಲಿ {value} ಇದೆ. Computer ನೇರವಾಗಿ ಅಲ್ಲಿಗೆ ಹೋಗುತ್ತದೆ, loop ಬೇಕಿಲ್ಲ.",
+    "shiftRight": "insert({index}, {value}): ಕೊನೆಯಿಂದ ಶುರು ಮಾಡಿ {count} values ಒಂದು box ಬಲಕ್ಕೆ ಸರಿಯುತ್ತವೆ.",
+    "noShift": "insert({index}, {value}): ಇದು array ನ ಕೊನೆ, ಆದ್ದರಿಂದ ಏನನ್ನೂ ಸರಿಸಬೇಕಿಲ್ಲ.",
+    "inserted": "{value} ಈಗ box {index} ನಲ್ಲಿದೆ, size {size}.",
+    "removed": "remove({index}): {value} ತೆಗೆದುಹಾಕಲಾಯಿತು. {count} values ಒಂದು box ಎಡಕ್ಕೆ ಸರಿದವು, size ಈಗ {size}.",
+    "ghost": "ಮಸುಕಾದ number ಸರಿಸಿದ ನಂತರ ಉಳಿದ ಹಳೆಯ copy. ಅದು size ನ ಹೊರಗಿದೆ, ಆದ್ದರಿಂದ ಈಗ array ನ ಭಾಗವಲ್ಲ.",
+    "found": "search({value}): {checked} boxes ನೋಡಿ index {index} ನಲ್ಲಿ ಕಂಡುಹಿಡಿಯಿತು.",
+    "notFound": "search({value}): ಎಲ್ಲಾ {checked} boxes ನೋಡಿತು. Value ಇಲ್ಲಿ ಇಲ್ಲ, ಆದ್ದರಿಂದ ಉತ್ತರ -1.",
+    "errFull": "insert({index}, {value}): ಎಲ್ಲಾ boxes ಬಳಕೆಯಲ್ಲಿವೆ (size = capacity = {n}). Array ತುಂಬಿದೆ.",
+    "errRange": "{op}({index}): index out of range. ಈಗ ನೀವು 0 ಯಿಂದ {max} ವರೆಗೆ ಬಳಸಬಹುದು.",
+    "errEmpty": "{op}({index}): array ಖಾಲಿ ಇದೆ, ಆದ್ದರಿಂದ ಯಾವ index ನಲ್ಲೂ ಏನೂ ಇಲ್ಲ.",
+    "removedLast": "remove({index}): {value} ತೆಗೆದುಹಾಕಲಾಯಿತು. ಅದು ಕೊನೆಯ value, ಆದ್ದರಿಂದ ಏನನ್ನೂ ಸರಿಸಬೇಕಾಗಲಿಲ್ಲ, size ಈಗ {size}.",
+    "foundFirst": "search({value}): ಮೊದಲ box ನಲ್ಲೇ, index {index} ನಲ್ಲಿ ಸಿಕ್ಕಿತು.",
+    "resetDone":"ಖಾಲಿ array ಜೊತೆ ಮತ್ತೆ ಶುರು ಮಾಡಲಾಗಿದೆ."
+  }
+}

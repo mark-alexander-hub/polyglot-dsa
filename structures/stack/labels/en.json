@@ -1,0 +1,21 @@
+{
+  "title": "Stack",
+  "summary": "Last in, first out, like a pile of plates.",
+  "viz": {
+    "valuePlaceholder": "value",
+    "push": "push",
+    "pop": "pop",
+    "peek": "peek",
+    "reset": "reset",
+    "top": "top",
+    "capacity": "room for {n}",
+    "hello": "This stack has room for {n} values and top = {top}. Try push, pop or peek.",
+    "pushed": "push({value}): top moved up to {index}, and {value} went into that box.",
+    "popped": "pop(): took {value} from box {index}. top moved down to {top}.",
+    "peeked": "peek(): the top value is {value}. Nothing moved.",
+    "overflow": "push({value}): the stack is full, there is no box above {index}. This is overflow.",
+    "underflow": "The stack is empty (top = -1), so there is nothing to take. This is underflow.",
+    "ghost": "Faded numbers are old values. They stay in their box until a push writes over them.",
+    "resetDone": "Started again with an empty stack."
+  }
+}

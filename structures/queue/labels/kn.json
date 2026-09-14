@@ -1,0 +1,23 @@
+{
+  "title": "Queue",
+  "summary": "ಮೊದಲು ಬಂದದ್ದು ಮೊದಲು ಹೋಗುತ್ತದೆ, ಟಿಕೆಟ್ ಕೌಂಟರ್ ಮುಂದಿನ ಸಾಲಿನಂತೆ.",
+  "viz": {
+    "valuePlaceholder": "value",
+    "enqueue": "enqueue",
+    "dequeue": "dequeue",
+    "peek": "peek",
+    "reset": "reset",
+    "front": "front",
+    "rear": "rear",
+    "hello": "ಈ queue ನಲ್ಲಿ {n} values ಗೆ ಜಾಗ ಇದೆ. front = {front}, count = {count}. enqueue, dequeue ಅಥವಾ peek ಮಾಡಿ ನೋಡಿ.",
+    "enqueued": "enqueue({value}): ಮುಂದಿನ ಖಾಲಿ box ({front} + {count}) % {n} = {index}, ಆದ್ದರಿಂದ {value} ಅಲ್ಲಿ ಇಡಲಾಯಿತು. ಈಗ count {newCount}.",
+    "enqueueWrapped": "rear ಕೊನೆಯ box ಅನ್ನು ದಾಟಿತು, ಆದ್ದರಿಂದ % ಅದನ್ನು ಸುತ್ತಿಸಿ box {index} ಗೆ ತಂದಿತು.",
+    "dequeued": "dequeue(): box {index} ನಿಂದ {value} ತೆಗೆಯಲಾಯಿತು. front {front} ಗೆ ಸರಿಯಿತು, ಈಗ count {count}.",
+    "dequeueWrapped": "front ಕೊನೆಯ box ಅನ್ನು ದಾಟಿತು, ಆದ್ದರಿಂದ % ಅದನ್ನು ಸುತ್ತಿಸಿ box 0 ಗೆ ತಂದಿತು.",
+    "peeked": "peek(): front value {value}, box {index} ನಲ್ಲಿದೆ. ಏನೂ ಬದಲಾಗಲಿಲ್ಲ.",
+    "full": "enqueue({value}): count = {n}, ಅಂದರೆ ಎಲ್ಲಾ boxes ಬಳಕೆಯಲ್ಲಿವೆ. queue ತುಂಬಿದೆ.",
+    "empty": "queue ಖಾಲಿ ಇದೆ (count = 0), ತೆಗೆಯಲು ಏನೂ ಇಲ್ಲ.",
+    "ghost": "ಮಸುಕಾದ numbers ಹಳೆಯ values. ಯಾವುದಾದರೂ enqueue ಅವುಗಳ ಮೇಲೆ ಬರೆಯುವವರೆಗೂ ಅವು box ನಲ್ಲೇ ಇರುತ್ತವೆ.",
+    "resetDone": "ಖಾಲಿ queue ನೊಂದಿಗೆ ಮತ್ತೆ ಶುರು ಮಾಡಲಾಯಿತು: front = 0, count = 0."
+  }
+}

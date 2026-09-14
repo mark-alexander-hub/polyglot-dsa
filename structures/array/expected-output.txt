@@ -1,0 +1,17 @@
+Array with room for 5 values
+insert 10 at 0 -> [10]
+insert 20 at 1 -> [10, 20]
+insert 40 at 2 -> [10, 20, 40]
+insert 30 at 2 -> [10, 20, 30, 40]
+insert 5 at 0 -> [5, 10, 20, 30, 40]
+insert 50 at 5 -> error: array is full
+get 2 -> 20
+get 7 -> error: index out of range
+search 30 -> 3
+search 99 -> -1
+remove 0 -> 5, array is now [10, 20, 30, 40]
+remove 2 -> 30, array is now [10, 20, 40]
+remove 3 -> error: index out of range
+insert 60 at 3 -> [10, 20, 40, 60]
+insert 70 at 9 -> error: index out of range
+size -> 4, capacity -> 5

@@ -1,0 +1,38 @@
+name: Review a translation
+description: Tell us what sounds wrong or unnatural in a lesson in your language.
+title: "[Language] Lesson"
+labels: [translation]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you! Even one corrected sentence helps. Our style rules are in
+        [docs/translation-guide.md](../blob/main/docs/translation-guide.md): technical words
+        like *stack* or *pointer* stay in English on purpose.
+  - type: dropdown
+    id: language
+    attributes:
+      label: Language
+      options: [हिन्दी (Hindi), ಕನ್ನಡ (Kannada), தமிழ் (Tamil), Other]
+    validations:
+      required: true
+  - type: dropdown
+    id: lesson
+    attributes:
+      label: Lesson
+      options: [Array, Linked list, Stack, Queue, Website buttons and labels]
+    validations:
+      required: true
+  - type: textarea
+    id: changes
+    attributes:
+      label: What should change?
+      description: Quote the sentence as it is now, then write how you would say it.
+    validations:
+      required: true
+  - type: checkboxes
+    id: about
+    attributes:
+      label: About you
+      options:
+        - label: This is my first language, or I teach in it

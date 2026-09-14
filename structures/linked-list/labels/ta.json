@@ -1,0 +1,29 @@
+{
+  "title": "Linked list",
+  "summary": "ஒவ்வொரு node-உம் அடுத்ததை point செய்யும் nodes-இன் chain, train coaches மாதிரி.",
+  "viz": {
+    "valuePlaceholder": "value",
+    "addFirst": "add-first",
+    "addLast": "add-last",
+    "find": "find",
+    "remove": "remove",
+    "reset": "reset",
+    "head": "head",
+    "current": "current",
+    "previous": "previous",
+    "newNode": "புதியது",
+    "null": "null",
+    "hello": "இந்த list-இல் {n} nodes உள்ளன, head {value}-ஐ point செய்கிறது. add-first, add-last, find அல்லது remove முயன்று பாருங்கள்.",
+    "addedFirst": "add-first({value}): புதிய node பழைய head-ஐ point செய்கிறது, பிறகு head {value}-க்கு நகர்கிறது. வேறு எதுவும் நகரவில்லை.",
+    "addedEmpty": "List காலியாக இருந்தது, அதனால் இப்போது {value} மட்டுமே ஒரே node, head அதை point செய்கிறது.",
+    "addedLast": "add-last({value}): கடைசி node வரை {steps} step நடந்து, பிறகு {value}-ஐ அதற்குப் பின் இணைத்தோம்.",
+    "found": "find({value}): ஆம், node எண் {steps}-இல் கிடைத்தது.",
+    "notFound": "find({value}): இல்லை. எல்லா {steps} nodes-ஐயும் சரிபார்த்து null-ஐ அடைந்தோம்.",
+    "removedHead": "remove({value}): அது head, அதனால் head அடுத்த node-க்கு நகர்ந்தது, அவ்வளவுதான்.",
+    "removed": "remove({value}): அதற்கு முந்தைய node இப்போது அதைத் தாண்டி {next}-ஐ point செய்கிறது.",
+    "removeMissing": "remove({value}): null வரை நடந்தும் கிடைக்கவில்லை. Error: value not found.",
+    "emptyList": "List காலியாக உள்ளது (head = null). முதலில் ஒரு node சேருங்கள்.",
+    "full": "இந்த playground-க்கு இவ்வளவு nodes போதும் ({max}). முதலில் ஒன்றை நீக்குங்கள்.",
+    "resetDone": "காலி list-உடன் மீண்டும் தொடங்கினோம்."
+  }
+}

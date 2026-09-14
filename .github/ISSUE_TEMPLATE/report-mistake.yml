@@ -1,0 +1,22 @@
+name: Report a mistake
+description: A program, a lesson or the website does something wrong.
+labels: [bug]
+body:
+  - type: dropdown
+    id: where
+    attributes:
+      label: Where is the mistake?
+      options: [A program, A lesson (English), The playground, The website, Something else]
+    validations:
+      required: true
+  - type: input
+    id: page
+    attributes:
+      label: Page or file
+      placeholder: https://mark-alexander-hub.github.io/polyglot-dsa/en/stack/ or structures/stack/code/java/Stack.java
+  - type: textarea
+    id: what
+    attributes:
+      label: What is wrong, and what did you expect?
+    validations:
+      required: true
