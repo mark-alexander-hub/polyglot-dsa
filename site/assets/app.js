@@ -17,6 +17,13 @@
         /* private window: keep going without saving */
       }
     },
+    remove: (k) => {
+      try {
+        localStorage.removeItem(`pdsa.${k}`);
+      } catch (e) {
+        /* nothing saved, nothing to remove */
+      }
+    },
   };
 
   // Theme -------------------------------------------------------------------
@@ -72,6 +79,59 @@
     btn.textContent = btn.dataset.copied;
     setTimeout(() => (btn.textContent = old), 1400);
   });
+
+  // Progress: "I finished this lesson" --------------------------------------
+  const doneKey = (id) => `done.${id}`;
+  document.querySelectorAll('.lesson-card[data-lesson]').forEach((card) => {
+    if (store.get(doneKey(card.dataset.lesson))) card.classList.add('is-done');
+  });
+  const doneButton = document.querySelector('.mark-done');
+  if (doneButton) {
+    const id = doneButton.dataset.lesson;
+    const paint = () => {
+      const done = !!store.get(doneKey(id));
+      doneButton.classList.toggle('is-done', done);
+      doneButton.setAttribute('aria-pressed', String(done));
+    };
+    paint();
+    doneButton.addEventListener('click', () => {
+      if (store.get(doneKey(id))) {
+        store.remove(doneKey(id));
+      } else {
+        store.set(doneKey(id), '1');
+        confetti(doneButton);
+      }
+      paint();
+    });
+  }
+
+  function confetti(origin) {
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const box = origin.getBoundingClientRect();
+    const colors = ['var(--gold)', 'var(--rose)', 'var(--sky)', 'var(--sage)', 'var(--coral)', 'var(--purple)'];
+    for (let i = 0; i < 70; i++) {
+      const bit = document.createElement('i');
+      bit.className = 'confetti';
+      bit.style.left = `${box.left + box.width / 2}px`;
+      bit.style.top = `${box.top + box.height / 2}px`;
+      bit.style.background = colors[i % colors.length];
+      document.body.append(bit);
+      const angle = Math.random() * Math.PI * 2;
+      const distance = 70 + Math.random() * 170;
+      const x = Math.cos(angle) * distance;
+      const y = Math.sin(angle) * distance;
+      bit
+        .animate(
+          [
+            { transform: 'translate(-50%, -50%) rotate(0deg)', opacity: 1 },
+            { transform: `translate(${x}px, ${y - 70}px) rotate(${Math.random() * 540}deg)`, opacity: 1, offset: 0.65 },
+            { transform: `translate(${x * 1.1}px, ${y + 90}px) rotate(${Math.random() * 900}deg)`, opacity: 0 },
+          ],
+          { duration: 1100 + Math.random() * 600, easing: 'cubic-bezier(.2,.7,.3,1)' },
+        )
+        .finished.then(() => bit.remove(), () => bit.remove());
+    }
+  }
 
   // Run ---------------------------------------------------------------------
   const data = window.PDSA;

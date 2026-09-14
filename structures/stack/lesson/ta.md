@@ -1,5 +1,5 @@
 ---
-translated_from: 786a994eed5d
+translated_from: 110bf42ceb7a
 status: draft
 reviewed_by:
 ---
@@ -33,7 +33,7 @@ reviewed_by:
 <!-- code: setup -->
 
 > **நாமே ஏன் உருவாக்க வேண்டும்?** ஒவ்வொரு மொழியிலும் ஏற்கனவே தயாரான stack உள்ளது: Python-இல்
-> `list`, C++-இல் `std::stack`, Java-வில் `ArrayDeque`, JavaScript-இல் array. ஒருமுறை நீங்களே
+> `list`, C++-இல் `std::stack`, Java-வில் `ArrayDeque`, JavaScript-இல் array, PHP-இல் `SplStack`. ஒருமுறை நீங்களே
 > உருவாக்கினால் அந்த tools உங்களுக்காக என்ன செய்கின்றன என்று புரியும், interview-களிலும் இந்தக்
 > கேள்வியை அடிக்கடி கேட்பார்கள்.
 

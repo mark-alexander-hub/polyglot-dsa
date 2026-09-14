@@ -1,0 +1,29 @@
+<svg class="art" viewBox="0 0 320 180" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <path class="s thin" d="M6 158 H314"/>
+  <path class="s thin dash" d="M6 166 H314"/>
+  <g class="a-slide">
+    <circle class="s thin fp a-puff" cx="34" cy="50" r="8"/>
+    <circle class="s thin fp a-puff" cx="48" cy="36" r="10"/>
+    <rect class="s fi" x="26" y="66" width="12" height="20" rx="2"/>
+    <rect class="s fa" x="16" y="84" width="72" height="54" rx="10"/>
+    <rect class="s fa" x="56" y="62" width="32" height="30" rx="4"/>
+    <rect class="s fp" x="63" y="69" width="18" height="14" rx="3"/>
+    <circle class="s fp" cx="34" cy="146" r="9"/><circle class="s fp" cx="72" cy="146" r="9"/>
+    <path class="s" d="M88 122 H100"/><circle class="s fp" cx="94" cy="122" r="3.5"/>
+    <rect class="s fp" x="100" y="92" width="56" height="46" rx="9"/>
+    <rect class="s f2" x="110" y="102" width="14" height="14" rx="3"/><rect class="s f2" x="132" y="102" width="14" height="14" rx="3"/>
+    <circle class="s fp" cx="114" cy="146" r="8"/><circle class="s fp" cx="142" cy="146" r="8"/>
+    <path class="s" d="M156 122 H168"/><circle class="s fp" cx="162" cy="122" r="3.5"/>
+    <rect class="s fp" x="168" y="92" width="56" height="46" rx="9"/>
+    <rect class="s f2" x="178" y="102" width="14" height="14" rx="3"/><rect class="s f2" x="200" y="102" width="14" height="14" rx="3"/>
+    <circle class="s fp" cx="182" cy="146" r="8"/><circle class="s fp" cx="210" cy="146" r="8"/>
+    <path class="s" d="M224 122 H236"/><circle class="s fp" cx="230" cy="122" r="3.5"/>
+    <rect class="s fp" x="236" y="92" width="56" height="46" rx="9"/>
+    <rect class="s f2" x="246" y="102" width="14" height="14" rx="3"/><rect class="s f2" x="268" y="102" width="14" height="14" rx="3"/>
+    <circle class="s fp" cx="250" cy="146" r="8"/><circle class="s fp" cx="278" cy="146" r="8"/>
+  </g>
+  <path class="s" d="M306 158 V116"/>
+  <rect class="s fx" x="298" y="106" width="16" height="12" rx="2"/>
+  <text class="t-hand" x="286" y="92" font-size="20">null</text>
+  <text class="t-hand" x="20" y="36" font-size="22">head</text>
+</svg>

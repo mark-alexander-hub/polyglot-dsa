@@ -1,5 +1,5 @@
 ---
-translated_from: ba0b4418c4dc
+translated_from: d9708606fe9e
 status: draft
 reviewed_by:
 ---
@@ -116,7 +116,7 @@ Step 4 का relinking सिर्फ़ एक line है और `O(1)` ल�
   `null` तो नहीं है।
 - **गिनती गड़बड़ाना।** हर उस method में counter बदलिए जो node जोड़ता या हटाता है।
 - **C++ में memory leaks।** `new` से बना हर node `delete` से free होना चाहिए, `remove` में भी और
-  destructor में भी। Python, Java और JavaScript बेकार nodes को आपके लिए साफ़ कर देते हैं।
+  destructor में भी। Python, Java, JavaScript और PHP बेकार nodes को आपके लिए साफ़ कर देते हैं।
 
 ## ये कहाँ काम आता है?
 

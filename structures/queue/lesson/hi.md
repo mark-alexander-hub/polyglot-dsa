@@ -1,5 +1,5 @@
 ---
-translated_from: 466ea1ba3975
+translated_from: 5f63ad135dde
 status: draft
 reviewed_by:
 ---
@@ -110,7 +110,7 @@ Queue चाहे जितनी लंबी हो, हर operation थो�
 - **गलत सिरे से निकालना।** Values front से निकलती हैं। अगर आपका `dequeue` *सबसे नई* value लौटाता
   है, तो आपने गलती से stack बना दिया है।
 - **हर dequeue पर सारी values खिसकाना।** ये चलता तो है, लेकिन `O(1)` वाले operation को `O(n)` बना
-  देता है। JavaScript में `array.shift()` ठीक यही करता है।
+  देता है। JavaScript में `array.shift()` और PHP में `array_shift()` ठीक यही करते हैं।
 
 ## ये कहाँ काम आता है?
 

@@ -1,5 +1,5 @@
 ---
-translated_from: 786a994eed5d
+translated_from: 110bf42ceb7a
 status: draft
 reviewed_by:
 ---
@@ -31,7 +31,7 @@ reviewed_by:
 <!-- code: setup -->
 
 > **इसे खुद क्यों बनाएँ?** हर भाषा में पहले से बना-बनाया stack मिलता है: Python में `list`,
-> C++ में `std::stack`, Java में `ArrayDeque`, JavaScript में array। एक बार खुद बनाने से
+> C++ में `std::stack`, Java में `ArrayDeque`, JavaScript में array, PHP में `SplStack`। एक बार खुद बनाने से
 > आपको समझ आता है कि ये tools आपके लिए क्या करते हैं, और interview में ये सवाल बहुत पूछा
 > जाता है।
 

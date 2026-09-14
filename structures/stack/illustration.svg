@@ -1,0 +1,15 @@
+<svg class="art" viewBox="0 0 320 180" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <path class="s thin dash" d="M24 164 H296"/>
+  <path class="s f2" d="M84 150 H236 L226 164 H94 Z"/>
+  <ellipse class="s fp" cx="160" cy="140" rx="64" ry="11"/>
+  <ellipse class="s fp" cx="160" cy="126" rx="64" ry="11"/>
+  <ellipse class="s fp" cx="160" cy="112" rx="64" ry="11"/>
+  <ellipse class="s fp" cx="160" cy="98" rx="64" ry="11"/>
+  <g class="a-lift">
+    <ellipse class="s fa" cx="160" cy="70" rx="64" ry="11"/>
+    <ellipse class="s thin" cx="160" cy="68" rx="38" ry="5"/>
+    <path class="s thin" d="M100 50 l-9 -9 M160 44 v-13 M220 50 l9 -9"/>
+  </g>
+  <text class="t-hand" x="236" y="58" font-size="26">top!</text>
+  <path class="s thin" d="M246 64 C 244 70, 236 72, 228 70"/>
+</svg>

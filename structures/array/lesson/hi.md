@@ -1,5 +1,5 @@
 ---
-translated_from: e9a4f26a63d8
+translated_from: 065d4cfa8ad6
 status: draft
 reviewed_by:
 ---
@@ -48,7 +48,8 @@ address of box i = address of box 0 + i * size of one box
 <!-- code: setup -->
 
 > **इसे खुद क्यों बनाएँ?** Python की `list`, C++ का `std::vector`, Java की `ArrayList` और
-> JavaScript का array, सब अंदर से arrays ही हैं जो आपके लिए खुद बढ़ जाते हैं। एक fixed array
+> JavaScript का array, सब अंदर से arrays ही हैं जो आपके लिए खुद बढ़ जाते हैं। (PHP का array असल में
+> एक ordered map है; PHP में boxes की तय row के सबसे करीब `SplFixedArray` है।) एक fixed array
 > खुद बनाने से आप वो खिसकाना देख पाते हैं जो ये पर्दे के पीछे करते हैं, और समझ पाते हैं कि कुछ
 > operations तेज़ क्यों हैं और कुछ धीमे क्यों।
 

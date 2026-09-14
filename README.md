@@ -5,7 +5,7 @@ Data structures, अपनी भाषा में। · Data structures, ನ�
 
 Most people first understand an idea in the language they think in. Polyglot DSA teaches
 data structures in **English, हिन्दी, ಕನ್ನಡ and தமிழ்**, with the same working program in
-**Python, C++, Java and JavaScript**. Every lesson has a playground where you press
+**Python, C++, Java, JavaScript and PHP**. Every lesson has a playground where you press
 buttons and watch the structure move, step by step, with each step explained in your
 language.
 
@@ -32,14 +32,14 @@ language.
 ## How it is built
 
 Writing every lesson for every pair of human and programming language would mean
-4 × 4 = 16 versions of each lesson, and they would drift apart. Instead:
+4 × 5 = 20 versions of each lesson, and they would drift apart. Instead:
 
 - **One explanation per human language.** `structures/<name>/lesson/<language>.md`
 - **One program per programming language.** `structures/<name>/code/<language>/`
 - The website puts them side by side. A line like `<!-- code: push -->` in a lesson shows
   the `push` part of whichever programming language the reader picked. The code marks those
   parts with `@snippet push` … `@end` comments.
-- **All four programs must print exactly the same output**, stored in
+- **All five programs must print exactly the same output**, stored in
   `expected-output.txt`. Every pull request runs them all, so the four languages can never
   quietly disagree.
 - **Translations know when they are out of date.** Each one records a fingerprint of the
@@ -51,10 +51,12 @@ structures/stack/
   meta.json               order, card shape and colour
   lesson/en.md hi.md …    the explanation, one file per language
   labels/en.json …        title, summary and playground text
-  code/python/stack.py    the same program in four languages
+  code/python/stack.py    the same program in five languages
   code/cpp/stack.cpp
   code/java/Stack.java
   code/javascript/stack.js
+  code/php/stack.php
+  illustration.svg        the hand-drawn scene on the lesson card (optional)
   expected-output.txt     what every program must print
   visualizer.js           the playground
 site/                     page styles, scripts and interface text (site/i18n)
@@ -73,8 +75,8 @@ npm test             # runs every program you have a compiler for
 npm run translations # shows which translations are draft, reviewed or out of date
 ```
 
-To run the tests for all four languages you also need Python 3, a C++17 compiler (`g++`,
-or set `CXX`) and Java 17 or newer.
+To run the tests for all five languages you also need Python 3, a C++17 compiler (`g++`,
+or set `CXX`), Java 17 or newer and PHP 8.1 or newer (or set `PHP`).
 
 ## Help us
 

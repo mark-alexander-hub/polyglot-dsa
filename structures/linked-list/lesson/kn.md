@@ -1,5 +1,5 @@
 ---
-translated_from: ba0b4418c4dc
+translated_from: d9708606fe9e
 status: draft
 reviewed_by:
 ---
@@ -117,7 +117,7 @@ Step 4 ರ relinking ಕೇವಲ ಒಂದು line, ಅದು `O(1)` ತೆಗ�
   ಎಂದು ಪರಿಶೀಲಿಸಿ.
 - **ಎಣಿಕೆ ತಪ್ಪುವುದು.** Node ಸೇರಿಸುವ ಅಥವಾ ತೆಗೆಯುವ ಪ್ರತಿ method ನಲ್ಲೂ counter ಬದಲಿಸಿ.
 - **C++ ನಲ್ಲಿ memory leaks.** `new` ನಿಂದ ಮಾಡಿದ ಪ್ರತಿ node ಅನ್ನು `delete` ನಿಂದ free ಮಾಡಬೇಕು,
-  `remove` ನಲ್ಲೂ destructor ನಲ್ಲೂ. Python, Java ಮತ್ತು JavaScript ಬಳಕೆಯಾಗದ nodes ಅನ್ನು ನಿಮಗಾಗಿ
+  `remove` ನಲ್ಲೂ destructor ನಲ್ಲೂ. Python, Java, JavaScript ಮತ್ತು PHP ಬಳಕೆಯಾಗದ nodes ಅನ್ನು ನಿಮಗಾಗಿ
   ಸ್ವಚ್ಛಗೊಳಿಸುತ್ತವೆ.
 
 ## ಇದು ಎಲ್ಲಿ ಬಳಕೆಯಾಗುತ್ತದೆ?

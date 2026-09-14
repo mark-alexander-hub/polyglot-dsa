@@ -28,6 +28,11 @@ jobs:
           distribution: temurin
           java-version: "21"
 
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: "8.3"
+          coverage: none
+
       - run: npm ci
 
       - name: Build the website

@@ -1,5 +1,5 @@
 ---
-translated_from: e9a4f26a63d8
+translated_from: 065d4cfa8ad6
 status: draft
 reviewed_by:
 ---
@@ -48,7 +48,9 @@ Box `0` address `1000`-இல் தொடங்கி, ஒவ்வொரு bo
 <!-- code: setup -->
 
 > **ஏன் நாமே உருவாக்க வேண்டும்?** Python `list`, C++ `std::vector`, Java `ArrayList`,
-> JavaScript array ஆகிய எல்லாமே உள்ளே arrays தான், உங்களுக்காகத் தானாக வளர்கின்றன. ஒரு fixed
+> JavaScript array ஆகிய எல்லாமே உள்ளே arrays தான், உங்களுக்காகத் தானாக வளர்கின்றன. (PHP array
+> உண்மையில் ஒரு ordered map; PHP-இல் நிலையான size உள்ள boxes row-க்கு மிக நெருக்கமானது
+> `SplFixedArray`.) ஒரு fixed
 > array-ஐ நீங்களே உருவாக்கினால், அவை திரைக்குப் பின்னால் செய்யும் நகர்த்தும் வேலையைப் பார்க்கலாம்,
 > சில operations ஏன் வேகமானவை, சில ஏன் மெதுவானவை என்றும் புரியும்.
 

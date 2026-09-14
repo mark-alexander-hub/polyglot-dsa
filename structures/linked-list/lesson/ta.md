@@ -1,5 +1,5 @@
 ---
-translated_from: ba0b4418c4dc
+translated_from: d9708606fe9e
 status: draft
 reviewed_by:
 ---
@@ -121,7 +121,7 @@ Step 4-இல் உள்ள relinking ஒரே ஒரு line, அது `O(1
 - **எண்ணிக்கையைத் தவறவிடுவது.** Node-ஐச் சேர்க்கும் அல்லது நீக்கும் ஒவ்வொரு method-இலும்
   counter-ஐ மாற்றுங்கள்.
 - **C++-இல் memory leaks.** `new` மூலம் உருவான ஒவ்வொரு node-ஐயும் `delete` மூலம் free செய்ய
-  வேண்டும், `remove`-இலும் destructor-இலும். Python, Java, JavaScript பயன்படாத nodes-ஐ உங்களுக்காகச்
+  வேண்டும், `remove`-இலும் destructor-இலும். Python, Java, JavaScript, PHP பயன்படாத nodes-ஐ உங்களுக்காகச்
   சுத்தம் செய்துவிடும்.
 
 ## இது எங்கே பயன்படுகிறது?

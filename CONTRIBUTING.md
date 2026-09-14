@@ -10,6 +10,9 @@ making it sound right.
 2. Fork and clone the repository, then run `npm install`.
 3. `npm run dev` builds the site and serves it at http://localhost:4173. Run it again after
    you change a file.
+4. To run `npm test` for every programming language you also need Python 3, a C++17 compiler
+   (`g++`, or set `CXX`), Java 17 or newer and PHP 8.1 or newer (or set `PHP` to its path).
+   Languages without a toolchain are skipped on your computer; CI runs all five.
 
 ## Review a translation
 
@@ -46,7 +49,7 @@ Copy the layout of `structures/stack/`:
 | File | What goes in it |
 |---|---|
 | `code/<language>/` | One program per language, written from scratch (no built-in collection doing the work). Mark the parts a lesson shows with `# @snippet name` / `// @snippet name` and `@end`. |
-| `expected-output.txt` | The exact output. All four programs must print it byte for byte (ASCII only). |
+| `expected-output.txt` | The exact output. All five programs must print it byte for byte (ASCII only). |
 | `lesson/en.md` | No `#` title. The standard `##` headings from the translation guide, and `<!-- code: name -->` lines where snippets should appear. |
 | `labels/en.json` | `title`, `summary`, and every piece of playground text under `viz`. |
 | `visualizer.js` | `VizKit.register('<folder name>', (ctx) => { … })`. The helpers are documented at the top of `site/assets/viz-kit.js`; reuse the `.cell`, `.pointer` and `.idx` classes and add your own CSS with `ctx.css`. |
@@ -61,7 +64,7 @@ npm run build                  # every snippet and label is found
 
 ## Fix a program
 
-Change all four languages together so they keep printing the same output, update
+Change all five languages together so they keep printing the same output, update
 `expected-output.txt` if the demo changed, and run `npm test`. If a snippet a lesson shows
 changes meaning, update the English lesson too; translations will then show as out of date,
 which is what we want.

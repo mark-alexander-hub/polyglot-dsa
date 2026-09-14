@@ -42,9 +42,10 @@ number, **size**, that counts how many boxes are in use. The values always sit i
 <!-- code: setup -->
 
 > **Why build it ourselves?** A Python `list`, a C++ `std::vector`, a Java `ArrayList` and
-> a JavaScript array are all arrays underneath that grow for you. Building a fixed one shows
-> you the shifting they do behind the scenes, and why some operations are fast and others
-> are slow.
+> a JavaScript array are all arrays underneath that grow for you. (A PHP array is really an
+> ordered map; `SplFixedArray` is PHP's closest thing to a fixed row of boxes.) Building a
+> fixed one shows you the shifting they do behind the scenes, and why some operations are
+> fast and others are slow.
 
 ## Operations
 

@@ -3,7 +3,7 @@
 //   npm test -- stack             one structure
 //   npm test -- stack java        one structure, one language
 //   npm test -- --require-all     fail (instead of skip) when a toolchain is missing (used in CI)
-// Set CXX to pick a C++ compiler, for example CXX=clang++.
+// Set CXX to pick a C++ compiler (for example CXX=clang++) and PHP to point at a php binary.
 import { spawnSync } from 'node:child_process';
 import { mkdirSync } from 'node:fs';
 import { join, basename, dirname, isAbsolute, delimiter } from 'node:path';
@@ -27,11 +27,13 @@ const works = (cmd, cmdArgs) => {
 
 const python = ['python3', 'python'].find((p) => works(p, ['--version']));
 const cxx = process.env.CXX || 'g++';
+const php = process.env.PHP || 'php';
 const toolchains = {
   python: python ? null : 'python3 / python not found',
   cpp: works(cxx, ['--version']) ? null : `${cxx} not found (set CXX)`,
   java: works('java', ['--version']) ? null : 'java not found',
   javascript: null,
+  php: works(php, ['--version']) ? null : `${php} not found (set PHP)`,
 };
 
 function execute(structure, cl) {
@@ -44,6 +46,8 @@ function execute(structure, cl) {
       return run(process.execPath, [file], cwd);
     case 'java':
       return run('java', [file], cwd);
+    case 'php':
+      return run(php, [file], cwd);
     case 'cpp': {
       const out = join(ROOT, '.build', structure.id);
       mkdirSync(out, { recursive: true });

@@ -1,5 +1,5 @@
 ---
-translated_from: 466ea1ba3975
+translated_from: 5f63ad135dde
 status: draft
 reviewed_by:
 ---
@@ -115,7 +115,7 @@ Queue ಎಷ್ಟೇ ಉದ್ದವಿದ್ದರೂ, ಪ್ರತಿ operati
 - **ತಪ್ಪು ತುದಿಯಿಂದ ತೆಗೆಯುವುದು.** Values front ನಿಂದ ಹೊರಹೋಗುತ್ತವೆ. ನಿಮ್ಮ `dequeue` *ಅತ್ಯಂತ ಹೊಸ*
   value ಅನ್ನು return ಮಾಡಿದರೆ, ನೀವು ತಿಳಿಯದೆ stack ಕಟ್ಟಿದ್ದೀರಿ.
 - **ಪ್ರತಿ dequeue ನಲ್ಲೂ ಎಲ್ಲಾ values ಸರಿಸುವುದು.** ಇದು ಕೆಲಸ ಮಾಡುತ್ತದೆ, ಆದರೆ `O(1)` operation ಅನ್ನು
-  `O(n)` ಆಗಿಸುತ್ತದೆ. JavaScript ನಲ್ಲಿ `array.shift()` ನಿಖರವಾಗಿ ಇದನ್ನೇ ಮಾಡುತ್ತದೆ.
+  `O(n)` ಆಗಿಸುತ್ತದೆ. JavaScript ನಲ್ಲಿ `array.shift()` ಮತ್ತು PHP ಯಲ್ಲಿ `array_shift()` ನಿಖರವಾಗಿ ಇದನ್ನೇ ಮಾಡುತ್ತವೆ.
 
 ## ಇದು ಎಲ್ಲಿ ಬಳಕೆಯಾಗುತ್ತದೆ?
 

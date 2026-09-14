@@ -1,5 +1,5 @@
 ---
-translated_from: 466ea1ba3975
+translated_from: 5f63ad135dde
 status: draft
 reviewed_by:
 ---
@@ -116,7 +116,7 @@ dequeue-க்கும் `O(n)` ஆகும்.
 - **தவறான முனையிலிருந்து எடுப்பது.** Values front-இலிருந்து வெளியேறும். உங்கள் `dequeue` *மிகப் புதிய*
   value-ஐ return செய்தால், நீங்கள் தெரியாமல் stack உருவாக்கிவிட்டீர்கள்.
 - **ஒவ்வொரு dequeue-இலும் எல்லா values-ஐயும் நகர்த்துவது.** இது வேலை செய்யும், ஆனால் `O(1)`
-  operation-ஐ `O(n)` ஆக்கிவிடும். JavaScript-இல் `array.shift()` சரியாக இதைத் தான் செய்கிறது.
+  operation-ஐ `O(n)` ஆக்கிவிடும். JavaScript-இல் `array.shift()`-உம் PHP-இல் `array_shift()`-உம் சரியாக இதைத் தான் செய்கின்றன.
 
 ## இது எங்கே பயன்படுகிறது?
 

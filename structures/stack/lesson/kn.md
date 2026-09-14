@@ -1,5 +1,5 @@
 ---
-translated_from: 786a994eed5d
+translated_from: 110bf42ceb7a
 status: draft
 reviewed_by:
 ---
@@ -31,7 +31,7 @@ reviewed_by:
 <!-- code: setup -->
 
 > **ನಾವೇ ಏಕೆ ಕಟ್ಟಬೇಕು?** ಪ್ರತಿ ಭಾಷೆಯಲ್ಲೂ ಈಗಾಗಲೇ ಸಿದ್ಧವಾದ stack ಇದೆ: Python ನಲ್ಲಿ `list`,
-> C++ ನಲ್ಲಿ `std::stack`, Java ದಲ್ಲಿ `ArrayDeque`, JavaScript ನಲ್ಲಿ array. ಒಮ್ಮೆ ನೀವೇ ಕಟ್ಟಿದರೆ ಆ
+> C++ ನಲ್ಲಿ `std::stack`, Java ದಲ್ಲಿ `ArrayDeque`, JavaScript ನಲ್ಲಿ array, PHP ಯಲ್ಲಿ `SplStack`. ಒಮ್ಮೆ ನೀವೇ ಕಟ್ಟಿದರೆ ಆ
 > tools ನಿಮಗಾಗಿ ಏನು ಮಾಡುತ್ತವೆ ಎಂದು ಅರ್ಥವಾಗುತ್ತದೆ, ಮತ್ತು interview ಗಳಲ್ಲಿ ಈ ಪ್ರಶ್ನೆ ತುಂಬಾ
 > ಕೇಳುತ್ತಾರೆ.
 

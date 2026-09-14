@@ -106,7 +106,8 @@ A queue with room for `n` values uses `n` boxes, so it needs `O(n)` memory.
 - **Removing from the wrong end.** Values leave from the front. If your `dequeue` returns
   the *newest* value, you have built a stack by accident.
 - **Shifting every value on dequeue.** It works, but it turns an `O(1)` operation into
-  `O(n)`. In JavaScript, `array.shift()` does exactly this.
+  `O(n)`. In JavaScript, `array.shift()` does exactly this, and so does `array_shift()` in
+  PHP.
 
 ## Where is it used?
 

@@ -1,0 +1,20 @@
+<svg class="art" viewBox="0 0 320 180" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <path class="s thin dash" d="M8 164 H312"/>
+  <rect class="s f2" x="12" y="54" width="82" height="110" rx="6"/>
+  <path class="s fa" d="M6 54 H100 L92 32 H14 Z"/>
+  <path class="s thin" d="M30 54 L34 32 M52 54 V32 M74 54 L70 32"/>
+  <rect class="s fp" x="26" y="74" width="54" height="40" rx="5"/>
+  <circle class="s fg" cx="53" cy="94" r="10"/>
+  <path class="s" d="M26 114 H80"/>
+  <g class="a-step" style="--d:0">
+    <rect class="s fr" x="106" y="104" width="34" height="56" rx="15"/><circle class="s fp" cx="123" cy="86" r="14"/>
+    <path class="s thin fg" d="M100 108 h14 v10 h-14 z"/>
+  </g>
+  <g class="a-step" style="--d:1"><rect class="s fs" x="152" y="104" width="34" height="56" rx="15"/><circle class="s fp" cx="169" cy="86" r="14"/></g>
+  <g class="a-step" style="--d:2"><rect class="s fe" x="198" y="104" width="34" height="56" rx="15"/><circle class="s fp" cx="215" cy="86" r="14"/></g>
+  <g class="a-step" style="--d:3"><rect class="s fu" x="244" y="104" width="34" height="56" rx="15"/><circle class="s fp" cx="261" cy="86" r="14"/></g>
+  <path class="s thin dash" d="M296 44 H130"/>
+  <path class="s thin" d="M140 36 L128 44 L140 52"/>
+  <text class="t-hand" x="118" y="30" font-size="21">front</text>
+  <text class="t-hand" x="262" y="30" font-size="21">rear</text>
+</svg>

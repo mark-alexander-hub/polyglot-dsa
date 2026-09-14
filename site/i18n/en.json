@@ -7,7 +7,7 @@
   "siteTitle": "Polyglot DSA",
   "tagline": "Data structures, in your language.",
   "heroTitle": "Learn data structures in the language you think in.",
-  "heroText": "Every lesson is written in English, हिन्दी, ಕನ್ನಡ and தமிழ், with the same code in Python, C++, Java and JavaScript. Play with each structure, watch it move, then read the code.",
+  "heroText": "Every lesson is written in English, हिन्दी, ಕನ್ನಡ and தமிழ், with the same code in Python, C++, Java, JavaScript and PHP. Play with each structure, watch it move, then read the code.",
   "chooseLanguage": "Choose your language",
   "codeLanguage": "Code in",
   "lessonsTitle": "Lessons",
@@ -36,5 +36,9 @@
   "footerContribute": "Want this in your language? Help us add it.",
   "timeComplexity": "Time",
   "stepLog": "What just happened",
-  "notTranslated": "This lesson is not in {language} yet, so you are reading the English version."
+  "notTranslated": "This lesson is not in {language} yet, so you are reading the English version.",
+  "greeting": "Hello!",
+  "lessonOf": "Lesson {n} of {total}",
+  "markDone": "I finished this lesson",
+  "doneLabel": "Done!"
 }

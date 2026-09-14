@@ -1,5 +1,5 @@
 ---
-translated_from: e9a4f26a63d8
+translated_from: 065d4cfa8ad6
 status: draft
 reviewed_by:
 ---
@@ -48,7 +48,8 @@ boxes ಬಳಕೆಯಲ್ಲಿವೆ ಎಂದು ಎಣಿಸುವ **size**
 <!-- code: setup -->
 
 > **ನಾವೇ ಏಕೆ ಕಟ್ಟಬೇಕು?** Python ನ `list`, C++ ನ `std::vector`, Java ದ `ArrayList` ಮತ್ತು
-> JavaScript ನ array, ಇವೆಲ್ಲವೂ ಒಳಗೆ arrays ಆಗಿದ್ದು ನಿಮಗಾಗಿ ತಾವೇ ಬೆಳೆಯುತ್ತವೆ. ಒಂದು fixed array
+> JavaScript ನ array, ಇವೆಲ್ಲವೂ ಒಳಗೆ arrays ಆಗಿದ್ದು ನಿಮಗಾಗಿ ತಾವೇ ಬೆಳೆಯುತ್ತವೆ. (PHP ಯ array ನಿಜವಾಗಿ
+> ಒಂದು ordered map; PHP ಯಲ್ಲಿ ನಿಗದಿತ boxes ಸಾಲಿಗೆ ಅತಿ ಹತ್ತಿರವಾದದ್ದು `SplFixedArray`.) ಒಂದು fixed array
 > ಅನ್ನು ನೀವೇ ಕಟ್ಟಿದರೆ, ಅವು ತೆರೆಮರೆಯಲ್ಲಿ ಮಾಡುವ ಸರಿಸುವ ಕೆಲಸವನ್ನು ನೋಡಬಹುದು, ಮತ್ತು ಕೆಲವು operations
 > ಏಕೆ ವೇಗ, ಕೆಲವು ಏಕೆ ನಿಧಾನ ಎಂದು ಅರ್ಥವಾಗುತ್ತದೆ.
 

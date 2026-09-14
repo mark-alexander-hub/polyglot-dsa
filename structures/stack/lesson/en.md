@@ -25,8 +25,9 @@ We keep one number, `top`, which is the index of the value at the top.
 <!-- code: setup -->
 
 > **Why build it ourselves?** Every language already has a ready-made stack: a Python
-> `list`, `std::stack` in C++, `ArrayDeque` in Java, an array in JavaScript. Building one
-> once shows you what those tools do for you, and interviewers love asking about it.
+> `list`, `std::stack` in C++, `ArrayDeque` in Java, an array in JavaScript, `SplStack` in
+> PHP. Building one once shows you what those tools do for you, and interviewers love asking
+> about it.
 
 ## Operations
 

@@ -14,6 +14,7 @@ export const CODE_LANGS = [
   { id: 'cpp', label: 'C++', ext: '.cpp', hljs: 'cpp', browser: null, local: (f) => `g++ -std=c++17 ${f} -o ${basename(f, '.cpp')} && ./${basename(f, '.cpp')}` },
   { id: 'java', label: 'Java', ext: '.java', hljs: 'java', browser: null, local: (f) => `java ${f}` },
   { id: 'javascript', label: 'JavaScript', ext: '.js', hljs: 'javascript', browser: 'javascript', local: (f) => `node ${f}` },
+  { id: 'php', label: 'PHP', ext: '.php', hljs: 'php', browser: null, local: (f) => `php ${f}` },
 ];
 
 const readText = (p) => readFileSync(p, 'utf8').replace(/\r\n?/g, '\n');
@@ -159,6 +160,10 @@ export function loadStructures(languages) {
     const vizPath = join(dir, 'visualizer.js');
     if (!existsSync(vizPath)) errors.push(`${where}/visualizer.js is missing`);
 
+    // Optional hand-drawn scene of the real-life example, shown on cards and the lesson header.
+    const artPath = join(dir, 'illustration.svg');
+    const illustration = existsSync(artPath) ? readText(artPath).replace(/<\?xml[^>]*>\s*/, '').trim() : null;
+
     for (const [code2, lesson] of Object.entries(lessons)) {
       for (const name of lessonDirectives(lesson.body)) {
         for (const cl of CODE_LANGS) {
@@ -175,7 +180,7 @@ export function loadStructures(languages) {
       }
     }
 
-    return { id, dir, meta, labels, lessons, code, expectedOutput, vizPath };
+    return { id, dir, meta, labels, lessons, code, expectedOutput, vizPath, illustration };
   });
 
   structures.sort((a, b) => a.meta.order - b.meta.order);

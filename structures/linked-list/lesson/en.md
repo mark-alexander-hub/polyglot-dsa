@@ -111,8 +111,8 @@ A list of `n` nodes needs `O(n)` memory, and each node carries one extra link.
   its `next`.
 - **Losing count.** Update the counter in every method that adds or removes a node.
 - **Memory leaks in C++.** Every node made with `new` must be freed with `delete`, both in
-  `remove` and in the destructor. Python, Java and JavaScript clean up unused nodes for
-  you.
+  `remove` and in the destructor. Python, Java, JavaScript and PHP clean up unused nodes
+  for you.
 
 ## Where is it used?
 
