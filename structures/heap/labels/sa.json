@@ -1,0 +1,31 @@
+{
+  "title": "Heap",
+  "summary": "लघुतमं value सर्वदा उपरि, चिकित्सालये अत्यावश्यकः रोगी इव।",
+  "viz": {
+    "valuePlaceholder": "value",
+    "insert": "insert",
+    "removeMin": "removeMin",
+    "peek": "peek",
+    "reset": "reset",
+    "root": "root",
+    "count": "count = {count}",
+    "capacity": "{n} स्थानानि",
+    "asArray": "सः एव heap array रूपेण",
+    "hello": "अस्मिन् heap इत्यस्मिन् {n} values इत्येतेषां स्थानम् अस्ति, इदानीं {count} सन्ति। लघुतमं {min} उपरि अस्ति। insert, removeMin अथवा peek कृत्वा पश्यत।",
+    "inserted": "insert({value}): तत् प्रथमे रिक्ते स्थाने, index {index} इत्यत्र, अधः नूतनः leaf इति गतम्।",
+    "insertedRoot": "insert({value}): heap रिक्तः आसीत्, अतः {value} इति root अभवत्।",
+    "siftUpSwap": "{value} स्वस्य parent {parent} इत्यस्मात् लघुतरम्, अतः तयोः swap। {value} इति index {index} इत्यत्र आरोहति।",
+    "siftUpStay": "{value} इति index {index} इत्यत्र एव तिष्ठति, यतः तस्य parent {parent} लघुतरम्।",
+    "siftUpRoot": "{value} इति root प्राप्तम्। इदानीं तत् एव नूतनं लघुतमं value।",
+    "removed": "removeMin(): root इत्यतः {value} गृहीतम्। अन्तिमं value {moved} उपरि गतम्, इदानीं तेन अधः अवरोहणीयम्।",
+    "removedLast": "removeMin(): {value} गृहीतम्। इदानीं heap रिक्तः।",
+    "siftDownSwap": "{value} स्वस्य लघुतरात् child {child} इत्यस्मात् महत्तरम्, अतः तयोः swap। {value} इति index {index} इत्यत्र अवरोहति।",
+    "siftDownStay": "{value} index {index} इत्यत्र तिष्ठति, यतः तस्य अधः किमपि child तस्मात् लघुतरं नास्ति।",
+    "siftDownLeaf": "{value} इति index {index} इत्यत्र विरमति। तस्य अधः किमपि नास्ति।",
+    "peeked": "peek(): लघुतमं value {value}, root इत्यत्र। किमपि न चलितम्।",
+    "overflow": "insert({value}): heap पूर्णः, सर्वाणि {n} स्थानानि गृहीतानि। एषः overflow।",
+    "underflow": "heap रिक्तः (count = 0), अतः ग्रहीतुं किमपि नास्ति। एषः underflow।",
+    "arrayNote": "वृक्षस्य अधः पङ्क्तिः सः एव heap array रूपेण। index i इत्यस्य parent (i - 1) / 2 इत्यत्र, children 2i + 1 तथा 2i + 2 इत्यत्र।",
+    "resetDone": "रिक्तेन heap इत्यनेन पुनः आरब्धम्।"
+  }
+}

@@ -173,7 +173,7 @@ write('index.html', page({
   scripts: ['assets/app.js'],
   body: `<main class="hello wrap">
   <h1 class="hello-title">Polyglot <span class="hl">DSA</span></h1>
-  <p class="hello-sub cycle">${languages.map((l, i) => `<span style="--i:${i}" lang="${esc(l.htmlLang)}">${esc(l.tagline)}</span>`).join('')}</p>
+  <p class="hello-sub cycle" style="--n:${languages.length}">${languages.map((l, i) => `<span style="--i:${i}" lang="${esc(l.htmlLang)}">${esc(l.tagline)}</span>`).join('')}</p>
   <div class="hello-grid">
     ${languages.map((l, i) => `<a class="pick-card note" style="--i:${i};--tilt:${tilt(i, [-2.5, 1.8, -1.4, 2.2])}" href="${l.code}/" lang="${esc(l.htmlLang)}">
       <span class="tape"></span>

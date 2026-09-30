@@ -1,0 +1,31 @@
+{
+  "title": "Heap",
+  "summary": "மிகச் சிறிய value எப்போதும் மேலே, மருத்துவமனையில் மிக அவசரமான நோயாளி போல.",
+  "viz": {
+    "valuePlaceholder": "value",
+    "insert": "insert",
+    "removeMin": "removeMin",
+    "peek": "peek",
+    "reset": "reset",
+    "root": "root",
+    "count": "count = {count}",
+    "capacity": "{n} இடங்கள்",
+    "asArray": "அதே heap ஒரு array-ஆக",
+    "hello": "இந்த heap-இல் {n} values-க்கு இடம் உள்ளது, இப்போது {count} உள்ளன. மிகச் சிறியது, {min}, மேலே உள்ளது. insert, removeMin அல்லது peek செய்து பாருங்கள்.",
+    "inserted": "insert({value}): அது முதல் காலி இடத்தில், index {index}-இல், கீழே ஒரு புதிய leaf-ஆகப் போனது.",
+    "insertedRoot": "insert({value}): heap காலியாக இருந்தது, அதனால் {value} root ஆனது.",
+    "siftUpSwap": "{value} தன் parent {parent}-ஐ விடச் சிறியது, அதனால் இரண்டும் swap ஆகின்றன. {value} index {index}-க்கு மேலே ஏறுகிறது.",
+    "siftUpStay": "{value} index {index}-இலேயே இருக்கிறது, ஏனென்றால் அதன் parent {parent} சிறியது.",
+    "siftUpRoot": "{value} root-ஐ அடைந்தது. அது தான் புதிய மிகச் சிறிய value.",
+    "removed": "removeMin(): root-இலிருந்து {value} எடுக்கப்பட்டது. கடைசி value {moved} மேலே குதிக்கிறது, இப்போது அது கீழே இறங்க வேண்டும்.",
+    "removedLast": "removeMin(): {value} எடுக்கப்பட்டது. இப்போது heap காலியாக உள்ளது.",
+    "siftDownSwap": "{value} தன் சிறிய child {child}-ஐ விடப் பெரியது, அதனால் இரண்டும் swap ஆகின்றன. {value} index {index}-க்குக் கீழே இறங்குகிறது.",
+    "siftDownStay": "{value} index {index}-இல் நின்றது, ஏனெனில் அதற்குக் கீழே எந்த child-உம் அதைவிடச் சிறியதல்ல.",
+    "siftDownLeaf": "{value} index {index}-இல் நிற்கிறது. அதற்குக் கீழே எதுவும் இல்லை.",
+    "peeked": "peek(): மிகச் சிறிய value {value}, root-இல் உள்ளது. எதுவும் நகரவில்லை.",
+    "overflow": "insert({value}): heap நிரம்பியது, எல்லா {n} இடங்களும் பயன்பாட்டில் உள்ளன. இதுதான் overflow.",
+    "underflow": "heap காலியாக உள்ளது (count = 0), எடுக்க எதுவும் இல்லை. இதுதான் underflow.",
+    "arrayNote": "மரத்துக்குக் கீழே உள்ள வரிசை அதே heap ஒரு array-ஆக. Index i-இன் parent (i - 1) / 2-இல், அதன் children 2i + 1, 2i + 2-இல்.",
+    "resetDone": "காலியான heap-உடன் மீண்டும் தொடங்கப்பட்டது."
+  }
+}

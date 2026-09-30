@@ -1,6 +1,7 @@
 Polyglot DSA uses two licences:
 
-  * Code (everything under structures/*/code, scripts/ and site/) - MIT licence, below.
+  * Code (everything under structures/*/code, structures/*/visualizer.js,
+    structures/*/illustration.svg, scripts/ and site/) - MIT licence, below.
   * Lessons and translations (structures/*/lesson, structures/*/labels, docs/) -
     Creative Commons Attribution 4.0 International (CC BY 4.0),
     https://creativecommons.org/licenses/by/4.0/

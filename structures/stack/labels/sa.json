@@ -1,0 +1,21 @@
+{
+  "title": "Stack",
+  "summary": "यत् अन्ते आगतं तत् प्रथमं गच्छति, स्थालिकानां राशिः इव।",
+  "viz": {
+    "valuePlaceholder": "value",
+    "push": "push",
+    "pop": "pop",
+    "peek": "peek",
+    "reset": "reset",
+    "top": "top",
+    "capacity": "{n} इत्येतेषां स्थानम्",
+    "hello": "अस्मिन् stack इत्यस्मिन् {n} values इत्येतेषां स्थानम् अस्ति, top = {top} च। push, pop अथवा peek कृत्वा पश्यत।",
+    "pushed": "push({value}): top उपरि {index} प्रति गतम्, {value} च तस्मिन् box इत्यस्मिन् स्थापितम्।",
+    "popped": "pop(): box {index} इत्यस्मात् {value} अपनीतम्। top अधः {top} प्रति गतम्।",
+    "peeked": "peek(): top value {value} अस्ति। किमपि न चलितम्।",
+    "overflow": "push({value}): stack पूर्णः अस्ति, {index} इत्यस्य उपरि कोऽपि box नास्ति। एतत् overflow इति कथ्यते।",
+    "underflow": "stack रिक्तः अस्ति (top = -1), अतः अपनेतुं किमपि नास्ति। एतत् underflow इति कथ्यते।",
+    "ghost": "मन्दवर्णाः numbers पुरातनानि values सन्ति। यावत् कश्चित् push तेषाम् उपरि नवीनं value न लिखति, तावत् तानि box इत्यस्मिन् एव तिष्ठन्ति।",
+    "resetDone": "रिक्तेन stack इत्यनेन पुनः आरब्धम्।"
+  }
+}

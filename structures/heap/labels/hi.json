@@ -1,0 +1,31 @@
+{
+  "title": "Heap",
+  "summary": "सबसे छोटी value हमेशा सबसे ऊपर रहती है, बिल्कुल अस्पताल के सबसे ज़रूरी मरीज़ की तरह।",
+  "viz": {
+    "valuePlaceholder": "value",
+    "insert": "insert",
+    "removeMin": "removeMin",
+    "peek": "peek",
+    "reset": "reset",
+    "root": "root",
+    "count": "count = {count}",
+    "capacity": "{n} की जगह",
+    "asArray": "यही heap एक array की तरह",
+    "hello": "इस heap में {n} values की जगह है और अभी {count} रखी हैं। सबसे छोटी value, {min}, सबसे ऊपर है। insert, removeMin या peek करके देखिए।",
+    "inserted": "insert({value}): वो पहली खाली जगह, index {index}, में गई, सबसे नीचे एक नए leaf की तरह।",
+    "insertedRoot": "insert({value}): heap खाली था, इसलिए {value} root बन गया।",
+    "siftUpSwap": "{value} अपने parent {parent} से छोटा है, इसलिए दोनों swap हुए। {value} चढ़कर index {index} पर आया।",
+    "siftUpStay": "{value} index {index} पर ही रहा, क्योंकि उसका parent {parent} छोटा है।",
+    "siftUpRoot": "{value} root तक पहुँच गया। अब यही नई सबसे छोटी value है।",
+    "removed": "removeMin(): root से {value} निकाला। आख़िरी value, {moved}, उछलकर सबसे ऊपर आई और अब उसे नीचे उतरना है।",
+    "removedLast": "removeMin(): {value} निकाला। अब heap खाली है।",
+    "siftDownSwap": "{value} अपने छोटे child {child} से बड़ा है, इसलिए दोनों swap हुए। {value} उतरकर index {index} पर आया।",
+    "siftDownStay": "{value} index {index} पर रुक गया, क्योंकि उसके नीचे कोई भी child उससे छोटा नहीं है।",
+    "siftDownLeaf": "{value} index {index} पर रुक गया। उसके नीचे कुछ नहीं है।",
+    "peeked": "peek(): सबसे छोटी value {value} है, root पर। कुछ भी नहीं हिला।",
+    "overflow": "insert({value}): heap भरा हुआ है, सभी {n} जगहें भरी हैं। इसे overflow कहते हैं।",
+    "underflow": "heap खाली है (count = 0), इसलिए निकालने के लिए कुछ नहीं है। इसे underflow कहते हैं।",
+    "arrayNote": "पेड़ के नीचे वाली पंक्ति यही heap एक array की तरह है। Index i का parent (i - 1) / 2 पर है, उसके children 2i + 1 और 2i + 2 पर।",
+    "resetDone": "खाली heap के साथ फिर से शुरू किया।"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "title": "Array",
+  "summary": "परस्परं संलग्नानि number युक्तानि boxes, यथा cinema इत्यस्य एकस्यां पङ्क्तौ seats।",
+  "viz": {
+    "indexPlaceholder": "index",
+    "valuePlaceholder": "value",
+    "get": "get",
+    "insert": "insert",
+    "remove": "remove",
+    "search": "search",
+    "reset": "reset",
+    "size": "size",
+    "capacity": "{n} values कृते स्थानम्",
+    "hello": "अस्मिन् array इत्यस्मिन् {n} values कृते स्थानम् अस्ति, size = {size} च। एकम् index एकां च value लिखत, ततः insert, remove, get अथवा search कुरुत।",
+    "needIndex": "प्रथमम् एकम् index लिखत: box इत्यस्य number, यत् 0 तः आरभते।",
+    "got": "get({index}): box {index} इत्यस्मिन् {value} अस्ति। Computer साक्षात् तत्र गच्छति, कोऽपि loop नास्ति।",
+    "shiftRight": "insert({index}, {value}): {count} values अन्तात् आरभ्य एकं box दक्षिणतः सरन्ति।",
+    "noShift": "insert({index}, {value}): एतत् array इत्यस्य अन्तः, अतः किमपि न सारणीयम्।",
+    "inserted": "{value} इदानीं box {index} इत्यस्मिन् अस्ति, size च {size}।",
+    "removed": "remove({index}): {value} अपनीतम्। {count} values एकं box वामतः सृताः, size च इदानीं {size}।",
+    "ghost": "मन्दवर्णं number स्थानान्तरणेन अवशिष्टा पुरातना copy अस्ति। तत् size इत्यस्मात् बहिः अस्ति, अतः इदानीं array इत्यस्य भागः नास्ति।",
+    "found": "search({value}): {checked} boxes दृष्टानि, value index {index} इत्यत्र लब्धा।",
+    "notFound": "search({value}): सर्वाणि {checked} boxes दृष्टानि। Value अत्र नास्ति, अतः उत्तरं -1।",
+    "errFull": "insert({index}, {value}): प्रत्येकं box प्रयोगे अस्ति (size = capacity = {n})। Array पूर्णम्।",
+    "errRange": "{op}({index}): index out of range। इदानीं यूयं 0 तः {max} पर्यन्तं प्रयोक्तुं शक्नुथ।",
+    "errEmpty": "{op}({index}): array रिक्तम्, अतः कस्मिन्नपि index इत्यस्मिन् किमपि नास्ति।",
+    "removedLast": "remove({index}): {value} अपनीतम्। एषा अन्तिमा value आसीत्, अतः किमपि न सारणीयम् आसीत्, size च इदानीं {size}।",
+    "foundFirst": "search({value}): प्रथमे एव box इत्यस्मिन् लब्धा, index {index} इत्यत्र।",
+    "resetDone": "रिक्तेन array इत्यनेन पुनः आरब्धम्।"
+  }
+}

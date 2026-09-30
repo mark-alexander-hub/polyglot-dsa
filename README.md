@@ -1,30 +1,31 @@
 # ◆ Polyglot DSA
 
 **Data structures, in your language.**
-Data structures, अपनी भाषा में। · Data structures, ನಿಮ್ಮ ಭಾಷೆಯಲ್ಲಿ. · Data structures, உங்கள் மொழியில்.
+Data structures, अपनी भाषा में। · Data structures, ನಿಮ್ಮ ಭಾಷೆಯಲ್ಲಿ. · Data structures, உங்கள் மொழியில். · Data structures, स्वभाषायाम्।
 
 Most people first understand an idea in the language they think in. Polyglot DSA teaches
-data structures in **English, हिन्दी, ಕನ್ನಡ and தமிழ்**, with the same working program in
+data structures in **English, हिन्दी, ಕನ್ನಡ, தமிழ் and संस्कृतम्**, with the same working program in
 **Python, C++, Java, JavaScript and PHP**. Every lesson has a playground where you press
 buttons and watch the structure move, step by step, with each step explained in your
 language.
 
 **Website:** https://mark-alexander-hub.github.io/polyglot-dsa/
 
-![The lesson home page: four lesson cards (Array, Linked list, Stack, Queue) and a code-language picker](docs/screenshots/home.png)
+![The lesson home page: five lesson cards (Array, Linked list, Stack, Queue, Heap) and a code-language picker](docs/screenshots/home.png)
 
 ![The Queue lesson: a playground with front and rear pointers on a circular array, a step-by-step log, then the lesson text](docs/screenshots/queue-lesson.png)
 
 ## Lessons
 
-| # | Structure | English | हिन्दी | ಕನ್ನಡ | தமிழ் | Code |
-|---|---|---|---|---|---|---|
-| 1 | Array | [en](structures/array/lesson/en.md) | [hi](structures/array/lesson/hi.md) | [kn](structures/array/lesson/kn.md) | [ta](structures/array/lesson/ta.md) | [code](structures/array/code) |
-| 2 | Linked list | [en](structures/linked-list/lesson/en.md) | [hi](structures/linked-list/lesson/hi.md) | [kn](structures/linked-list/lesson/kn.md) | [ta](structures/linked-list/lesson/ta.md) | [code](structures/linked-list/code) |
-| 3 | Stack | [en](structures/stack/lesson/en.md) | [hi](structures/stack/lesson/hi.md) | [kn](structures/stack/lesson/kn.md) | [ta](structures/stack/lesson/ta.md) | [code](structures/stack/code) |
-| 4 | Queue | [en](structures/queue/lesson/en.md) | [hi](structures/queue/lesson/hi.md) | [kn](structures/queue/lesson/kn.md) | [ta](structures/queue/lesson/ta.md) | [code](structures/queue/code) |
+| # | Structure | English | हिन्दी | ಕನ್ನಡ | தமிழ் | संस्कृतम् | Code |
+|---|---|---|---|---|---|---|---|
+| 1 | Array | [en](structures/array/lesson/en.md) | [hi](structures/array/lesson/hi.md) | [kn](structures/array/lesson/kn.md) | [ta](structures/array/lesson/ta.md) | [sa](structures/array/lesson/sa.md) | [code](structures/array/code) |
+| 2 | Linked list | [en](structures/linked-list/lesson/en.md) | [hi](structures/linked-list/lesson/hi.md) | [kn](structures/linked-list/lesson/kn.md) | [ta](structures/linked-list/lesson/ta.md) | [sa](structures/linked-list/lesson/sa.md) | [code](structures/linked-list/code) |
+| 3 | Stack | [en](structures/stack/lesson/en.md) | [hi](structures/stack/lesson/hi.md) | [kn](structures/stack/lesson/kn.md) | [ta](structures/stack/lesson/ta.md) | [sa](structures/stack/lesson/sa.md) | [code](structures/stack/code) |
+| 4 | Queue | [en](structures/queue/lesson/en.md) | [hi](structures/queue/lesson/hi.md) | [kn](structures/queue/lesson/kn.md) | [ta](structures/queue/lesson/ta.md) | [sa](structures/queue/lesson/sa.md) | [code](structures/queue/code) |
+| 5 | Heap | [en](structures/heap/lesson/en.md) | [hi](structures/heap/lesson/hi.md) | [kn](structures/heap/lesson/kn.md) | [ta](structures/heap/lesson/ta.md) | [sa](structures/heap/lesson/sa.md) | [code](structures/heap/code) |
 
-> **The Hindi, Kannada and Tamil lessons are drafts.** They follow our
+> **The Hindi, Kannada, Tamil and Sanskrit lessons are drafts.** They follow our
 > [translation guide](docs/translation-guide.md) but have not yet been checked by native
 > speakers. If one of these is your language, a review is the most valuable thing you can
 > give this project: [review a translation](../../issues/new?template=review-translation.yml).
@@ -32,7 +33,7 @@ language.
 ## How it is built
 
 Writing every lesson for every pair of human and programming language would mean
-4 × 5 = 20 versions of each lesson, and they would drift apart. Instead:
+5 × 5 = 25 versions of each lesson, and they would drift apart. Instead:
 
 - **One explanation per human language.** `structures/<name>/lesson/<language>.md`
 - **One program per programming language.** `structures/<name>/code/<language>/`
@@ -40,7 +41,7 @@ Writing every lesson for every pair of human and programming language would mean
   the `push` part of whichever programming language the reader picked. The code marks those
   parts with `@snippet push` … `@end` comments.
 - **All five programs must print exactly the same output**, stored in
-  `expected-output.txt`. Every pull request runs them all, so the four languages can never
+  `expected-output.txt`. Every pull request runs them all, so the five languages can never
   quietly disagree.
 - **Translations know when they are out of date.** Each one records a fingerprint of the
   English lesson it came from. If the English changes later, the website tells readers and
@@ -80,7 +81,7 @@ or set `CXX`), Java 17 or newer and PHP 8.1 or newer (or set `PHP`).
 
 ## Help us
 
-- **Speak Hindi, Kannada or Tamil?** Review a lesson. Even one corrected sentence helps.
+- **Speak Hindi, Kannada, Tamil or Sanskrit?** Review a lesson. Even one corrected sentence helps.
 - **Want your language?** Marathi, Telugu, Bengali, Malayalam, Gujarati, Punjabi, Odia,
   Urdu: see [adding a language](CONTRIBUTING.md#add-a-language). Lessons you have not
   translated yet show the English version until you do.
