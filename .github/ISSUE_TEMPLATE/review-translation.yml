@@ -13,14 +13,14 @@ body:
     id: language
     attributes:
       label: Language
-      options: [हिन्दी (Hindi), ಕನ್ನಡ (Kannada), தமிழ் (Tamil), Other]
+      options: [हिन्दी (Hindi), ಕನ್ನಡ (Kannada), தமிழ் (Tamil), संस्कृतम् (Sanskrit), Other]
     validations:
       required: true
   - type: dropdown
     id: lesson
     attributes:
       label: Lesson
-      options: [Array, Linked list, Stack, Queue, Website buttons and labels]
+      options: [Array, Linked list, Stack, Queue, Heap, Website buttons and labels]
     validations:
       required: true
   - type: textarea

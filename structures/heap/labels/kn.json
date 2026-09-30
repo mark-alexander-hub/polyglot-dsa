@@ -1,0 +1,31 @@
+{
+  "title": "Heap",
+  "summary": "ಅತಿ ಚಿಕ್ಕ value ಯಾವಾಗಲೂ ಮೇಲೆ ಇರುತ್ತದೆ, ಆಸ್ಪತ್ರೆಯ ಅತಿ ತುರ್ತು ರೋಗಿಯಂತೆ.",
+  "viz": {
+    "valuePlaceholder": "value",
+    "insert": "insert",
+    "removeMin": "removeMin",
+    "peek": "peek",
+    "reset": "reset",
+    "root": "root",
+    "count": "count = {count}",
+    "capacity": "{n} ಜಾಗ",
+    "asArray": "ಇದೇ heap array ಆಗಿ",
+    "hello": "ಈ heap ನಲ್ಲಿ {n} values ಗೆ ಜಾಗ ಇದೆ, ಈಗ {count} ಇವೆ. ಅತಿ ಚಿಕ್ಕದು, {min}, ಮೇಲಿದೆ. insert, removeMin ಅಥವಾ peek ಮಾಡಿ ನೋಡಿ.",
+    "inserted": "insert({value}): ಅದು ಮೊದಲ ಖಾಲಿ ಜಾಗವಾದ index {index} ಗೆ ಹೋಗಿ, ಕೆಳಗೆ ಒಂದು ಹೊಸ leaf ಆಯಿತು.",
+    "insertedRoot": "insert({value}): heap ಖಾಲಿ ಇತ್ತು, ಆದ್ದರಿಂದ {value} root ಆಯಿತು.",
+    "siftUpSwap": "{value} ತನ್ನ parent {parent} ಗಿಂತ ಚಿಕ್ಕದು, ಆದ್ದರಿಂದ ಅವು swap ಆದವು. {value} index {index} ಗೆ ಏರಿತು.",
+    "siftUpStay": "{value} index {index} ನಲ್ಲೇ ಉಳಿಯಿತು, ಏಕೆಂದರೆ ಅದರ parent {parent} ಚಿಕ್ಕದು.",
+    "siftUpRoot": "{value} root ತಲುಪಿತು. ಅದೇ ಈಗ ಹೊಸ ಅತಿ ಚಿಕ್ಕ value.",
+    "removed": "removeMin(): root ನಿಂದ {value} ತೆಗೆಯಲಾಯಿತು. ಕೊನೆಯ value {moved} ಮೇಲಕ್ಕೆ ಹಾರಿತು, ಈಗ ಅದು ಕೆಳಗೆ ಇಳಿಯಬೇಕು.",
+    "removedLast": "removeMin(): {value} ತೆಗೆಯಲಾಯಿತು. heap ಈಗ ಖಾಲಿ ಇದೆ.",
+    "siftDownSwap": "{value} ತನ್ನ ಚಿಕ್ಕ child {child} ಗಿಂತ ದೊಡ್ಡದು, ಆದ್ದರಿಂದ ಅವು swap ಆದವು. {value} index {index} ಗೆ ಇಳಿಯಿತು.",
+    "siftDownStay": "{value} index {index} ನಲ್ಲಿ ನಿಂತಿತು, ಏಕೆಂದರೆ ಅದರ ಕೆಳಗಿನ ಯಾವ child ಕೂಡ ಅದಕ್ಕಿಂತ ಚಿಕ್ಕದಲ್ಲ.",
+    "siftDownLeaf": "{value} index {index} ನಲ್ಲಿ ನಿಂತಿತು. ಅದರ ಕೆಳಗೆ ಏನೂ ಇಲ್ಲ.",
+    "peeked": "peek(): ಅತಿ ಚಿಕ್ಕ value {value}, root ನಲ್ಲಿದೆ. ಏನೂ ಬದಲಾಗಲಿಲ್ಲ.",
+    "overflow": "insert({value}): heap ತುಂಬಿದೆ, ಎಲ್ಲಾ {n} ಜಾಗಗಳೂ ಬಳಕೆಯಲ್ಲಿವೆ. ಇದನ್ನು overflow ಎನ್ನುತ್ತಾರೆ.",
+    "underflow": "heap ಖಾಲಿ ಇದೆ (count = 0), ತೆಗೆಯಲು ಏನೂ ಇಲ್ಲ. ಇದನ್ನು underflow ಎನ್ನುತ್ತಾರೆ.",
+    "arrayNote": "ಮರದ ಕೆಳಗಿನ ಸಾಲು ಇದೇ heap array ಆಗಿ. Index i ನ parent (i - 1) / 2 ನಲ್ಲಿ, ಅದರ children 2i + 1 ಮತ್ತು 2i + 2 ನಲ್ಲಿ.",
+    "resetDone": "ಖಾಲಿ heap ನೊಂದಿಗೆ ಮತ್ತೆ ಶುರು ಮಾಡಲಾಯಿತು."
+  }
+}

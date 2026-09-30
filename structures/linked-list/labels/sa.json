@@ -1,0 +1,29 @@
+{
+  "title": "Linked list",
+  "summary": "Nodes इत्येतेषां शृङ्खला, यस्यां प्रत्येकः node अग्रिमं निर्दिशति, यथा train इत्यस्य coaches।",
+  "viz": {
+    "valuePlaceholder": "value",
+    "addFirst": "add-first",
+    "addLast": "add-last",
+    "find": "find",
+    "remove": "remove",
+    "reset": "reset",
+    "head": "head",
+    "current": "current",
+    "previous": "previous",
+    "newNode": "नवीनः",
+    "null": "null",
+    "hello": "अस्यां list इत्यस्यां {n} nodes सन्ति, head च {value} निर्दिशति। add-first, add-last, find अथवा remove कुरुत।",
+    "addedFirst": "add-first({value}): नवीनः node पुरातनं head निर्दिशति, ततः head {value} इत्यत्र आगच्छति। अन्यत् किमपि न चलितम्।",
+    "addedEmpty": "List रिक्ता आसीत्, अतः इदानीं {value} एकः एव node, head च तमेव निर्दिशति।",
+    "addedLast": "add-last({value}): अन्तिमं node यावत् {steps} step गतम्, ततः {value} तस्य पश्चात् योजितम्।",
+    "found": "find({value}): आम्, node संख्या {steps} इत्यत्र लब्धम्।",
+    "notFound": "find({value}): न। सर्वे {steps} nodes परीक्षिताः, null च प्राप्तम्।",
+    "removedHead": "remove({value}): एषः head आसीत्, अतः head केवलम् अग्रिमं node गतः।",
+    "removed": "remove({value}): तस्मात् पूर्वः node इदानीं तम् अतिक्रम्य {next} निर्दिशति।",
+    "removeMissing": "remove({value}): null यावत् गतम्, किन्तु value न लब्धा। Error: value not found।",
+    "emptyList": "List रिक्ता (head = null)। प्रथमम् एकं node योजयत।",
+    "full": "अस्य playground कृते एतावन्तः nodes पर्याप्ताः ({max})। प्रथमम् एकम् अपनयत।",
+    "resetDone": "रिक्तया list इत्यनया पुनः आरब्धम्।"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "title": "Heap",
+  "summary": "The smallest value is always on top, like the most urgent patient in a hospital.",
+  "viz": {
+    "valuePlaceholder": "value",
+    "insert": "insert",
+    "removeMin": "removeMin",
+    "peek": "peek",
+    "reset": "reset",
+    "root": "root",
+    "count": "count = {count}",
+    "capacity": "room for {n}",
+    "asArray": "the same heap as an array",
+    "hello": "This heap has room for {n} values and holds {count}. The smallest, {min}, is on top. Try insert, removeMin or peek.",
+    "inserted": "insert({value}): it went into the first free slot, index {index}, as a new leaf at the bottom.",
+    "insertedRoot": "insert({value}): the heap was empty, so {value} became the root.",
+    "siftUpSwap": "{value} is smaller than its parent {parent}, so they swap. {value} climbs to index {index}.",
+    "siftUpStay": "{value} stays at index {index}, because its parent {parent} is smaller.",
+    "siftUpRoot": "{value} reached the root. It is the new smallest value.",
+    "removed": "removeMin(): took {value} from the root. The last value, {moved}, jumps to the top and now has to sink down.",
+    "removedLast": "removeMin(): took {value}. The heap is empty now.",
+    "siftDownSwap": "{value} is bigger than its smaller child {child}, so they swap. {value} sinks to index {index}.",
+    "siftDownStay": "{value} stops at index {index}, because no child below it is smaller.",
+    "siftDownLeaf": "{value} stops at index {index}. There is nothing below it.",
+    "peeked": "peek(): the smallest value is {value}, at the root. Nothing moved.",
+    "overflow": "insert({value}): the heap is full, all {n} slots are taken. This is overflow.",
+    "underflow": "The heap is empty (count = 0), so there is nothing to take. This is underflow.",
+    "arrayNote": "The row under the tree is the same heap as an array. The parent of index i is at (i - 1) / 2, its children at 2i + 1 and 2i + 2.",
+    "resetDone": "Started again with an empty heap."
+  }
+}

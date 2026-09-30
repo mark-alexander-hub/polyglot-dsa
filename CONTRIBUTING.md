@@ -53,7 +53,7 @@ Copy the layout of `structures/stack/`:
 | `lesson/en.md` | No `#` title. The standard `##` headings from the translation guide, and `<!-- code: name -->` lines where snippets should appear. |
 | `labels/en.json` | `title`, `summary`, and every piece of playground text under `viz`. |
 | `visualizer.js` | `VizKit.register('<folder name>', (ctx) => { … })`. The helpers are documented at the top of `site/assets/viz-kit.js`; reuse the `.cell`, `.pointer` and `.idx` classes and add your own CSS with `ctx.css`. |
-| `meta.json` | `{"order": 5, "shape": "row", "accent": "teal"}`. Shapes: `row`, `chain`, `column`, `ring`. Accents: `teal`, `gold`, `coral`, `rose`, `sage`, `sky`. |
+| `meta.json` | `{"order": 6, "shape": "row", "accent": "teal"}`. Shapes: `row`, `chain`, `column`, `ring`, `tree`. Accents: `teal`, `gold`, `coral`, `rose`, `sage`, `sky`. |
 
 Then run:
 

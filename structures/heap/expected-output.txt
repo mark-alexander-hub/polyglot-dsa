@@ -1,0 +1,23 @@
+Min-heap with room for 7 values (the smallest is always on top)
+insert 42 -> [42] (0 swaps)
+insert 17 -> [17, 42] (1 swap)
+insert 30 -> [17, 42, 30] (0 swaps)
+insert 8 -> [8, 17, 30, 42] (2 swaps)
+peek -> 8
+size -> 4
+removeMin -> 8, heap is now [17, 42, 30]
+insert 25 -> [17, 25, 30, 42] (1 swap)
+insert 5 -> [5, 17, 30, 42, 25] (2 swaps)
+insert 13 -> [5, 17, 13, 42, 25, 30] (1 swap)
+insert 60 -> [5, 17, 13, 42, 25, 30, 60] (0 swaps)
+insert 3 -> error: heap is full
+removeMin -> 5, heap is now [13, 17, 30, 42, 25, 60]
+removeMin -> 13, heap is now [17, 25, 30, 42, 60]
+removeMin -> 17, heap is now [25, 42, 30, 60]
+removeMin -> 25, heap is now [30, 42, 60]
+removeMin -> 30, heap is now [42, 60]
+removeMin -> 42, heap is now [60]
+removeMin -> 60, heap is now []
+taken out in order -> 5, 13, 17, 25, 30, 42, 60
+is empty? -> yes
+removeMin -> error: heap is empty

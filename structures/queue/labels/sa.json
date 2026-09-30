@@ -1,0 +1,23 @@
+{
+  "title": "Queue",
+  "summary": "यत् प्रथमम् आगतं तत् प्रथमं गच्छति, ticket counter इत्यत्र पङ्क्तिः इव।",
+  "viz": {
+    "valuePlaceholder": "value",
+    "enqueue": "enqueue",
+    "dequeue": "dequeue",
+    "peek": "peek",
+    "reset": "reset",
+    "front": "front",
+    "rear": "rear",
+    "hello": "अस्यां queue इत्यस्यां {n} values इत्येतेषां स्थानम् अस्ति। front = {front}, count = {count} च। enqueue, dequeue अथवा peek कृत्वा पश्यत।",
+    "enqueued": "enqueue({value}): अग्रिमः रिक्तः box ({front} + {count}) % {n} = {index} अस्ति, अतः {value} तत्र स्थापितम्। इदानीं count {newCount} अस्ति।",
+    "enqueueWrapped": "rear अन्तिमं box अतिक्रान्तम्, अतः % तत् परिभ्राम्य box {index} प्रति नीतवान्।",
+    "dequeued": "dequeue(): box {index} इत्यस्मात् {value} अपनीतम्। front {front} प्रति गतम्, इदानीं च count {count} अस्ति।",
+    "dequeueWrapped": "front अन्तिमं box अतिक्रान्तम्, अतः % तत् परिभ्राम्य box 0 प्रति नीतवान्।",
+    "peeked": "peek(): front value {value} अस्ति, box {index} इत्यस्मिन्। किमपि न चलितम्।",
+    "full": "enqueue({value}): count = {n}, अर्थात् प्रत्येकः box उपयोगे अस्ति। queue पूर्णा अस्ति।",
+    "empty": "queue रिक्ता अस्ति (count = 0), अतः ग्रहीतुं किमपि नास्ति।",
+    "ghost": "मन्दवर्णाः numbers पुरातनानि values सन्ति। यावत् कश्चित् enqueue तेषाम् उपरि नवीनं value न लिखति, तावत् तानि box इत्यस्मिन् एव तिष्ठन्ति।",
+    "resetDone": "रिक्तया queue इत्यनया पुनः आरब्धम्: front = 0, count = 0 च।"
+  }
+}

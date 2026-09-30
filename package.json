@@ -2,7 +2,7 @@
   "name": "polyglot-dsa",
   "version": "0.1.0",
   "private": true,
-  "description": "Learn data structures in your own language (English, Hindi, Kannada, Tamil) and in the programming language you like (Python, C++, Java, JavaScript).",
+  "description": "Learn data structures in your own language (English, Hindi, Kannada, Tamil, Sanskrit) and in the programming language you like (Python, C++, Java, JavaScript, PHP).",
   "type": "module",
   "scripts": {
     "build": "node scripts/build.mjs",
