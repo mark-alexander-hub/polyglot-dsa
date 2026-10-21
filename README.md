@@ -7,7 +7,9 @@ Most people first understand an idea in the language they think in. Polyglot DSA
 data structures in **English, हिन्दी, ಕನ್ನಡ, தமிழ் and संस्कृतम्**, with the same working program in
 **Python, C++, Java, JavaScript and PHP**. Every lesson has a playground where you press
 buttons and watch the structure move, step by step, with each step explained in your
-language.
+language and the matching lines of code lighting up as it happens. Each playground has
+three missions (make the stack overflow, cause a collision in the hash map...); finish them
+to earn that lesson's sticker for your sticker sheet.
 
 **Website:** https://mark-alexander-hub.github.io/polyglot-dsa/
 
@@ -59,6 +61,7 @@ structures/stack/
   code/javascript/stack.js
   code/php/stack.php
   illustration.svg        the hand-drawn scene on the lesson card (optional)
+  sticker.svg             the sticker earned by finishing the playground missions (optional)
   expected-output.txt     what every program must print
   visualizer.js           the playground
 site/                     page styles, scripts and interface text (site/i18n)

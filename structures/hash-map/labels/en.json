@@ -30,5 +30,10 @@
     "growCap": "The playground stops at {n} buckets so the picture fits. A real hash map would keep doubling, and its chains would stay short.",
     "loadNote": "A hash map keeps about one key per bucket on average, so chains stay short and get stays fast.",
     "resetDone": "Started again with an empty table of {n} buckets."
+  },
+  "missions": {
+    "collision": "Cause a collision: put a key into a bucket that already holds one.",
+    "grow": "Make the table grow from 4 to 8 buckets.",
+    "chain": "Get a key that sits behind another key in its chain."
   }
 }

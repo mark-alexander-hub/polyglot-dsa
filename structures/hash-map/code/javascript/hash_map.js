@@ -20,49 +20,69 @@ class HashMap {
 
   hashOf(key) {
     let total = 0;
+    // @step hash-sum
     for (let i = 0; i < key.length; i++) {
       total += key.charCodeAt(i); // add up the character codes of the key
+    // @end
     }
     return total;
   }
 
   indexOf(key) {
+    // @step hash-index
     return this.hashOf(key) % this.bucketCount; // which bucket this key belongs to
+    // @end
   }
   // @end
 
   // @snippet put
   put(key, value) {
+    // @step put-bucket
     let entry = this.buckets[this.indexOf(key)];
+    // @end
+    // @step put-compare
     while (entry !== null) {
       if (entry.key === key) {
+    // @end
+        // @step put-update
         entry.value = value; // the key is already here: just replace its value
         return false;
+        // @end
       }
+      // @step put-next
       entry = entry.next;
+      // @end
     }
+    // @step put-grow
     if (this.count === this.bucketCount) {
       this.grow(); // already one key per bucket on average: make room first
+    // @end
     }
+    // @step put-insert
     const index = this.indexOf(key);
     this.buckets[index] = new Entry(key, value, this.buckets[index]); // new entry at the front of the chain
     this.count++;
     return true;
+    // @end
   }
   // @end
 
   // @snippet grow
   grow() {
+    // @step grow-double
     const oldBuckets = this.buckets;
     this.bucketCount *= 2;
     this.buckets = new Array(this.bucketCount).fill(null);
+    // @end
     for (let entry of oldBuckets) {
+      // @step grow-move
       while (entry !== null) { // every key gets a new bucket, because % changed
         const next = entry.next;
         const index = this.indexOf(entry.key);
         entry.next = this.buckets[index];
         this.buckets[index] = entry;
         entry = next;
+      // @end
       }
     }
   }
@@ -70,14 +90,24 @@ class HashMap {
 
   // @snippet get
   get(key) {
+    // @step get-bucket
     let entry = this.buckets[this.indexOf(key)];
+    // @end
+    // @step get-compare
     while (entry !== null) { // only this one chain is searched, never the whole map
       if (entry.key === key) {
+    // @end
+        // @step get-found
         return entry.value;
+        // @end
       }
+      // @step get-next
       entry = entry.next;
+      // @end
     }
+    // @step get-missing
     return null;
+    // @end
   }
   // @end
 
@@ -87,11 +117,16 @@ class HashMap {
 
   // @snippet remove
   remove(key) {
+    // @step remove-bucket
     const index = this.indexOf(key);
     let entry = this.buckets[index];
     let previous = null;
+    // @end
+    // @step remove-compare
     while (entry !== null) {
       if (entry.key === key) {
+    // @end
+        // @step remove-unlink
         if (previous === null) {
           this.buckets[index] = entry.next; // it was the first in the chain
         } else {
@@ -99,11 +134,16 @@ class HashMap {
         }
         this.count--;
         return true;
+        // @end
       }
+      // @step remove-next
       previous = entry;
       entry = entry.next;
+      // @end
     }
+    // @step remove-missing
     return false;
+    // @end
   }
   // @end
 

@@ -20,24 +20,36 @@ public class LinkedList {
 
     // @snippet add-first
     public void addFirst(int value) {
+        // @step add-first-new
         Node node = new Node(value);
+        // @end
+        // @step add-first-link
         node.next = head;  // 1. the new node points at the old first node
+        // @end
+        // @step add-first-head
         head = node;       // 2. head moves to the new node
         count++;
+        // @end
     }
     // @end
 
     // @snippet add-last
     public void addLast(int value) {
         Node node = new Node(value);
+        // @step add-last-empty
         if (head == null) {  // empty list: the new node becomes the head
             head = node;
+        // @end
         } else {
+            // @step add-last-walk
             Node current = head;
             while (current.next != null) {  // walk until the last node
                 current = current.next;
             }
+            // @end
+            // @step add-last-link
             current.next = node;
+            // @end
         }
         count++;
     }
@@ -45,36 +57,54 @@ public class LinkedList {
 
     // @snippet find
     public boolean find(int value) {
+        // @step find-start
         Node current = head;
+        // @end
         while (current != null) {
+            // @step find-check
             if (current.value == value) {
                 return true;
+            // @end
             }
+            // @step find-next
             current = current.next;
+            // @end
         }
+        // @step find-none
         return false;
+        // @end
     }
     // @end
 
     // @snippet remove
     public void remove(int value) {
+        // @step remove-empty
         if (head == null) {
             throw new IllegalArgumentException("value not found");
+        // @end
         }
+        // @step remove-head
         if (head.value == value) {  // removing the first node: just move head
             head = head.next;
             count--;
             return;
+        // @end
         }
+        // @step remove-walk
         Node previous = head;
         while (previous.next != null && previous.next.value != value) {
             previous = previous.next;
         }
+        // @end
+        // @step remove-missing
         if (previous.next == null) {
             throw new IllegalArgumentException("value not found");
+        // @end
         }
+        // @step remove-skip
         previous.next = previous.next.next;  // skip over the removed node
         count--;
+        // @end
     }
     // @end
 

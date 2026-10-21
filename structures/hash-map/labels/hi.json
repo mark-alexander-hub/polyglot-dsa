@@ -30,5 +30,10 @@
     "growCap": "Playground {n} buckets पर रुक जाता है ताकि तस्वीर समा सके। असली hash map दोगुना होता जाता, और उसकी chains छोटी ही रहतीं।",
     "loadNote": "Hash map औसतन हर bucket में लगभग एक key रखता है, इसलिए chains छोटी रहती हैं और get तेज़ बना रहता है।",
     "resetDone": "{n} buckets की खाली table के साथ फिर से शुरू किया।"
+  },
+  "missions": {
+    "collision": "Collision कराइए: ऐसे bucket में key put कीजिए जिसमें पहले से एक key हो।",
+    "grow": "Table को 4 से 8 buckets तक बढ़ाइए।",
+    "chain": "ऐसी key get कीजिए जो अपनी chain में किसी दूसरी key के पीछे बैठी हो।"
   }
 }

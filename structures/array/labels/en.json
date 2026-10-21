@@ -26,6 +26,11 @@
     "errEmpty": "{op}({index}): the array is empty, so there is nothing at any index.",
     "removedLast": "remove({index}): took out {value}. It was the last value, so nothing had to move, and size is {size}.",
     "foundFirst": "search({value}): found it in the very first box, index {index}.",
-    "resetDone":"Started again with an empty array."
+    "resetDone": "Started again with an empty array."
+  },
+  "missions": {
+    "full": "Fill every box, then try one more insert.",
+    "shift": "Insert at index 0 while at least three values are in the array.",
+    "missing": "Search for a value that is not there."
   }
 }

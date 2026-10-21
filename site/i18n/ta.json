@@ -40,5 +40,16 @@
   "greeting": "வணக்கம்!",
   "lessonOf": "{total}-இல் lesson {n}",
   "markDone": "நான் இந்த lesson-ஐ முடித்துவிட்டேன்",
-  "doneLabel": "முடிந்தது!"
+  "doneLabel": "முடிந்தது!",
+  "missions": "Missions",
+  "missionsHint": "இந்த lesson-இன் sticker-ஐப் பெற மூன்றையும் முடியுங்கள்.",
+  "missionDone": "Mission முடிந்தது: {text}",
+  "stickerEarned": "மூன்று missions-உம் முடிந்தன! நீங்கள் {title} sticker-ஐப் பெற்றீர்கள். அது lessons page-இல் உள்ள உங்கள் sticker sheet-இல் இருக்கிறது.",
+  "stickers": "Sticker sheet",
+  "stickersCount": "{total}-இல் {have} stickers",
+  "stickersAll": "Sheet நிரம்பியது! இந்த site-இன் எல்லா missions-ஐயும் முடித்துவிட்டீர்கள்.",
+  "stickerLocked": "இந்த sticker-ஐப் பெற lesson {n}-இன் மூன்று missions-ஐயும் முடியுங்கள்.",
+  "codeFollow": "Code, ஒவ்வொரு step-ஆக",
+  "sound": "ஒலிகள்",
+  "slow": "மெதுவான வேகம்"
 }

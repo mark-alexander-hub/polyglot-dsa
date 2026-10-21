@@ -13,53 +13,83 @@ class FixedArray {
 
   // @snippet get
   get(index) {
+    // @step get-check
     if (index < 0 || index >= this.size) {
       throw new RangeError('index out of range');
     }
+    // @end
+    // @step get-read
     return this.items[index];
+    // @end
   }
   // @end
 
   // @snippet insert
   insert(index, value) {
+    // @step insert-full
     if (this.size === this.capacity) {
       throw new Error('array is full');
     }
+    // @end
+    // @step insert-range
     if (index < 0 || index > this.size) {
       throw new RangeError('index out of range');
     }
+    // @end
     // Shift values one box to the right, starting from the end.
+    // @step insert-shift
     for (let i = this.size; i > index; i--) {
       this.items[i] = this.items[i - 1];
     }
+    // @end
+    // @step insert-write
     this.items[index] = value;
+    // @end
+    // @step insert-size
     this.size++;
+    // @end
   }
   // @end
 
   // @snippet remove
   remove(index) {
+    // @step remove-range
     if (index < 0 || index >= this.size) {
       throw new RangeError('index out of range');
     }
+    // @end
+    // @step remove-read
     const value = this.items[index];
+    // @end
     // Shift values one box to the left to close the gap.
+    // @step remove-shift
     for (let i = index; i < this.size - 1; i++) {
       this.items[i] = this.items[i + 1];
     }
+    // @end
+    // @step remove-size
     this.size--;
+    // @end
+    // @step remove-return
     return value;
+    // @end
   }
   // @end
 
   // @snippet search
   search(value) {
+    // @step search-loop
     for (let i = 0; i < this.size; i++) {
       if (this.items[i] === value) {
+    // @end
+        // @step search-found
         return i;
+        // @end
       }
     }
+    // @step search-missing
     return -1; // not found
+    // @end
   }
   // @end
 

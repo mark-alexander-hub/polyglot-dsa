@@ -25,40 +25,55 @@ class MinHeap {
 
   // @snippet insert
   insert(value) {
+    // @step insert-check
     if (this.count === this.capacity) {
       throw new Error('heap is full');
     }
+    // @end
+    // @step insert-place
     this.items[this.count] = value; // put it in the first free spot, at the end
     this.count++;
+    // @end
     return this.siftUp(this.count - 1); // how many steps it climbed (for the demo)
   }
 
   siftUp(i) {
     let swaps = 0;
+    // @step insert-compare
     while (i > 0 && this.items[i] < this.items[this.parent(i)]) {
+    // @end
+      // @step insert-swap
       const p = this.parent(i);
       [this.items[i], this.items[p]] = [this.items[p], this.items[i]];
       i = p;
       swaps++;
+      // @end
     }
+    // @step insert-return
     return swaps;
+    // @end
   }
   // @end
 
   // @snippet removeMin
   removeMin() {
+    // @step removeMin-check
     if (this.count === 0) {
       throw new Error('heap is empty');
     }
+    // @end
+    // @step removeMin-take
     const smallest = this.items[0];
     this.count--;
     this.items[0] = this.items[this.count]; // the last value moves to the top...
+    // @end
     this.siftDown(0);                       // ...and sinks to where it belongs
     return smallest;
   }
 
   siftDown(i) {
     while (true) {
+      // @step siftDown-compare
       const l = this.left(i);
       const r = this.right(i);
       let smallest = i;
@@ -68,21 +83,30 @@ class MinHeap {
       if (r < this.count && this.items[r] < this.items[smallest]) {
         smallest = r;
       }
+      // @end
+      // @step siftDown-stop
       if (smallest === i) {
         return;
       }
+      // @end
+      // @step siftDown-swap
       [this.items[i], this.items[smallest]] = [this.items[smallest], this.items[i]];
       i = smallest;
+      // @end
     }
   }
   // @end
 
   // @snippet peek
   peek() {
+    // @step peek-check
     if (this.count === 0) {
       throw new Error('heap is empty');
     }
+    // @end
+    // @step peek-read
     return this.items[0];
+    // @end
   }
   // @end
 

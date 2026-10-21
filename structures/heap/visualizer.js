@@ -142,10 +142,13 @@ VizKit.register('heap', (ctx) => {
   async function insert() {
     const value = input.read();
     if (count === CAPACITY) {
+      ctx.spot('insert-check');
       ctx.say(t('overflow', { value, n: CAPACITY }), 'warn');
+      ctx.mission('full');
       await shake(treeCell(CAPACITY - 1));
       return;
     }
+    ctx.spot('insert-place');
     const item = { id: nextId++, value };
     let i = count;
     items[i] = item;
@@ -159,9 +162,11 @@ VizKit.register('heap', (ctx) => {
     while (i > 0) {
       const p = parentOf(i);
       const parent = items[p].value;
+      ctx.spot('insert-compare');
       render([item.id, items[p].id]);
       await ctx.wait(STEP);
       if (value < parent) {
+        ctx.spot('insert-swap');
         swap(i, p);
         i = p;
         swaps++;
@@ -174,6 +179,8 @@ VizKit.register('heap', (ctx) => {
       }
     }
     if (i === 0 && swaps > 0) ctx.say(t('siftUpRoot', { value }), 'info');
+    ctx.spot('insert-return');
+    if (swaps >= 2) ctx.mission('climb2');
     await ctx.wait(300);
     render();
     await explainArrayOnce();
@@ -181,11 +188,13 @@ VizKit.register('heap', (ctx) => {
 
   async function removeMin() {
     if (count === 0) {
+      ctx.spot('removeMin-check');
       ctx.say(t('underflow'), 'warn');
       await shake();
       return;
     }
     const value = items[0].value;
+    ctx.spot('removeMin-take');
     const cell = treeCell(0);
     const flying = el('div', {
       class: 'cell hp-fly',
@@ -215,10 +224,14 @@ VizKit.register('heap', (ctx) => {
 
     // Sift down: swap with the smaller child while it is smaller.
     let i = 0;
+    let sinks = 0;
     while (true) {
       const l = leftOf(i);
       const r = rightOf(i);
+      ctx.spot('siftDown-compare');
       if (l >= count) {
+        await ctx.wait(STEP / 2);
+        ctx.spot('siftDown-stop');
         ctx.say(t('siftDownLeaf', { value: moved, index: i }), 'info');
         break;
       }
@@ -228,16 +241,20 @@ VizKit.register('heap', (ctx) => {
       await ctx.wait(STEP);
       if (items[smallest].value < moved) {
         const child = items[smallest].value;
+        ctx.spot('siftDown-swap');
         swap(i, smallest);
         i = smallest;
+        sinks++;
         await ctx.flip(wrap, () => render([last.id]));
         ctx.say(t('siftDownSwap', { value: moved, child, index: i }), 'ok');
         await ctx.wait(STEP);
       } else {
+        ctx.spot('siftDown-stop');
         ctx.say(t('siftDownStay', { value: moved, index: i }), 'info');
         break;
       }
     }
+    if (sinks >= 2) ctx.mission('sink2');
     await ctx.wait(300);
     render();
     await explainArrayOnce();
@@ -245,10 +262,12 @@ VizKit.register('heap', (ctx) => {
 
   async function peek() {
     if (count === 0) {
+      ctx.spot('peek-check');
       ctx.say(t('underflow'), 'warn');
       await shake();
       return;
     }
+    ctx.spot('peek-read');
     ctx.say(t('peeked', { value: items[0].value }), 'info');
     treeCell(0).classList.add('hit');
     await ctx.pulse(arrCell(0), 'hit', 700);

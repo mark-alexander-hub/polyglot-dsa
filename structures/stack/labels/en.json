@@ -17,5 +17,10 @@
     "underflow": "The stack is empty (top = -1), so there is nothing to take. This is underflow.",
     "ghost": "Faded numbers are old values. They stay in their box until a push writes over them.",
     "resetDone": "Started again with an empty stack."
+  },
+  "missions": {
+    "overflow": "Push until the stack overflows.",
+    "underflow": "Pop from an empty stack.",
+    "peek4": "Peek with at least four values on the stack."
   }
 }

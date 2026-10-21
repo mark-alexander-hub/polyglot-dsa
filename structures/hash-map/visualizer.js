@@ -61,13 +61,10 @@ VizKit.register('hash-map', (ctx) => {
   const valueBox = ctx.input(t('valuePlaceholder'));
   const keyBox = el('input', { type: 'text', class: 'viz-input hm-key', maxlength: '8', autocapitalize: 'off', autocomplete: 'off', spellcheck: 'false', placeholder: t('keyPlaceholder'), 'aria-label': t('keyPlaceholder') });
   valueBox.before(keyBox);
-  const putBtn = ctx.button(t('put'), put, { kind: 'primary' });
+  ctx.button(t('put'), put, { kind: 'primary' });
   ctx.button(t('get'), get);
   ctx.button(t('remove'), remove);
   ctx.button(t('reset'), reset, { kind: 'danger' });
-  keyBox.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter') putBtn.click();
-  });
 
   const wrap = el('div', { class: 'hm' });
   const strip = el('div', { class: 'hm-strip', 'aria-live': 'polite' });
@@ -150,6 +147,7 @@ VizKit.register('hash-map', (ctx) => {
     line1.textContent = '';
     line2.textContent = '';
     strip.classList.add('on');
+    ctx.spot('hash-sum');
     for (const ch of key) {
       const code = ch.charCodeAt(0);
       total += code;
@@ -159,6 +157,7 @@ VizKit.register('hash-map', (ctx) => {
     }
     const hash = total;
     const index = hash % bucketCount;
+    ctx.spot('hash-index');
     line2.textContent = t('modLine', { hash, n: bucketCount, index });
     await ctx.wait(STEP);
     ctx.say(t('hashed', { key, hash, n: bucketCount, index }), 'info');
@@ -167,15 +166,17 @@ VizKit.register('hash-map', (ctx) => {
     return { hash, index };
   }
 
-  // Walks one chain comparing keys. Leaves the matching cell glowing for the caller.
-  async function walk(key, index) {
+  // Walks one chain comparing keys (op = put, get or remove, for the lit code). Leaves the match glowing.
+  async function walk(key, index, op) {
     let steps = 0;
     for (const entry of buckets[index]) {
       steps++;
       const cell = cellOf(entry.id);
       cell.classList.add('hit');
+      ctx.spot(`${op}-compare`);
       await ctx.wait(STEP);
       if (entry.key === key) return { entry, steps };
+      ctx.spot(`${op}-next`);
       ctx.say(t('compare', { key, other: entry.key }), 'info');
       cell.classList.remove('hit');
     }
@@ -187,6 +188,7 @@ VizKit.register('hash-map', (ctx) => {
     const old = buckets;
     const n = bucketCount;
     const m = n * 2;
+    ctx.spot('grow-double');
     ctx.say(t('growing', { count, n, m }), 'info');
     bucketCount = m;
     buckets = Array.from({ length: m }, () => []);
@@ -200,6 +202,7 @@ VizKit.register('hash-map', (ctx) => {
         const index = hash % m;
         buckets[i] = buckets[i].filter((e) => e !== entry);
         buckets[index].unshift(entry);
+        ctx.spot('grow-move');
         ctx.say(t('rehashed', { key: entry.key, hash, m, index }), 'info');
         active = index;
         await ctx.flip(rows, () => render([entry.id]));
@@ -218,9 +221,12 @@ VizKit.register('hash-map', (ctx) => {
     const value = valueBox.read();
     const { hash } = await showHash(key);
     let index = active;
+    ctx.spot('put-bucket');
+    await ctx.wait(STEP / 2);
 
-    const hit = await walk(key, index);
+    const hit = await walk(key, index, 'put');
     if (hit.entry) {
+      ctx.spot('put-update');
       const old = hit.entry.value;
       hit.entry.value = value;
       render([hit.entry.id]);
@@ -231,8 +237,11 @@ VizKit.register('hash-map', (ctx) => {
     }
 
     if (count === bucketCount) {
+      ctx.spot('put-grow');
+      await ctx.wait(STEP);
       if (bucketCount < CAP) {
         await grow();
+        ctx.mission('grow');
         index = indexOf(key);
         line2.textContent = t('modLine', { hash, n: bucketCount, index });
         setActive(index);
@@ -244,12 +253,14 @@ VizKit.register('hash-map', (ctx) => {
       }
     }
 
+    ctx.spot('put-insert');
     const others = buckets[index].map((e) => e.key);
     const entry = { id: nextId++, key, value };
     buckets[index].unshift(entry);
     count++;
     await ctx.flip(rows, () => render([entry.id]));
     ctx.say(others.length ? t('putCollision', { key, value, index, others: others.join(', ') }) : t('putEmpty', { key, value, index }), 'ok');
+    if (others.length) ctx.mission('collision');
     await ctx.wait(500);
     finish();
   }
@@ -258,18 +269,24 @@ VizKit.register('hash-map', (ctx) => {
     const key = readKey();
     if (key === null) return rejectKey();
     const { index } = await showHash(key);
+    ctx.spot('get-bucket');
+    await ctx.wait(STEP / 2);
 
     if (!buckets[index].length) {
+      ctx.spot('get-missing');
       ctx.say(t('notFoundEmpty', { key, index }), 'info');
       await ctx.pulse(emptyCellOf(index), 'hit', 800);
       finish();
       return;
     }
-    const hit = await walk(key, index);
+    const hit = await walk(key, index, 'get');
     if (hit.entry) {
+      ctx.spot('get-found');
       ctx.say(t('found', { key, index, value: hit.entry.value, steps: hit.steps }), 'ok');
+      if (hit.steps >= 2) ctx.mission('chain');
       await ctx.wait(800);
     } else {
+      ctx.spot('get-missing');
       ctx.say(t('notFound', { key, index, steps: hit.steps }), 'warn');
       await shake(rowOf(index));
     }
@@ -280,14 +297,18 @@ VizKit.register('hash-map', (ctx) => {
     const key = readKey();
     if (key === null) return rejectKey();
     const { index } = await showHash(key);
+    ctx.spot('remove-bucket');
+    await ctx.wait(STEP / 2);
 
-    const hit = buckets[index].length ? await walk(key, index) : { entry: null };
+    const hit = buckets[index].length ? await walk(key, index, 'remove') : { entry: null };
     if (!hit.entry) {
+      ctx.spot('remove-missing');
       ctx.say(t('removeMissing', { key, index }), 'warn');
       await shake(rowOf(index));
       finish();
       return;
     }
+    ctx.spot('remove-unlink');
     const cell = cellOf(hit.entry.id);
     buckets[index] = buckets[index].filter((e) => e !== hit.entry);
     count--;

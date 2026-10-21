@@ -17,5 +17,10 @@
     "underflow": "stack खाली है (top = -1), इसलिए निकालने के लिए कुछ नहीं है। इसे underflow कहते हैं।",
     "ghost": "हल्के रंग वाले numbers पुरानी values हैं। वे तब तक box में रहती हैं जब तक कोई push उन पर नई value नहीं लिख देता।",
     "resetDone": "खाली stack के साथ फिर से शुरू किया।"
+  },
+  "missions": {
+    "overflow": "इतना push कीजिए कि stack overflow हो जाए।",
+    "underflow": "खाली stack से pop कीजिए।",
+    "peek4": "Stack पर कम से कम चार values हों, तब peek कीजिए।"
   }
 }

@@ -30,5 +30,10 @@
     "growCap": "ಚಿತ್ರ ಹಿಡಿಸಲೆಂದು playground {n} buckets ನಲ್ಲಿ ನಿಲ್ಲುತ್ತದೆ. ನಿಜವಾದ hash map ದುಪ್ಪಟ್ಟು ಮಾಡುತ್ತಲೇ ಇರುತ್ತದೆ, ಮತ್ತು ಅದರ chains ಚಿಕ್ಕದಾಗಿಯೇ ಉಳಿಯುತ್ತವೆ.",
     "loadNote": "Hash map ಸರಾಸರಿ ಪ್ರತಿ bucket ಗೆ ಸುಮಾರು ಒಂದು key ಇಟ್ಟುಕೊಳ್ಳುತ್ತದೆ, ಆದ್ದರಿಂದ chains ಚಿಕ್ಕದಾಗಿ ಉಳಿದು get ವೇಗವಾಗಿಯೇ ಇರುತ್ತದೆ.",
     "resetDone": "{n} buckets ಇರುವ ಖಾಲಿ table ನೊಂದಿಗೆ ಮತ್ತೆ ಶುರು ಮಾಡಲಾಯಿತು."
+  },
+  "missions": {
+    "collision": "Collision ಮಾಡಿಸಿ: ಈಗಾಗಲೇ ಒಂದು key ಇರುವ bucket ಗೆ key ಅನ್ನು put ಮಾಡಿ.",
+    "grow": "Table ಅನ್ನು 4 ರಿಂದ 8 buckets ಗೆ ಬೆಳೆಸಿ.",
+    "chain": "ತನ್ನ chain ನಲ್ಲಿ ಇನ್ನೊಂದು key ಯ ಹಿಂದೆ ಇರುವ key ಅನ್ನು get ಮಾಡಿ."
   }
 }

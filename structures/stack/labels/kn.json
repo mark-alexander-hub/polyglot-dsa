@@ -17,5 +17,10 @@
     "underflow": "stack ಖಾಲಿ ಇದೆ (top = -1), ತೆಗೆಯಲು ಏನೂ ಇಲ್ಲ. ಇದನ್ನು underflow ಎನ್ನುತ್ತಾರೆ.",
     "ghost": "ಮಸುಕಾದ numbers ಹಳೆಯ values. ಯಾವುದಾದರೂ push ಅವುಗಳ ಮೇಲೆ ಬರೆಯುವವರೆಗೂ ಅವು box ನಲ್ಲೇ ಇರುತ್ತವೆ.",
     "resetDone": "ಖಾಲಿ stack ನೊಂದಿಗೆ ಮತ್ತೆ ಶುರು ಮಾಡಲಾಯಿತು."
+  },
+  "missions": {
+    "overflow": "Stack overflow ಆಗುವವರೆಗೆ push ಮಾಡಿ.",
+    "underflow": "ಖಾಲಿ stack ನಿಂದ pop ಮಾಡಿ.",
+    "peek4": "Stack ನಲ್ಲಿ ಕನಿಷ್ಠ ನಾಲ್ಕು values ಇರುವಾಗ peek ಮಾಡಿ."
   }
 }

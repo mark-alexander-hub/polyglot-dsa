@@ -17,5 +17,10 @@
     "underflow": "stack காலியாக உள்ளது (top = -1), எடுக்க எதுவும் இல்லை. இதுதான் underflow.",
     "ghost": "மங்கலான numbers பழைய values. ஒரு push அவற்றின் மேல் எழுதும் வரை அவை box-இலேயே இருக்கும்.",
     "resetDone": "காலியான stack-உடன் மீண்டும் தொடங்கப்பட்டது."
+  },
+  "missions": {
+    "overflow": "Stack overflow ஆகும் வரை push செய்யுங்கள்.",
+    "underflow": "காலியான stack-இலிருந்து pop செய்யுங்கள்.",
+    "peek4": "Stack-இல் குறைந்தது நான்கு values இருக்கும்போது peek செய்யுங்கள்."
   }
 }

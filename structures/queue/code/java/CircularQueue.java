@@ -16,33 +16,55 @@ public class CircularQueue {
 
     // @snippet enqueue
     public void enqueue(int value) {
+        // @step enqueue-check
         if (count == capacity) {
             throw new IllegalStateException("queue is full");
         }
+        // @end
+        // @step enqueue-rear
         int rear = (front + count) % capacity;  // next free box
+        // @end
+        // @step enqueue-write
         items[rear] = value;
+        // @end
+        // @step enqueue-count
         count++;
+        // @end
     }
     // @end
 
     // @snippet dequeue
     public int dequeue() {
+        // @step dequeue-check
         if (count == 0) {
             throw new IllegalStateException("queue is empty");
         }
+        // @end
+        // @step dequeue-read
         int value = items[front];
+        // @end
+        // @step dequeue-front
         front = (front + 1) % capacity;  // wraps around to box 0
+        // @end
+        // @step dequeue-count
         count--;
+        // @end
+        // @step dequeue-return
         return value;
+        // @end
     }
     // @end
 
     // @snippet peek
     public int peek() {
+        // @step peek-check
         if (count == 0) {
             throw new IllegalStateException("queue is empty");
         }
+        // @end
+        // @step peek-return
         return items[front];
+        // @end
     }
     // @end
 

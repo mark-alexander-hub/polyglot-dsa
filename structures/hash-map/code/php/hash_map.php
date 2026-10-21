@@ -35,50 +35,70 @@ final class HashMap
     public function hashOf(string $key): int
     {
         $total = 0;
+        // @step hash-sum
         for ($i = 0; $i < strlen($key); $i++) {
             $total += ord($key[$i]);  // add up the character codes of the key
+        // @end
         }
         return $total;
     }
 
     public function indexOf(string $key): int
     {
+        // @step hash-index
         return $this->hashOf($key) % $this->bucketCount;  // which bucket this key belongs to
+        // @end
     }
     // @end
 
     // @snippet put
     public function put(string $key, int $value): bool
     {
+        // @step put-bucket
         $entry = $this->buckets[$this->indexOf($key)];
+        // @end
+        // @step put-compare
         while ($entry !== null) {
             if ($entry->key === $key) {
+        // @end
+                // @step put-update
                 $entry->value = $value;  // the key is already here: just replace its value
                 return false;
+                // @end
             }
+            // @step put-next
             $entry = $entry->next;
+            // @end
         }
+        // @step put-grow
         if ($this->count === $this->bucketCount) {
             $this->grow();  // already one key per bucket on average: make room first
+        // @end
         }
+        // @step put-insert
         $index = $this->indexOf($key);
         $this->buckets[$index] = new Entry($key, $value, $this->buckets[$index]);  // new entry at the front of the chain
         $this->count++;
         return true;
+        // @end
     }
     // @end
 
     // @snippet grow
     private function grow(): void
     {
+        // @step grow-double
         $oldBuckets = $this->buckets;
         $this->bucketCount *= 2;
         $this->buckets = array_fill(0, $this->bucketCount, null);
+        // @end
         foreach ($oldBuckets as $entry) {
+            // @step grow-move
             while ($entry !== null) {  // every key gets a new bucket, because % changed
                 $index = $this->indexOf($entry->key);
                 $this->buckets[$index] = new Entry($entry->key, $entry->value, $this->buckets[$index]);
                 $entry = $entry->next;
+            // @end
             }
         }
     }
@@ -87,14 +107,24 @@ final class HashMap
     // @snippet get
     public function get(string $key): ?int
     {
+        // @step get-bucket
         $entry = $this->buckets[$this->indexOf($key)];
+        // @end
+        // @step get-compare
         while ($entry !== null) {  // only this one chain is searched, never the whole map
             if ($entry->key === $key) {
+        // @end
+                // @step get-found
                 return $entry->value;
+                // @end
             }
+            // @step get-next
             $entry = $entry->next;
+            // @end
         }
+        // @step get-missing
         return null;
+        // @end
     }
     // @end
 
@@ -106,11 +136,16 @@ final class HashMap
     // @snippet remove
     public function remove(string $key): bool
     {
+        // @step remove-bucket
         $index = $this->indexOf($key);
         $entry = $this->buckets[$index];
         $previous = null;
+        // @end
+        // @step remove-compare
         while ($entry !== null) {
             if ($entry->key === $key) {
+        // @end
+                // @step remove-unlink
                 if ($previous === null) {
                     $this->buckets[$index] = $entry->next;  // it was the first in the chain
                 } else {
@@ -118,11 +153,16 @@ final class HashMap
                 }
                 $this->count--;
                 return true;
+                // @end
             }
+            // @step remove-next
             $previous = $entry;
             $entry = $entry->next;
+            // @end
         }
+        // @step remove-missing
         return false;
+        // @end
     }
     // @end
 

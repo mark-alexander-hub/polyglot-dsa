@@ -26,49 +26,69 @@ public class HashMap {
 
     public int hashOf(String key) {
         int total = 0;
+        // @step hash-sum
         for (int i = 0; i < key.length(); i++) {
             total += key.charAt(i);  // add up the character codes of the key
+        // @end
         }
         return total;
     }
 
     public int indexOf(String key) {
+        // @step hash-index
         return hashOf(key) % bucketCount;  // which bucket this key belongs to
+        // @end
     }
     // @end
 
     // @snippet put
     public boolean put(String key, int value) {
+        // @step put-bucket
         Entry entry = buckets[indexOf(key)];
+        // @end
+        // @step put-compare
         while (entry != null) {
             if (entry.key.equals(key)) {
+        // @end
+                // @step put-update
                 entry.value = value;  // the key is already here: just replace its value
                 return false;
+                // @end
             }
+            // @step put-next
             entry = entry.next;
+            // @end
         }
+        // @step put-grow
         if (count == bucketCount) {
             grow();  // already one key per bucket on average: make room first
+        // @end
         }
+        // @step put-insert
         int index = indexOf(key);
         buckets[index] = new Entry(key, value, buckets[index]);  // new entry at the front of the chain
         count++;
         return true;
+        // @end
     }
     // @end
 
     // @snippet grow
     private void grow() {
+        // @step grow-double
         Entry[] oldBuckets = buckets;
         bucketCount *= 2;
         buckets = new Entry[bucketCount];
+        // @end
         for (Entry entry : oldBuckets) {
+            // @step grow-move
             while (entry != null) {  // every key gets a new bucket, because % changed
                 Entry next = entry.next;
                 int index = indexOf(entry.key);
                 entry.next = buckets[index];
                 buckets[index] = entry;
                 entry = next;
+            // @end
             }
         }
     }
@@ -76,14 +96,24 @@ public class HashMap {
 
     // @snippet get
     public Integer get(String key) {
+        // @step get-bucket
         Entry entry = buckets[indexOf(key)];
+        // @end
+        // @step get-compare
         while (entry != null) {  // only this one chain is searched, never the whole map
             if (entry.key.equals(key)) {
+        // @end
+                // @step get-found
                 return entry.value;
+                // @end
             }
+            // @step get-next
             entry = entry.next;
+            // @end
         }
+        // @step get-missing
         return null;
+        // @end
     }
     // @end
 
@@ -93,11 +123,16 @@ public class HashMap {
 
     // @snippet remove
     public boolean remove(String key) {
+        // @step remove-bucket
         int index = indexOf(key);
         Entry entry = buckets[index];
         Entry previous = null;
+        // @end
+        // @step remove-compare
         while (entry != null) {
             if (entry.key.equals(key)) {
+        // @end
+                // @step remove-unlink
                 if (previous == null) {
                     buckets[index] = entry.next;  // it was the first in the chain
                 } else {
@@ -105,11 +140,16 @@ public class HashMap {
                 }
                 count--;
                 return true;
+                // @end
             }
+            // @step remove-next
             previous = entry;
             entry = entry.next;
+            // @end
         }
+        // @step remove-missing
         return false;
+        // @end
     }
     // @end
 

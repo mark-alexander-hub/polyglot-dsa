@@ -49,6 +49,7 @@ export function fingerprint(body) {
 }
 
 const SNIPPET_START = /^\s*(?:#|\/\/)\s*@snippet\s+([\w-]+)\s*$/;
+const STEP_START = /^\s*(?:#|\/\/)\s*@step\s+([\w-]+)\s*$/;
 const SNIPPET_END = /^\s*(?:#|\/\/)\s*@end\s*$/;
 
 function dedent(lines) {
@@ -57,13 +58,17 @@ function dedent(lines) {
   return lines.map((l) => l.slice(cut)).join('\n').replace(/\n+$/, '');
 }
 
-/** Reads a source file: the display code (markers removed) and its named snippets. */
+/** Reads a source file: the display code (markers removed), its named snippets, and the steps inside them.
+ *  `@step name` … `@end` inside a snippet marks the lines the playground lights up for that step;
+ *  steps[name] = { snippet, from, to } with 0-based line numbers inside the dedented snippet. */
 export function parseSource(text) {
   const lines = text.replace(/\r\n?/g, '\n').split('\n');
   const display = [];
   const snippets = {};
+  const steps = {};
   const errors = [];
   let open = null;
+  let step = null;
   lines.forEach((line, i) => {
     const s = SNIPPET_START.exec(line);
     if (s) {
@@ -71,7 +76,21 @@ export function parseSource(text) {
       open = { name: s[1], lines: [] };
       return;
     }
+    const st = STEP_START.exec(line);
+    if (st) {
+      if (!open) errors.push(`line ${i + 1}: @step ${st[1]} is outside a @snippet`);
+      else if (step) errors.push(`line ${i + 1}: @step ${st[1]} starts inside @step ${step.name}`);
+      else if (steps[st[1]]) errors.push(`step "${st[1]}" is defined twice`);
+      else step = { name: st[1], from: open.lines.length };
+      return;
+    }
     if (SNIPPET_END.test(line)) {
+      if (step) {
+        if (open.lines.length === step.from) errors.push(`line ${i + 1}: @step ${step.name} has no lines`);
+        else steps[step.name] = { snippet: open.name, from: step.from, to: open.lines.length - 1 };
+        step = null;
+        return;
+      }
       if (!open) errors.push(`line ${i + 1}: @end without @snippet`);
       else if (snippets[open.name]) errors.push(`snippet "${open.name}" is defined twice`);
       else snippets[open.name] = dedent(open.lines);
@@ -81,8 +100,9 @@ export function parseSource(text) {
     display.push(line);
     if (open) open.lines.push(line);
   });
+  if (step) errors.push(`@step ${step.name} is never closed with @end`);
   if (open) errors.push(`@snippet ${open.name} is never closed with @end`);
-  return { display: display.join('\n').replace(/\n+$/, '') + '\n', snippets, errors };
+  return { display: display.join('\n').replace(/\n+$/, '') + '\n', snippets, steps, errors };
 }
 
 /** Lines like `<!-- code: push -->` inside a lesson. */
@@ -153,6 +173,24 @@ export function loadStructures(languages) {
       code[cl.id] = { ...parsed, file: files[0], path: `${where}/code/${cl.id}/${files[0]}`, abs: join(cdir, files[0]) };
     }
 
+    // Every language must mark the same steps, in the same snippets, or the playground lights up the wrong code.
+    const ref = code.python;
+    if (ref) {
+      for (const cl of CODE_LANGS) {
+        const c = code[cl.id];
+        if (!c || c === ref) continue;
+        for (const name of Object.keys(ref.steps)) {
+          if (!c.steps[name]) errors.push(`${c.path}: missing "@step ${name}" (python has it)`);
+          else if (c.steps[name].snippet !== ref.steps[name].snippet) errors.push(`${c.path}: @step ${name} is in snippet ${c.steps[name].snippet}, python has it in ${ref.steps[name].snippet}`);
+        }
+        for (const name of Object.keys(c.steps)) if (!ref.steps[name]) errors.push(`${c.path}: "@step ${name}" is not in the python program`);
+      }
+    }
+
+    // Optional sticker for the sticker sheet, earned by finishing the playground missions.
+    const stickerPath = join(dir, 'sticker.svg');
+    const sticker = existsSync(stickerPath) ? readText(stickerPath).replace(/<\?xml[^>]*>\s*/, '').trim() : null;
+
     const outPath = join(dir, 'expected-output.txt');
     const expectedOutput = existsSync(outPath) ? readText(outPath) : null;
     if (expectedOutput === null) errors.push(`${where}/expected-output.txt is missing`);
@@ -180,7 +218,7 @@ export function loadStructures(languages) {
       }
     }
 
-    return { id, dir, meta, labels, lessons, code, expectedOutput, vizPath, illustration };
+    return { id, dir, meta, labels, lessons, code, expectedOutput, vizPath, illustration, sticker };
   });
 
   structures.sort((a, b) => a.meta.order - b.meta.order);

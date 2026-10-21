@@ -58,12 +58,19 @@ VizKit.register('stack', (ctx) => {
 
   async function push() {
     const value = input.read();
+    ctx.spot('push-check');
     if (top === CAPACITY - 1) {
       ctx.say(t('overflow', { value, index: top }), 'warn');
+      ctx.mission('overflow');
       await shake(cells[top]);
       return;
     }
+    await ctx.wait(250);
+    ctx.spot('push-move');
     top++;
+    paint();
+    await ctx.wait(350);
+    ctx.spot('push-write');
     items[top] = value;
     paint();
     ctx.say(t('pushed', { value, index: top }), 'ok');
@@ -71,14 +78,20 @@ VizKit.register('stack', (ctx) => {
   }
 
   async function pop() {
+    ctx.spot('pop-check');
     if (top === -1) {
       ctx.say(t('underflow'), 'warn');
+      ctx.mission('underflow');
       await shake();
       return;
     }
+    await ctx.wait(250);
     const index = top;
     const value = items[index];
     const cell = cells[index];
+    ctx.spot('pop-read');
+    await ctx.pulse(cell, 'hit', 350);
+    ctx.spot('pop-move');
     const flying = el('div', {
       class: 'cell stk-fly',
       text: String(value),
@@ -92,16 +105,21 @@ VizKit.register('stack', (ctx) => {
       ghostExplained = true;
       ctx.say(t('ghost'), 'info');
     }
+    await ctx.wait(200);
+    ctx.spot('pop-return');
     await ctx.leave(flying, 70, -50);
   }
 
   async function peek() {
+    ctx.spot('peek-check');
     if (top === -1) {
       ctx.say(t('underflow'), 'warn');
       await shake();
       return;
     }
+    ctx.spot('peek-return');
     ctx.say(t('peeked', { value: items[top] }), 'info');
+    if (top >= 3) ctx.mission('peek4');
     await ctx.pulse(cells[top], 'hit', 700);
   }
 

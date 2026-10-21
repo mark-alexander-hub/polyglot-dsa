@@ -81,6 +81,34 @@ function art(s, labels) {
   return `<svg class="art" viewBox="0 0 320 180" aria-hidden="true"><rect class="s fa" x="110" y="36" width="100" height="100" rx="20" transform="rotate(-4 160 86)"/><text x="160" y="106" text-anchor="middle" font-size="52">${letter}</text></svg>`;
 }
 
+// Splits highlighted HTML into lines, closing and reopening spans so every line stands alone.
+function htmlLines(html) {
+  const open = [];
+  return html.split('\n').map((line) => {
+    const prefix = open.join('');
+    for (const m of line.matchAll(/<span[^>]*>|<\/span>/g)) {
+      if (m[0] === '</span>') open.pop();
+      else open.push(m[0]);
+    }
+    return prefix + line + '</span>'.repeat(open.length);
+  });
+}
+
+// For "The code, step by step": every snippet that has @step marks, as highlighted lines, per code language.
+function followData(s) {
+  const out = {};
+  for (const cl of CODE_LANGS) {
+    const c = s.code[cl.id];
+    const names = [...new Set(Object.values(c.steps).map((st) => st.snippet))];
+    if (!names.length) continue;
+    out[cl.id] = {
+      steps: c.steps,
+      snippets: Object.fromEntries(names.map((n) => [n, htmlLines(highlight(c.snippets[n], cl.hljs))])),
+    };
+  }
+  return out;
+}
+
 function codeTabs(sources, t, { kind, runnable = false }) {
   const bar = CODE_LANGS.map((cl) => `<button type="button" class="tab" data-code="${cl.id}">${cl.label}</button>`).join('');
   const panels = CODE_LANGS.map((cl) => {
@@ -221,6 +249,14 @@ for (const lang of languages) {
   </section>
   <h2 class="section-title">${esc(lang.lessonsTitle)} ${ARROW}</h2>
   <div class="lesson-grid">${cards}</div>
+  <section class="sticker-sheet">
+    <h2 class="section-title">${esc(lang.stickers)} ${ARROW}</h2>
+    <p class="sticker-count hand" data-template="${esc(lang.stickersCount)}" data-all="${esc(lang.stickersAll)}">${esc(fill(lang.stickersCount, { have: 0, total: structures.length }))}</p>
+    <div class="sticker-grid">${structures.map((s, i) => {
+      const l = s.labels[lang.code] || s.labels.en;
+      return `<a class="sticker-slot accent-${esc(s.meta.accent || 'teal')}" data-lesson="${esc(s.id)}" href="${s.id}/" style="--tilt:${tilt(i, [-6, 4, -3, 7, -5, 3])}" title="${esc(fill(lang.stickerLocked, { n: i + 1 }))}"><span class="sticker-art">${s.sticker || art(s, l)}</span><span class="sticker-name">${esc(l.title)}</span></a>`;
+    }).join('')}</div>
+  </section>
 </main>`,
   }));
   pages++;
@@ -292,8 +328,16 @@ ${prose}
       structure: s.id,
       lang: lang.code,
       viz: labels.viz || {},
+      missions: labels.missions || s.labels.en.missions || {},
+      title: labels.title,
+      sticker: s.sticker,
+      follow: followData(s),
       sources,
-      text: { run: lang.run, running: lang.running, stepLog: lang.stepLog, loadingPython: fill(lang.loadingPython, { mb: PYODIDE_MB }) },
+      text: {
+        run: lang.run, running: lang.running, stepLog: lang.stepLog, loadingPython: fill(lang.loadingPython, { mb: PYODIDE_MB }),
+        missions: lang.missions, missionsHint: lang.missionsHint, missionDone: lang.missionDone, stickerEarned: lang.stickerEarned,
+        codeFollow: lang.codeFollow, sound: lang.sound, slow: lang.slow,
+      },
     })}</script>`;
 
     write(`${lang.code}/${s.id}/index.html`, page({

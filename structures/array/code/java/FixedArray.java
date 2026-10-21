@@ -15,53 +15,83 @@ public class FixedArray {
 
     // @snippet get
     public int get(int index) {
+        // @step get-check
         if (index < 0 || index >= size) {
             throw new IndexOutOfBoundsException("index out of range");
         }
+        // @end
+        // @step get-read
         return items[index];
+        // @end
     }
     // @end
 
     // @snippet insert
     public void insert(int index, int value) {
+        // @step insert-full
         if (size == capacity) {
             throw new IllegalStateException("array is full");
         }
+        // @end
+        // @step insert-range
         if (index < 0 || index > size) {
             throw new IndexOutOfBoundsException("index out of range");
         }
+        // @end
         // Shift values one box to the right, starting from the end.
+        // @step insert-shift
         for (int i = size; i > index; i--) {
             items[i] = items[i - 1];
         }
+        // @end
+        // @step insert-write
         items[index] = value;
+        // @end
+        // @step insert-size
         size++;
+        // @end
     }
     // @end
 
     // @snippet remove
     public int remove(int index) {
+        // @step remove-range
         if (index < 0 || index >= size) {
             throw new IndexOutOfBoundsException("index out of range");
         }
+        // @end
+        // @step remove-read
         int value = items[index];
+        // @end
         // Shift values one box to the left to close the gap.
+        // @step remove-shift
         for (int i = index; i < size - 1; i++) {
             items[i] = items[i + 1];
         }
+        // @end
+        // @step remove-size
         size--;
+        // @end
+        // @step remove-return
         return value;
+        // @end
     }
     // @end
 
     // @snippet search
     public int search(int value) {
+        // @step search-loop
         for (int i = 0; i < size; i++) {
             if (items[i] == value) {
+        // @end
+                // @step search-found
                 return i;
+                // @end
             }
         }
+        // @step search-missing
         return -1;  // not found
+        // @end
     }
     // @end
 

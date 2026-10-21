@@ -22,56 +22,86 @@ final class FixedArray
     // @snippet get
     public function get(int $index): int
     {
+        // @step get-check
         if ($index < 0 || $index >= $this->size) {
             throw new OutOfRangeException('index out of range');
         }
+        // @end
+        // @step get-read
         return $this->items[$index];
+        // @end
     }
     // @end
 
     // @snippet insert
     public function insert(int $index, int $value): void
     {
+        // @step insert-full
         if ($this->size === $this->capacity) {
             throw new OverflowException('array is full');
         }
+        // @end
+        // @step insert-range
         if ($index < 0 || $index > $this->size) {
             throw new OutOfRangeException('index out of range');
         }
+        // @end
         // Shift values one box to the right, starting from the end.
+        // @step insert-shift
         for ($i = $this->size; $i > $index; $i--) {
             $this->items[$i] = $this->items[$i - 1];
         }
+        // @end
+        // @step insert-write
         $this->items[$index] = $value;
+        // @end
+        // @step insert-size
         $this->size++;
+        // @end
     }
     // @end
 
     // @snippet remove
     public function remove(int $index): int
     {
+        // @step remove-range
         if ($index < 0 || $index >= $this->size) {
             throw new OutOfRangeException('index out of range');
         }
+        // @end
+        // @step remove-read
         $value = $this->items[$index];
+        // @end
         // Shift values one box to the left to close the gap.
+        // @step remove-shift
         for ($i = $index; $i < $this->size - 1; $i++) {
             $this->items[$i] = $this->items[$i + 1];
         }
+        // @end
+        // @step remove-size
         $this->size--;
+        // @end
+        // @step remove-return
         return $value;
+        // @end
     }
     // @end
 
     // @snippet search
     public function search(int $value): int
     {
+        // @step search-loop
         for ($i = 0; $i < $this->size; $i++) {
             if ($this->items[$i] === $value) {
+        // @end
+                // @step search-found
                 return $i;
+                // @end
             }
         }
+        // @step search-missing
         return -1; // not found
+        // @end
     }
     // @end
 

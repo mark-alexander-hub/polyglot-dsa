@@ -48,11 +48,12 @@ Copy the layout of `structures/stack/`:
 
 | File | What goes in it |
 |---|---|
-| `code/<language>/` | One program per language, written from scratch (no built-in collection doing the work). Mark the parts a lesson shows with `# @snippet name` / `// @snippet name` and `@end`. |
+| `code/<language>/` | One program per language, written from scratch (no built-in collection doing the work). Mark the parts a lesson shows with `# @snippet name` / `// @snippet name` and `@end`. Inside a snippet, wrap the lines of each playground step in `@step name` / `@end` (same names in all five languages). |
 | `expected-output.txt` | The exact output. All five programs must print it byte for byte (ASCII only). |
 | `lesson/en.md` | No `#` title. The standard `##` headings from the translation guide, and `<!-- code: name -->` lines where snippets should appear. |
-| `labels/en.json` | `title`, `summary`, and every piece of playground text under `viz`. |
-| `visualizer.js` | `VizKit.register('<folder name>', (ctx) => { … })`. The helpers are documented at the top of `site/assets/viz-kit.js`; reuse the `.cell`, `.pointer` and `.idx` classes and add your own CSS with `ctx.css`. |
+| `labels/en.json` | `title`, `summary`, every piece of playground text under `viz`, and three playground goals under `missions` (`{"id": "sentence"}`). |
+| `sticker.svg` | Optional: a 120x120 round badge using the shared `.art` classes, earned when all three missions are done. |
+| `visualizer.js` | `VizKit.register('<folder name>', (ctx) => { … })`. The helpers are documented at the top of `site/assets/viz-kit.js` (call `ctx.spot('step')` as the picture moves and `ctx.mission('id')` when a goal is reached); reuse the `.cell`, `.pointer` and `.idx` classes and add your own CSS with `ctx.css`. |
 | `meta.json` | `{"order": 7, "shape": "row", "accent": "teal"}`. Shapes: `row`, `chain`, `column`, `ring`, `tree`, `buckets`. Accents: `teal`, `gold`, `coral`, `rose`, `sage`, `sky`. |
 
 Then run:

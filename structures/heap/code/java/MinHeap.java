@@ -27,42 +27,57 @@ public class MinHeap {
 
     // @snippet insert
     public int insert(int value) {
+        // @step insert-check
         if (count == capacity) {
             throw new IllegalStateException("heap is full");
         }
+        // @end
+        // @step insert-place
         items[count] = value;  // put it in the first free spot, at the end
         count++;
+        // @end
         return siftUp(count - 1);  // how many steps it climbed (for the demo)
     }
 
     private int siftUp(int i) {
         int swaps = 0;
+        // @step insert-compare
         while (i > 0 && items[i] < items[parent(i)]) {
+        // @end
+            // @step insert-swap
             int p = parent(i);
             int tmp = items[i];
             items[i] = items[p];
             items[p] = tmp;
             i = p;
             swaps++;
+            // @end
         }
+        // @step insert-return
         return swaps;
+        // @end
     }
     // @end
 
     // @snippet removeMin
     public int removeMin() {
+        // @step removeMin-check
         if (count == 0) {
             throw new IllegalStateException("heap is empty");
         }
+        // @end
+        // @step removeMin-take
         int smallest = items[0];
         count--;
         items[0] = items[count];  // the last value moves to the top...
+        // @end
         siftDown(0);              // ...and sinks to where it belongs
         return smallest;
     }
 
     private void siftDown(int i) {
         while (true) {
+            // @step siftDown-compare
             int l = left(i);
             int r = right(i);
             int smallest = i;
@@ -72,23 +87,32 @@ public class MinHeap {
             if (r < count && items[r] < items[smallest]) {
                 smallest = r;
             }
+            // @end
+            // @step siftDown-stop
             if (smallest == i) {
                 return;
             }
+            // @end
+            // @step siftDown-swap
             int tmp = items[i];
             items[i] = items[smallest];
             items[smallest] = tmp;
             i = smallest;
+            // @end
         }
     }
     // @end
 
     // @snippet peek
     public int peek() {
+        // @step peek-check
         if (count == 0) {
             throw new IllegalStateException("heap is empty");
         }
+        // @end
+        // @step peek-read
         return items[0];
+        // @end
     }
     // @end
 

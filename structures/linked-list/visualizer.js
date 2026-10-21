@@ -72,21 +72,26 @@ VizKit.register('linked-list', (ctx) => {
       await shake();
       return;
     }
+    ctx.spot('add-first-new');
     if (nodes.length === 0) {
       nodes.unshift(makeNode(value));
       await ctx.flip(chain, () => render());
+      ctx.spot('add-first-head');
       ctx.say(t('addedEmpty', { value }), 'ok');
       return;
     }
     // Step 1: the new node appears in front and points at the old head.
     nodes.unshift(makeNode(value));
     await ctx.flip(chain, () => render({ tags: { 0: t('newNode') }, head: 1 }));
+    ctx.spot('add-first-link');
     arrowAt(0).classList.add('on');
     await ctx.wait(650);
     // Step 2: head moves to the new node.
+    ctx.spot('add-first-head');
     render();
     await ctx.pulse(cellAt(0), 'hit', 500);
     ctx.say(t('addedFirst', { value }), 'ok');
+    ctx.mission('front');
   }
 
   async function addLast() {
@@ -97,29 +102,41 @@ VizKit.register('linked-list', (ctx) => {
       return;
     }
     if (nodes.length === 0) {
+      ctx.spot('add-last-empty');
       nodes.push(makeNode(value));
       await ctx.flip(chain, () => render());
       ctx.say(t('addedEmpty', { value }), 'ok');
       return;
     }
+    const longEnough = nodes.length >= 4;
+    ctx.spot('add-last-walk');
     for (let i = 0; i < nodes.length; i++) await visit(i, t('current'));
     const last = nodes.length - 1;
+    ctx.spot('add-last-link');
     nodes.push(makeNode(value));
     await ctx.flip(chain, () => render({ tags: { [last]: t('current'), [last + 1]: t('newNode') } }));
     arrowAt(last).classList.add('on');
     await ctx.pulse(cellAt(last + 1), 'hit', 500);
     render();
     ctx.say(t('addedLast', { value, steps: last }), 'ok');
+    if (longEnough) ctx.mission('walk');
   }
 
   async function find() {
     const value = input.read();
     if (nodes.length === 0) {
+      ctx.spot('find-none');
       ctx.say(t('emptyList'), 'warn');
       await shake(endItem.querySelector('.ll-null'));
       return;
     }
+    ctx.spot('find-start');
     for (let i = 0; i < nodes.length; i++) {
+      if (i > 0) {
+        ctx.spot('find-next');
+        await ctx.wait(220);
+      }
+      ctx.spot('find-check');
       await visit(i, t('current'));
       if (nodes[i].value === value) {
         render({ tags: { [i]: t('current') } });
@@ -130,6 +147,7 @@ VizKit.register('linked-list', (ctx) => {
       }
     }
     render();
+    ctx.spot('find-none');
     ctx.say(t('notFound', { value, steps: nodes.length }), 'warn');
     await shake(endItem.querySelector('.ll-null'));
   }
@@ -137,11 +155,13 @@ VizKit.register('linked-list', (ctx) => {
   async function remove() {
     const value = input.read();
     if (nodes.length === 0) {
+      ctx.spot('remove-empty');
       ctx.say(t('emptyList'), 'warn');
       await shake(endItem.querySelector('.ll-null'));
       return;
     }
     if (nodes[0].value === value) {
+      ctx.spot('remove-head');
       cellAt(0).classList.add('bad');
       await ctx.wait(450);
       render({ head: 1 });
@@ -155,6 +175,7 @@ VizKit.register('linked-list', (ctx) => {
       return;
     }
     let previous = 0;
+    ctx.spot('remove-walk');
     await visit(previous, t('previous'));
     while (previous + 1 < nodes.length && nodes[previous + 1].value !== value) {
       previous++;
@@ -162,12 +183,14 @@ VizKit.register('linked-list', (ctx) => {
     }
     if (previous + 1 === nodes.length) {
       render();
+      ctx.spot('remove-missing');
       ctx.say(t('removeMissing', { value }), 'warn');
       await shake(endItem.querySelector('.ll-null'));
       return;
     }
     const target = previous + 1;
     const after = nodes[target + 1];
+    ctx.spot('remove-skip');
     render({ tags: { [previous]: t('previous') } });
     cellAt(target).classList.add('bad');
     await ctx.wait(400);
@@ -179,6 +202,7 @@ VizKit.register('linked-list', (ctx) => {
     nodes.splice(target, 1);
     await ctx.flip(chain, () => render());
     ctx.say(t('removed', { value, next: after ? after.value : t('null') }), 'ok');
+    if (after) ctx.mission('middle');
   }
 
   async function reset() {

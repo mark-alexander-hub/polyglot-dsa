@@ -25,5 +25,10 @@
     "emptyList": "List ಖಾಲಿ ಇದೆ (head = null). ಮೊದಲು ಒಂದು node ಸೇರಿಸಿ.",
     "full": "ಈ playground ಗೆ ಇಷ್ಟು nodes ಸಾಕು ({max}). ಮೊದಲು ಒಂದನ್ನು ತೆಗೆಯಿರಿ.",
     "resetDone": "ಖಾಲಿ list ಜೊತೆ ಮತ್ತೆ ಶುರು ಮಾಡಿದೆವು."
+  },
+  "missions": {
+    "front": "ಈಗಾಗಲೇ nodes ಇರುವ list ನ ಮುಂದೆ ಒಂದು node ಸೇರಿಸಿ (add-first).",
+    "walk": "ಕನಿಷ್ಠ ನಾಲ್ಕು nodes ಇರುವ list ನ ಕೊನೆಗೆ node ಸೇರಿಸಿ (add-last), steps ಎಣಿಸಿ.",
+    "middle": "Chain ನ ಮಧ್ಯದಿಂದ ಒಂದು node ತೆಗೆದುಹಾಕಿ: head ಅಲ್ಲ, ಕೊನೆಯದೂ ಅಲ್ಲ."
   }
 }

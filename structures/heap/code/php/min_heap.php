@@ -37,36 +37,50 @@ final class MinHeap
     // @snippet insert
     public function insert(int $value): int
     {
+        // @step insert-check
         if ($this->count === $this->capacity) {
             throw new OverflowException('heap is full');
         }
+        // @end
+        // @step insert-place
         $this->items[$this->count] = $value; // put it in the first free spot, at the end
         $this->count++;
+        // @end
         return $this->siftUp($this->count - 1); // how many steps it climbed (for the demo)
     }
 
     private function siftUp(int $i): int
     {
         $swaps = 0;
+        // @step insert-compare
         while ($i > 0 && $this->items[$i] < $this->items[$this->parent($i)]) {
+        // @end
+            // @step insert-swap
             $p = $this->parent($i);
             [$this->items[$i], $this->items[$p]] = [$this->items[$p], $this->items[$i]];
             $i = $p;
             $swaps++;
+            // @end
         }
+        // @step insert-return
         return $swaps;
+        // @end
     }
     // @end
 
     // @snippet removeMin
     public function removeMin(): int
     {
+        // @step removeMin-check
         if ($this->count === 0) {
             throw new UnderflowException('heap is empty');
         }
+        // @end
+        // @step removeMin-take
         $smallest = $this->items[0];
         $this->count--;
         $this->items[0] = $this->items[$this->count]; // the last value moves to the top...
+        // @end
         $this->siftDown(0);                           // ...and sinks to where it belongs
         return $smallest;
     }
@@ -74,6 +88,7 @@ final class MinHeap
     private function siftDown(int $i): void
     {
         while (true) {
+            // @step siftDown-compare
             $l = $this->left($i);
             $r = $this->right($i);
             $smallest = $i;
@@ -83,11 +98,16 @@ final class MinHeap
             if ($r < $this->count && $this->items[$r] < $this->items[$smallest]) {
                 $smallest = $r;
             }
+            // @end
+            // @step siftDown-stop
             if ($smallest === $i) {
                 return;
             }
+            // @end
+            // @step siftDown-swap
             [$this->items[$i], $this->items[$smallest]] = [$this->items[$smallest], $this->items[$i]];
             $i = $smallest;
+            // @end
         }
     }
     // @end
@@ -95,10 +115,14 @@ final class MinHeap
     // @snippet peek
     public function peek(): int
     {
+        // @step peek-check
         if ($this->count === 0) {
             throw new UnderflowException('heap is empty');
         }
+        // @end
+        // @step peek-read
         return $this->items[0];
+        // @end
     }
     // @end
 

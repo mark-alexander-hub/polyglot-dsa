@@ -13,31 +13,49 @@ class Stack {
 
   // @snippet push
   push(value) {
+    // @step push-check
     if (this.top === this.capacity - 1) {
       throw new Error('stack is full');
     }
+    // @end
+    // @step push-move
     this.top++;
+    // @end
+    // @step push-write
     this.items[this.top] = value;
+    // @end
   }
   // @end
 
   // @snippet pop
   pop() {
+    // @step pop-check
     if (this.top === -1) {
       throw new Error('stack is empty');
     }
+    // @end
+    // @step pop-read
     const value = this.items[this.top];
+    // @end
+    // @step pop-move
     this.top--; // the old value stays in its box until a push overwrites it
+    // @end
+    // @step pop-return
     return value;
+    // @end
   }
   // @end
 
   // @snippet peek
   peek() {
+    // @step peek-check
     if (this.top === -1) {
       throw new Error('stack is empty');
     }
+    // @end
+    // @step peek-return
     return this.items[this.top];
+    // @end
   }
   // @end
 

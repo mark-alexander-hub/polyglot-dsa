@@ -26,6 +26,11 @@
     "errEmpty": "{op}({index}): array ಖಾಲಿ ಇದೆ, ಆದ್ದರಿಂದ ಯಾವ index ನಲ್ಲೂ ಏನೂ ಇಲ್ಲ.",
     "removedLast": "remove({index}): {value} ತೆಗೆದುಹಾಕಲಾಯಿತು. ಅದು ಕೊನೆಯ value, ಆದ್ದರಿಂದ ಏನನ್ನೂ ಸರಿಸಬೇಕಾಗಲಿಲ್ಲ, size ಈಗ {size}.",
     "foundFirst": "search({value}): ಮೊದಲ box ನಲ್ಲೇ, index {index} ನಲ್ಲಿ ಸಿಕ್ಕಿತು.",
-    "resetDone":"ಖಾಲಿ array ಜೊತೆ ಮತ್ತೆ ಶುರು ಮಾಡಲಾಗಿದೆ."
+    "resetDone": "ಖಾಲಿ array ಜೊತೆ ಮತ್ತೆ ಶುರು ಮಾಡಲಾಗಿದೆ."
+  },
+  "missions": {
+    "full": "ಎಲ್ಲಾ box ಗಳನ್ನು ತುಂಬಿಸಿ, ನಂತರ ಇನ್ನೊಂದು insert ಮಾಡಿ ನೋಡಿ.",
+    "shift": "Array ಯಲ್ಲಿ ಕನಿಷ್ಠ ಮೂರು values ಇರುವಾಗ index 0 ನಲ್ಲಿ insert ಮಾಡಿ.",
+    "missing": "Array ಯಲ್ಲಿ ಇಲ್ಲದ ಒಂದು value ಅನ್ನು search ಮಾಡಿ."
   }
 }

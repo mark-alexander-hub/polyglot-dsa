@@ -40,5 +40,16 @@
   "greeting": "स्वागतम्!",
   "lessonOf": "{total} मध्ये lesson {n}",
   "markDone": "मया एतत् lesson समाप्तम्",
-  "doneLabel": "समाप्तम्!"
+  "doneLabel": "समाप्तम्!",
+  "missions": "Missions",
+  "missionsHint": "अस्य lesson इत्यस्य sticker प्राप्तुं त्रीणि अपि समापयत।",
+  "missionDone": "Mission समाप्तम्: {text}",
+  "stickerEarned": "त्रीणि अपि missions समाप्तानि! यूयं {title} इति sticker प्राप्तवन्तः। तत् lessons page इत्यत्र युष्माकं sticker sheet इत्यस्मिन् अस्ति।",
+  "stickers": "Sticker sheet",
+  "stickersCount": "{total} मध्ये {have} stickers",
+  "stickersAll": "सम्पूर्णा sheet! यूयम् अस्मिन् site इत्यस्मिन् सर्वाणि missions समापितवन्तः।",
+  "stickerLocked": "एतत् sticker प्राप्तुं lesson {n} इत्यस्य त्रीणि missions समापयत।",
+  "codeFollow": "Code, एकैकं step",
+  "sound": "ध्वनयः",
+  "slow": "मन्दगतिः"
 }
