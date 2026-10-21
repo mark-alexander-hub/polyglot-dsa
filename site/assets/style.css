@@ -95,13 +95,14 @@ code, pre, .mono { font-family:var(--mono); font-variant-numeric:tabular-nums; }
 .art .t-num { font-family:var(--mono); font-weight:600; font-size:14px; }
 .a-bob { animation:bob 3.2s ease-in-out infinite; transform-box:fill-box; transform-origin:center; animation-delay:calc(var(--d, 0) * -0.8s); }
 @keyframes bob { 0%, 100% { transform:translateY(0) rotate(0); } 50% { transform:translateY(-6px) rotate(-1.5deg); } }
-.a-lift, .a-slide, .a-step, .a-puff { transform-box:fill-box; transition:transform .5s cubic-bezier(.3,1.5,.5,1), opacity .5s; }
+.a-lift, .a-slide, .a-step, .a-puff, .a-drop { transform-box:fill-box; transition:transform .5s cubic-bezier(.3,1.5,.5,1), opacity .5s; }
 .a-step { transition-delay:calc(var(--d, 0) * 70ms); }
 .a-puff { opacity:0; }
 .lesson-card:hover .a-lift, .lesson-hero:hover .a-lift { transform:translateY(-14px) rotate(-3deg); }
 .lesson-card:hover .a-slide, .lesson-hero:hover .a-slide { transform:translateX(14px); }
 .lesson-card:hover .a-step, .lesson-hero:hover .a-step { transform:translateX(-14px); }
 .lesson-card:hover .a-puff, .lesson-hero:hover .a-puff { opacity:1; transform:translateY(-8px); }
+.lesson-card:hover .a-drop, .lesson-hero:hover .a-drop { transform:translateY(16px) rotate(3deg); }
 .lesson-card:hover .a-seat, .lesson-hero:hover .a-seat { animation:seat .6s cubic-bezier(.3,1.6,.5,1); transform-box:fill-box; transform-origin:bottom; }
 @keyframes seat { 40% { transform:scaleY(1.12); } }
 

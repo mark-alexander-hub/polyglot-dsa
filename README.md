@@ -11,7 +11,7 @@ language.
 
 **Website:** https://mark-alexander-hub.github.io/polyglot-dsa/
 
-![The lesson home page: five lesson cards (Array, Linked list, Stack, Queue, Heap) and a code-language picker](docs/screenshots/home.png)
+![The lesson home page: six lesson cards (Array, Linked list, Stack, Queue, Heap, Hash map) and a code-language picker](docs/screenshots/home.png)
 
 ![The Queue lesson: a playground with front and rear pointers on a circular array, a step-by-step log, then the lesson text](docs/screenshots/queue-lesson.png)
 
@@ -24,6 +24,7 @@ language.
 | 3 | Stack | [en](structures/stack/lesson/en.md) | [hi](structures/stack/lesson/hi.md) | [kn](structures/stack/lesson/kn.md) | [ta](structures/stack/lesson/ta.md) | [sa](structures/stack/lesson/sa.md) | [code](structures/stack/code) |
 | 4 | Queue | [en](structures/queue/lesson/en.md) | [hi](structures/queue/lesson/hi.md) | [kn](structures/queue/lesson/kn.md) | [ta](structures/queue/lesson/ta.md) | [sa](structures/queue/lesson/sa.md) | [code](structures/queue/code) |
 | 5 | Heap | [en](structures/heap/lesson/en.md) | [hi](structures/heap/lesson/hi.md) | [kn](structures/heap/lesson/kn.md) | [ta](structures/heap/lesson/ta.md) | [sa](structures/heap/lesson/sa.md) | [code](structures/heap/code) |
+| 6 | Hash map | [en](structures/hash-map/lesson/en.md) | [hi](structures/hash-map/lesson/hi.md) | [kn](structures/hash-map/lesson/kn.md) | [ta](structures/hash-map/lesson/ta.md) | [sa](structures/hash-map/lesson/sa.md) | [code](structures/hash-map/code) |
 
 > **The Hindi, Kannada, Tamil and Sanskrit lessons are drafts.** They follow our
 > [translation guide](docs/translation-guide.md) but have not yet been checked by native
