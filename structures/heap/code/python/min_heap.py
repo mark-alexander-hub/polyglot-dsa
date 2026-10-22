@@ -22,51 +22,75 @@ class MinHeap:
 
     # @snippet insert
     def insert(self, value):
+        # @step insert-check
         if self.count == self.capacity:
             raise IndexError("heap is full")
+        # @end
+        # @step insert-place
         self.items[self.count] = value  # put it in the first free spot, at the end
         self.count += 1
+        # @end
         return self.sift_up(self.count - 1)  # how many steps it climbed (for the demo)
 
     def sift_up(self, i):
         swaps = 0
+        # @step insert-compare
         while i > 0 and self.items[i] < self.items[self.parent(i)]:
+        # @end
+            # @step insert-swap
             p = self.parent(i)
             self.items[i], self.items[p] = self.items[p], self.items[i]
             i = p
             swaps += 1
+            # @end
+        # @step insert-return
         return swaps
+        # @end
     # @end
 
     # @snippet removeMin
     def remove_min(self):
+        # @step removeMin-check
         if self.count == 0:
             raise IndexError("heap is empty")
+        # @end
+        # @step removeMin-take
         smallest = self.items[0]
         self.count -= 1
         self.items[0] = self.items[self.count]  # the last value moves to the top...
+        # @end
         self.sift_down(0)                       # ...and sinks to where it belongs
         return smallest
 
     def sift_down(self, i):
         while True:
+            # @step siftDown-compare
             l, r = self.left(i), self.right(i)
             smallest = i
             if l < self.count and self.items[l] < self.items[smallest]:
                 smallest = l
             if r < self.count and self.items[r] < self.items[smallest]:
                 smallest = r
+            # @end
+            # @step siftDown-stop
             if smallest == i:
                 return
+            # @end
+            # @step siftDown-swap
             self.items[i], self.items[smallest] = self.items[smallest], self.items[i]
             i = smallest
+            # @end
     # @end
 
     # @snippet peek
     def peek(self):
+        # @step peek-check
         if self.count == 0:
             raise IndexError("heap is empty")
+        # @end
+        # @step peek-read
         return self.items[0]
+        # @end
     # @end
 
     def is_empty(self):

@@ -25,5 +25,10 @@
     "emptyList": "List रिक्ता (head = null)। प्रथमम् एकं node योजयत।",
     "full": "अस्य playground कृते एतावन्तः nodes पर्याप्ताः ({max})। प्रथमम् एकम् अपनयत।",
     "resetDone": "रिक्तया list इत्यनया पुनः आरब्धम्।"
+  },
+  "missions": {
+    "front": "यस्मिन् list इत्यस्मिन् पूर्वमेव nodes सन्ति, तस्य पुरतः एकं node योजयत (add-first)।",
+    "walk": "न्यूनातिन्यूनं चतुर्भिः nodes इत्येतैः युक्तस्य list इत्यस्य अन्ते node योजयत (add-last), steps च गणयत।",
+    "middle": "Chain इत्यस्य मध्यात् एकं node अपनयत: न head, न अन्तिमम्।"
   }
 }

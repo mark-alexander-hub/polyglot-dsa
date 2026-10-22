@@ -14,28 +14,50 @@ class CircularQueue:
 
     # @snippet enqueue
     def enqueue(self, value):
+        # @step enqueue-check
         if self.count == self.capacity:
             raise IndexError("queue is full")
+        # @end
+        # @step enqueue-rear
         rear = (self.front + self.count) % self.capacity  # next free box
+        # @end
+        # @step enqueue-write
         self.items[rear] = value
+        # @end
+        # @step enqueue-count
         self.count += 1
+        # @end
     # @end
 
     # @snippet dequeue
     def dequeue(self):
+        # @step dequeue-check
         if self.count == 0:
             raise IndexError("queue is empty")
+        # @end
+        # @step dequeue-read
         value = self.items[self.front]
+        # @end
+        # @step dequeue-front
         self.front = (self.front + 1) % self.capacity  # wraps around to box 0
+        # @end
+        # @step dequeue-count
         self.count -= 1
+        # @end
+        # @step dequeue-return
         return value
+        # @end
     # @end
 
     # @snippet peek
     def peek(self):
+        # @step peek-check
         if self.count == 0:
             raise IndexError("queue is empty")
+        # @end
+        # @step peek-return
         return self.items[self.front]
+        # @end
     # @end
 
     def is_empty(self):

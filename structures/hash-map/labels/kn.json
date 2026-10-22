@@ -1,0 +1,39 @@
+{
+  "title": "Hash map",
+  "summary": "ಯಾವುದೇ key ತನ್ನ value ಅನ್ನು ಒಂದೇ ಜಿಗಿತದಲ್ಲಿ ಕಂಡುಹಿಡಿಯುತ್ತದೆ, ಸರಿಯಾದ ಗೂಡಿಗೆ ನೇರವಾಗಿ ಹಾಕಿದ ಪತ್ರದಂತೆ.",
+  "viz": {
+    "keyPlaceholder": "key",
+    "valuePlaceholder": "value",
+    "put": "put",
+    "get": "get",
+    "remove": "remove",
+    "reset": "reset",
+    "bucket": "bucket",
+    "count": "keys = {count}",
+    "buckets": "{n} buckets",
+    "hashLine": "{letters} = {hash}",
+    "modLine": "{hash} % {n} = bucket {index}",
+    "hello": "ಈ hash map ನಲ್ಲಿ {n} buckets ಇವೆ, ಈಗ {count} keys ಇವೆ. Key ಆಗಿ ಒಂದು ಪದ, value ಆಗಿ ಒಂದು ಸಂಖ್ಯೆ ಬರೆದು put ಒತ್ತಿ. Chain ಅನ್ನು ಹುಡುಕುವುದನ್ನು ನೋಡಲು idli ಮೇಲೆ get ಮಾಡಿ ನೋಡಿ.",
+    "badKey": "ಇಲ್ಲಿ key ಎಂದರೆ a ಯಿಂದ z ವರೆಗಿನ 1 ರಿಂದ 8 ಅಕ್ಷರಗಳು. chai ಅಥವಾ puri ಯಂತಹ ಪದ ಪ್ರಯತ್ನಿಸಿ.",
+    "hashed": "{key}: ಅದರ ಅಕ್ಷರಗಳ codes ಕೂಡಿಸಿದರೆ {hash} ಬರುತ್ತದೆ. {hash} % {n} = {index}, ಆದ್ದರಿಂದ ಅದು bucket {index} ಕ್ಕೆ ಸೇರಿದ್ದು.",
+    "putEmpty": "put({key}, {value}): bucket {index} ಖಾಲಿ ಇತ್ತು, ಆದ್ದರಿಂದ {key} ನೇರವಾಗಿ ಒಳಗೆ ಹೋಯಿತು.",
+    "putCollision": "put({key}, {value}): bucket {index} ನಲ್ಲಿ ಆಗಲೇ {others} ಇದೆ. ಇದೇ collision. {key} chain ನ ಮುಂಭಾಗದಲ್ಲಿ ಸೇರಿತು, ಉಳಿದವು ಮುಂದೆ ಸರಿದವು.",
+    "putUpdate": "put({key}, {value}): {key} ಆಗಲೇ bucket {index} ನಲ್ಲಿ ಇದೆ, ಆದ್ದರಿಂದ ಅದರ value ಮಾತ್ರ ಬದಲಾಯಿತು: {old} -> {value}.",
+    "compare": "ಇದು {key} ಹೌದೇ? ಅಲ್ಲ, ಇದು {other}. Chain ನ ಮುಂದಿನ entry ಗೆ.",
+    "found": "{key} bucket {index} ನಲ್ಲಿ ಸಿಕ್ಕಿತು: ಅದರ value {value}. ದಾರಿಯಲ್ಲಿ ಹೋಲಿಸಿದ keys: {steps}.",
+    "notFound": "get({key}): bucket {index} ನಲ್ಲಿ {key} ಇಲ್ಲ. ಹೋಲಿಸಿದ keys: {steps}. ಬೇರೆ ಎಲ್ಲಿಯೂ ಹುಡುಕುವ ಅಗತ್ಯವಿಲ್ಲ.",
+    "notFoundEmpty": "get({key}): bucket {index} ಖಾಲಿ ಇದೆ, ಆದ್ದರಿಂದ {key} map ನಲ್ಲಿ ಇಲ್ಲ. ಒಂದೇ ನೋಟ, ಹುಡುಕಾಟವೇ ಇಲ್ಲ.",
+    "removed": "remove({key}): bucket {index} ನ chain ನಿಂದ {key} ಅನ್ನು ಬಿಡಿಸಲಾಯಿತು. ಅದರ ಹಿಂದಿನ entries ಆ ಜಾಗವನ್ನು ಮುಚ್ಚಿದವು.",
+    "removeMissing": "remove({key}): {key} bucket {index} ನಲ್ಲಿ ಇಲ್ಲ, ಆದ್ದರಿಂದ ತೆಗೆಯಲು ಏನೂ ಇಲ್ಲ.",
+    "growing": "{n} buckets ಗಳಲ್ಲಿ ಆಗಲೇ {count} keys ತುಂಬಿವೆ. ಇನ್ನೊಂದು ಸೇರಿಸಿದರೆ chains ಕಿಕ್ಕಿರಿಯುತ್ತವೆ, ಆದ್ದರಿಂದ table {m} buckets ಗೆ ಬೆಳೆಯುತ್ತದೆ ಮತ್ತು ಪ್ರತಿ key ಅನ್ನೂ ಮತ್ತೆ hash ಮಾಡಲಾಗುತ್ತದೆ.",
+    "rehashed": "{key}: {hash} % {m} = bucket {index}.",
+    "growCap": "ಚಿತ್ರ ಹಿಡಿಸಲೆಂದು playground {n} buckets ನಲ್ಲಿ ನಿಲ್ಲುತ್ತದೆ. ನಿಜವಾದ hash map ದುಪ್ಪಟ್ಟು ಮಾಡುತ್ತಲೇ ಇರುತ್ತದೆ, ಮತ್ತು ಅದರ chains ಚಿಕ್ಕದಾಗಿಯೇ ಉಳಿಯುತ್ತವೆ.",
+    "loadNote": "Hash map ಸರಾಸರಿ ಪ್ರತಿ bucket ಗೆ ಸುಮಾರು ಒಂದು key ಇಟ್ಟುಕೊಳ್ಳುತ್ತದೆ, ಆದ್ದರಿಂದ chains ಚಿಕ್ಕದಾಗಿ ಉಳಿದು get ವೇಗವಾಗಿಯೇ ಇರುತ್ತದೆ.",
+    "resetDone": "{n} buckets ಇರುವ ಖಾಲಿ table ನೊಂದಿಗೆ ಮತ್ತೆ ಶುರು ಮಾಡಲಾಯಿತು."
+  },
+  "missions": {
+    "collision": "Collision ಮಾಡಿಸಿ: ಈಗಾಗಲೇ ಒಂದು key ಇರುವ bucket ಗೆ key ಅನ್ನು put ಮಾಡಿ.",
+    "grow": "Table ಅನ್ನು 4 ರಿಂದ 8 buckets ಗೆ ಬೆಳೆಸಿ.",
+    "chain": "ತನ್ನ chain ನಲ್ಲಿ ಇನ್ನೊಂದು key ಯ ಹಿಂದೆ ಇರುವ key ಅನ್ನು get ಮಾಡಿ."
+  }
+}

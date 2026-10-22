@@ -19,5 +19,10 @@
     "empty": "queue ಖಾಲಿ ಇದೆ (count = 0), ತೆಗೆಯಲು ಏನೂ ಇಲ್ಲ.",
     "ghost": "ಮಸುಕಾದ numbers ಹಳೆಯ values. ಯಾವುದಾದರೂ enqueue ಅವುಗಳ ಮೇಲೆ ಬರೆಯುವವರೆಗೂ ಅವು box ನಲ್ಲೇ ಇರುತ್ತವೆ.",
     "resetDone": "ಖಾಲಿ queue ನೊಂದಿಗೆ ಮತ್ತೆ ಶುರು ಮಾಡಲಾಯಿತು: front = 0, count = 0."
+  },
+  "missions": {
+    "wrapRear": "Rear ಅನ್ನು ಸುತ್ತಿಸಿ box 0 ಗೆ ತನ್ನಿ.",
+    "wrapFront": "Front ಅನ್ನು ಸುತ್ತಿಸಿ box 0 ಗೆ ತನ್ನಿ.",
+    "full": "Enqueue ನಿರಾಕರಿಸುವವರೆಗೆ queue ಅನ್ನು ತುಂಬಿಸಿ."
   }
 }

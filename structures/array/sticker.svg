@@ -1,0 +1,12 @@
+<svg class="art sticker" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="--accent:var(--teal)">
+<path class="s fa" d="M60.00 8.00 A12.50 12.50 0 0 1 82.56 13.15 A12.50 12.50 0 0 1 100.66 27.58 A12.50 12.50 0 0 1 110.70 48.43 A12.50 12.50 0 0 1 110.70 71.57 A12.50 12.50 0 0 1 100.66 92.42 A12.50 12.50 0 0 1 82.56 106.85 A12.50 12.50 0 0 1 60.00 112.00 A12.50 12.50 0 0 1 37.44 106.85 A12.50 12.50 0 0 1 19.34 92.42 A12.50 12.50 0 0 1 9.30 71.57 A12.50 12.50 0 0 1 9.30 48.43 A12.50 12.50 0 0 1 19.34 27.58 A12.50 12.50 0 0 1 37.44 13.15 A12.50 12.50 0 0 1 60.00 8.00 Z"/>
+<circle class="s thin fp" cx="60" cy="60" r="43"/>
+<circle class="s thin dash" cx="60" cy="60" r="47" style="stroke-width:1.5"/>
+<g transform="translate(29.00 29.00) scale(0.9688)">
+<rect class="s fa" x="18" y="26" width="28" height="30" rx="8"/>
+<rect class="s fa" x="13" y="50" width="38" height="12" rx="5"/>
+<path class="s thin" d="M19 62 v4 M45 62 v4"/>
+<path class="s fg" d="M20 4 H44 V9 a3 3 0 0 0 0 6 V20 H20 V15 a3 3 0 0 0 0 -6 Z"/>
+<path class="s thin" d="M32 22 v3"/>
+</g>
+</svg>

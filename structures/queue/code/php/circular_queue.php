@@ -23,35 +23,57 @@ final class CircularQueue
     // @snippet enqueue
     public function enqueue(int $value): void
     {
+        // @step enqueue-check
         if ($this->count === $this->capacity) {
             throw new OverflowException('queue is full');
         }
+        // @end
+        // @step enqueue-rear
         $rear = ($this->front + $this->count) % $this->capacity;  // next free box
+        // @end
+        // @step enqueue-write
         $this->items[$rear] = $value;
+        // @end
+        // @step enqueue-count
         $this->count++;
+        // @end
     }
     // @end
 
     // @snippet dequeue
     public function dequeue(): int
     {
+        // @step dequeue-check
         if ($this->count === 0) {
             throw new UnderflowException('queue is empty');
         }
+        // @end
+        // @step dequeue-read
         $value = $this->items[$this->front];
+        // @end
+        // @step dequeue-front
         $this->front = ($this->front + 1) % $this->capacity;  // wraps to box 0
+        // @end
+        // @step dequeue-count
         $this->count--;
+        // @end
+        // @step dequeue-return
         return $value;
+        // @end
     }
     // @end
 
     // @snippet peek
     public function peek(): int
     {
+        // @step peek-check
         if ($this->count === 0) {
             throw new UnderflowException('queue is empty');
         }
+        // @end
+        // @step peek-return
         return $this->items[$this->front];
+        // @end
     }
     // @end
 

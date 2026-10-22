@@ -26,6 +26,25 @@
     },
   };
 
+  // The playground kit (viz-kit.js) saves missions and throws confetti through these.
+  window.PDSAfx = { store, confetti: (node) => confetti(node) };
+
+  // Sticker sheet on the lessons page ---------------------------------------
+  const sheet = document.querySelector('.sticker-sheet');
+  if (sheet) {
+    const slots = [...sheet.querySelectorAll('.sticker-slot[data-lesson]')];
+    let have = 0;
+    slots.forEach((slot) => {
+      if (store.get(`sticker.${slot.dataset.lesson}`)) {
+        slot.classList.add('got');
+        slot.removeAttribute('title');
+        have++;
+      }
+    });
+    const count = sheet.querySelector('.sticker-count');
+    if (count) count.textContent = have === slots.length ? count.dataset.all : count.dataset.template.replace('{have}', have).replace('{total}', slots.length);
+  }
+
   // Theme -------------------------------------------------------------------
   const themeButton = document.querySelector('.theme-toggle');
   if (themeButton) {

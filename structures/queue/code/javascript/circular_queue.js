@@ -14,33 +14,55 @@ class CircularQueue {
 
   // @snippet enqueue
   enqueue(value) {
+    // @step enqueue-check
     if (this.count === this.capacity) {
       throw new Error('queue is full');
     }
+    // @end
+    // @step enqueue-rear
     const rear = (this.front + this.count) % this.capacity; // next free box
+    // @end
+    // @step enqueue-write
     this.items[rear] = value;
+    // @end
+    // @step enqueue-count
     this.count++;
+    // @end
   }
   // @end
 
   // @snippet dequeue
   dequeue() {
+    // @step dequeue-check
     if (this.count === 0) {
       throw new Error('queue is empty');
     }
+    // @end
+    // @step dequeue-read
     const value = this.items[this.front];
+    // @end
+    // @step dequeue-front
     this.front = (this.front + 1) % this.capacity; // wraps around to box 0
+    // @end
+    // @step dequeue-count
     this.count--;
+    // @end
+    // @step dequeue-return
     return value;
+    // @end
   }
   // @end
 
   // @snippet peek
   peek() {
+    // @step peek-check
     if (this.count === 0) {
       throw new Error('queue is empty');
     }
+    // @end
+    // @step peek-return
     return this.items[this.front];
+    // @end
   }
   // @end
 

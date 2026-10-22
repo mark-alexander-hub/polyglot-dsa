@@ -15,31 +15,49 @@ public class Stack {
 
     // @snippet push
     public void push(int value) {
+        // @step push-check
         if (top == capacity - 1) {
             throw new IllegalStateException("stack is full");
         }
+        // @end
+        // @step push-move
         top++;
+        // @end
+        // @step push-write
         items[top] = value;
+        // @end
     }
     // @end
 
     // @snippet pop
     public int pop() {
+        // @step pop-check
         if (top == -1) {
             throw new IllegalStateException("stack is empty");
         }
+        // @end
+        // @step pop-read
         int value = items[top];
+        // @end
+        // @step pop-move
         top--;  // the old value stays in its box until a push overwrites it
+        // @end
+        // @step pop-return
         return value;
+        // @end
     }
     // @end
 
     // @snippet peek
     public int peek() {
+        // @step peek-check
         if (top == -1) {
             throw new IllegalStateException("stack is empty");
         }
+        // @end
+        // @step peek-return
         return items[top];
+        // @end
     }
     // @end
 

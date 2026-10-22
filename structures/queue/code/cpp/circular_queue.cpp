@@ -20,33 +20,55 @@ public:
 
     // @snippet enqueue
     void enqueue(int value) {
+        // @step enqueue-check
         if (count == capacity) {
             throw std::overflow_error("queue is full");
         }
+        // @end
+        // @step enqueue-rear
         int rear = (front + count) % capacity;  // next free box
+        // @end
+        // @step enqueue-write
         items[rear] = value;
+        // @end
+        // @step enqueue-count
         count++;
+        // @end
     }
     // @end
 
     // @snippet dequeue
     int dequeue() {
+        // @step dequeue-check
         if (count == 0) {
             throw std::underflow_error("queue is empty");
         }
+        // @end
+        // @step dequeue-read
         int value = items[front];
+        // @end
+        // @step dequeue-front
         front = (front + 1) % capacity;  // wraps around to box 0
+        // @end
+        // @step dequeue-count
         count--;
+        // @end
+        // @step dequeue-return
         return value;
+        // @end
     }
     // @end
 
     // @snippet peek
     int peek() const {
+        // @step peek-check
         if (count == 0) {
             throw std::underflow_error("queue is empty");
         }
+        // @end
+        // @step peek-return
         return items[front];
+        // @end
     }
     // @end
 

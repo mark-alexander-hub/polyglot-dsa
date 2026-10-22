@@ -26,6 +26,11 @@
     "errEmpty": "{op}({index}): array खाली है, इसलिए किसी भी index पर कुछ नहीं है।",
     "removedLast": "remove({index}): {value} निकाला। ये आख़िरी value थी, इसलिए कुछ नहीं खिसकाना पड़ा, और size अब {size} है।",
     "foundFirst": "search({value}): पहले ही box में मिल गई, index {index} पर।",
-    "resetDone":"खाली array के साथ फिर से शुरू किया।"
+    "resetDone": "खाली array के साथ फिर से शुरू किया।"
+  },
+  "missions": {
+    "full": "हर box भर दीजिए, फिर एक और insert करके देखिए।",
+    "shift": "जब array में कम से कम तीन values हों, तब index 0 पर insert कीजिए।",
+    "missing": "ऐसी value search कीजिए जो array में है ही नहीं।"
   }
 }

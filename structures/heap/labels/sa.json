@@ -27,5 +27,10 @@
     "underflow": "heap रिक्तः (count = 0), अतः ग्रहीतुं किमपि नास्ति। एषः underflow।",
     "arrayNote": "वृक्षस्य अधः पङ्क्तिः सः एव heap array रूपेण। index i इत्यस्य parent (i - 1) / 2 इत्यत्र, children 2i + 1 तथा 2i + 2 इत्यत्र।",
     "resetDone": "रिक्तेन heap इत्यनेन पुनः आरब्धम्।"
+  },
+  "missions": {
+    "climb2": "तादृशं value insert कुरुत, यत् एकवारमेव द्वौ levels आरोहति।",
+    "sink2": "लघुतमं value निष्कासयत, नूतनः root द्वौ levels अवरोहति इति पश्यत।",
+    "full": "सप्त अपि slots पूरयत, ततः पुनः एकं insert कुरुत।"
   }
 }

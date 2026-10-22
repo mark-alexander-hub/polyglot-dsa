@@ -27,5 +27,10 @@
     "underflow": "heap खाली है (count = 0), इसलिए निकालने के लिए कुछ नहीं है। इसे underflow कहते हैं।",
     "arrayNote": "पेड़ के नीचे वाली पंक्ति यही heap एक array की तरह है। Index i का parent (i - 1) / 2 पर है, उसके children 2i + 1 और 2i + 2 पर।",
     "resetDone": "खाली heap के साथ फिर से शुरू किया।"
+  },
+  "missions": {
+    "climb2": "ऐसी value insert कीजिए जो एक ही बार में दो levels ऊपर चढ़े।",
+    "sink2": "सबसे छोटी value निकालिए और देखिए कि नया root दो levels नीचे उतरता है।",
+    "full": "सातों slots भर दीजिए, फिर एक और insert कीजिए।"
   }
 }

@@ -1,0 +1,40 @@
+Hash map with 4 buckets (a key's bucket = sum of its letter codes % 4)
+put tea=10 -> hash 314 % 4 = bucket 2, new key
+  bucket 2: tea=10
+put dosa=40 -> hash 423 % 4 = bucket 3, new key
+  bucket 3: dosa=40
+put idli=30 -> hash 418 % 4 = bucket 2, new key
+  bucket 2: idli=30 -> tea=10
+put vada=25 -> hash 412 % 4 = bucket 0, new key
+  bucket 0: vada=25
+the whole table (4 keys in 4 buckets):
+  bucket 0: vada=25
+  bucket 1: (empty)
+  bucket 2: idli=30 -> tea=10
+  bucket 3: dosa=40
+get tea -> 10
+get idli -> 30
+get puri -> not found
+put tea=12 -> hash 314 % 4 = bucket 2, value replaced
+  bucket 2: idli=30 -> tea=12
+size -> 4
+4 keys in 4 buckets, one more would crowd it -> grew to 8 buckets and re-hashed every key
+put coffee=15 -> hash 616 % 8 = bucket 0, new key
+  bucket 0: coffee=15
+the whole table (5 keys in 8 buckets):
+  bucket 0: coffee=15
+  bucket 1: (empty)
+  bucket 2: tea=12 -> idli=30
+  bucket 3: (empty)
+  bucket 4: vada=25
+  bucket 5: (empty)
+  bucket 6: (empty)
+  bucket 7: dosa=40
+get vada -> 25
+remove idli -> removed from bucket 2
+remove idli -> not found
+get idli -> not found
+contains dosa -> yes
+contains puri -> no
+size -> 4
+keys in bucket order -> coffee, tea, vada, dosa

@@ -1,0 +1,14 @@
+<svg class="art sticker" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="--accent:var(--sage)">
+<path class="s fa" d="M60.00 8.00 A12.50 12.50 0 0 1 82.56 13.15 A12.50 12.50 0 0 1 100.66 27.58 A12.50 12.50 0 0 1 110.70 48.43 A12.50 12.50 0 0 1 110.70 71.57 A12.50 12.50 0 0 1 100.66 92.42 A12.50 12.50 0 0 1 82.56 106.85 A12.50 12.50 0 0 1 60.00 112.00 A12.50 12.50 0 0 1 37.44 106.85 A12.50 12.50 0 0 1 19.34 92.42 A12.50 12.50 0 0 1 9.30 71.57 A12.50 12.50 0 0 1 9.30 48.43 A12.50 12.50 0 0 1 19.34 27.58 A12.50 12.50 0 0 1 37.44 13.15 A12.50 12.50 0 0 1 60.00 8.00 Z"/>
+<circle class="s thin fp" cx="60" cy="60" r="43"/>
+<circle class="s thin dash" cx="60" cy="60" r="47" style="stroke-width:1.5"/>
+<g transform="translate(29.00 29.00) scale(0.9688)">
+<path class="s thin dash" d="M2 60 H62"/>
+<rect class="s f2" x="4" y="22" width="24" height="38" rx="3"/>
+<path class="s fa" d="M2 22 H30 L27 13 H5 Z"/>
+<rect class="s thin fp" x="8" y="29" width="16" height="12" rx="2.5"/>
+<circle class="s thin fg" cx="16" cy="35" r="3.5"/>
+<rect class="s fr" x="33" y="38" width="11" height="22" rx="5.5"/><circle class="s fp" cx="38.5" cy="31" r="5.5"/>
+<rect class="s fs" x="48" y="38" width="11" height="22" rx="5.5"/><circle class="s fp" cx="53.5" cy="31" r="5.5"/>
+</g>
+</svg>

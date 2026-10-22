@@ -25,5 +25,10 @@
     "emptyList": "The list is empty (head = null). Add a node first.",
     "full": "That is enough nodes for this playground ({max}). Remove one first.",
     "resetDone": "Started again with an empty list."
+  },
+  "missions": {
+    "front": "Add a node at the front of a list that already has nodes.",
+    "walk": "Add at the end of a list with at least four nodes, and count the steps.",
+    "middle": "Remove a node from the middle of the chain: not the head, not the last one."
   }
 }

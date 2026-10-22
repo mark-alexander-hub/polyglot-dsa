@@ -22,33 +22,51 @@ final class Stack
     // @snippet push
     public function push(int $value): void
     {
+        // @step push-check
         if ($this->top === $this->capacity - 1) {
             throw new OverflowException('stack is full');
         }
+        // @end
+        // @step push-move
         $this->top++;
+        // @end
+        // @step push-write
         $this->items[$this->top] = $value;
+        // @end
     }
     // @end
 
     // @snippet pop
     public function pop(): int
     {
+        // @step pop-check
         if ($this->top === -1) {
             throw new UnderflowException('stack is empty');
         }
+        // @end
+        // @step pop-read
         $value = $this->items[$this->top];
+        // @end
+        // @step pop-move
         $this->top--; // the old value stays in its box until a push overwrites it
+        // @end
+        // @step pop-return
         return $value;
+        // @end
     }
     // @end
 
     // @snippet peek
     public function peek(): int
     {
+        // @step peek-check
         if ($this->top === -1) {
             throw new UnderflowException('stack is empty');
         }
+        // @end
+        // @step peek-return
         return $this->items[$this->top];
+        // @end
     }
     // @end
 

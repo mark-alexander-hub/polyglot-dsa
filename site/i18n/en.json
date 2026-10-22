@@ -40,5 +40,16 @@
   "greeting": "Hello!",
   "lessonOf": "Lesson {n} of {total}",
   "markDone": "I finished this lesson",
-  "doneLabel": "Done!"
+  "doneLabel": "Done!",
+  "missions": "Missions",
+  "missionsHint": "Finish all three to earn this lesson's sticker.",
+  "missionDone": "Mission done: {text}",
+  "stickerEarned": "All three missions done! You earned the {title} sticker. It is on your sticker sheet on the lessons page.",
+  "stickers": "Sticker sheet",
+  "stickersCount": "{have} of {total} stickers",
+  "stickersAll": "Full sheet! You did every mission on this site.",
+  "stickerLocked": "Finish the three missions in lesson {n} to earn this sticker.",
+  "codeFollow": "The code, step by step",
+  "sound": "Sound effects",
+  "slow": "Slow motion"
 }

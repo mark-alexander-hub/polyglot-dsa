@@ -136,35 +136,49 @@ VizKit.register('queue', (ctx) => {
 
   async function enqueue() {
     const value = input.read();
+    ctx.spot('enqueue-check');
     if (count === CAPACITY) {
       ctx.say(t('full', { value, n: CAPACITY }), 'warn');
+      ctx.mission('full');
       await shake(cells[rearIndex()]);
       return;
     }
+    await ctx.wait(220);
     const oldFront = front;
     const oldCount = count;
     const oldRear = rearIndex();
     const index = (front + count) % CAPACITY;
+    ctx.spot('enqueue-rear');
+    await ctx.pulse(cells[index], 'hit', 380);
     items[index] = value;
     count++;
     paint();
+    ctx.spot('enqueue-write');
     ctx.say(t('enqueued', { value, front, count: oldCount, n: CAPACITY, index, newCount: count }), 'ok');
-    if (front + oldCount === CAPACITY) ctx.say(t('enqueueWrapped', { index }), 'info');
+    if (front + oldCount === CAPACITY) {
+      ctx.say(t('enqueueWrapped', { index }), 'info');
+      ctx.mission('wrapRear');
+    }
     await Promise.all([ctx.enter(cells[index], 0, -50), movePointers(oldFront, oldRear, oldCount)]);
+    ctx.spot('enqueue-count');
   }
 
   async function dequeue() {
+    ctx.spot('dequeue-check');
     if (count === 0) {
       ctx.say(t('empty'), 'warn');
       await shake();
       return;
     }
+    await ctx.wait(220);
     const oldFront = front;
     const oldCount = count;
     const oldRear = rearIndex();
     const index = front;
     const value = items[index];
     const cell = cells[index];
+    ctx.spot('dequeue-read');
+    await ctx.pulse(cell, 'hit', 380);
     const flying = el('div', {
       class: 'cell q-fly',
       text: String(value),
@@ -174,21 +188,30 @@ VizKit.register('queue', (ctx) => {
     front = (front + 1) % CAPACITY;
     count--;
     paint();
+    ctx.spot('dequeue-front');
     ctx.say(t('dequeued', { value, index, front, count }), 'ok');
-    if (index === CAPACITY - 1) ctx.say(t('dequeueWrapped'), 'info');
+    if (index === CAPACITY - 1) {
+      ctx.say(t('dequeueWrapped'), 'info');
+      ctx.mission('wrapFront');
+    }
     if (!ghostExplained) {
       ghostExplained = true;
       ctx.say(t('ghost'), 'info');
     }
     await Promise.all([ctx.leave(flying, -40, -50), movePointers(oldFront, oldRear, oldCount)]);
+    ctx.spot('dequeue-count');
+    await ctx.wait(260);
+    ctx.spot('dequeue-return');
   }
 
   async function peek() {
+    ctx.spot('peek-check');
     if (count === 0) {
       ctx.say(t('empty'), 'warn');
       await shake();
       return;
     }
+    ctx.spot('peek-return');
     ctx.say(t('peeked', { value: items[front], index: front }), 'info');
     await ctx.pulse(cells[front], 'hit', 700);
   }

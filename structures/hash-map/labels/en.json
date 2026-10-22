@@ -1,0 +1,39 @@
+{
+  "title": "Hash map",
+  "summary": "Any key finds its value in one jump, like a letter dropped straight into the right pigeonhole.",
+  "viz": {
+    "keyPlaceholder": "key",
+    "valuePlaceholder": "value",
+    "put": "put",
+    "get": "get",
+    "remove": "remove",
+    "reset": "reset",
+    "bucket": "bucket",
+    "count": "keys = {count}",
+    "buckets": "{n} buckets",
+    "hashLine": "{letters} = {hash}",
+    "modLine": "{hash} % {n} = bucket {index}",
+    "hello": "This hash map has {n} buckets and holds {count} keys. Type a word as the key and a number as the value, then press put. Try get on idli to watch a chain being searched.",
+    "badKey": "A key here is 1 to 8 letters, a to z. Try a word like chai or puri.",
+    "hashed": "{key}: adding up its letter codes gives {hash}. {hash} % {n} = {index}, so it belongs in bucket {index}.",
+    "putEmpty": "put({key}, {value}): bucket {index} was empty, so {key} goes straight in.",
+    "putCollision": "put({key}, {value}): bucket {index} already holds {others}. That is a collision. {key} is chained in at the front and the others move along.",
+    "putUpdate": "put({key}, {value}): {key} is already in bucket {index}, so only its value changes: {old} -> {value}.",
+    "compare": "Is this {key}? No, it is {other}. On to the next entry in the chain.",
+    "found": "Found {key} in bucket {index}: its value is {value}. Keys compared on the way: {steps}.",
+    "notFound": "get({key}): bucket {index} does not have {key}. Keys compared: {steps}. Nowhere else needs searching.",
+    "notFoundEmpty": "get({key}): bucket {index} is empty, so {key} is not in the map. One look, no searching.",
+    "removed": "remove({key}): unlinked {key} from the chain in bucket {index}. The entries behind it close the gap.",
+    "removeMissing": "remove({key}): {key} is not in bucket {index}, so there is nothing to remove.",
+    "growing": "{count} keys already fill {n} buckets. One more would crowd the chains, so the table grows to {m} buckets and every key is hashed again.",
+    "rehashed": "{key}: {hash} % {m} = bucket {index}.",
+    "growCap": "The playground stops at {n} buckets so the picture fits. A real hash map would keep doubling, and its chains would stay short.",
+    "loadNote": "A hash map keeps about one key per bucket on average, so chains stay short and get stays fast.",
+    "resetDone": "Started again with an empty table of {n} buckets."
+  },
+  "missions": {
+    "collision": "Cause a collision: put a key into a bucket that already holds one.",
+    "grow": "Make the table grow from 4 to 8 buckets.",
+    "chain": "Get a key that sits behind another key in its chain."
+  }
+}

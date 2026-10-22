@@ -13,42 +13,72 @@ class FixedArray:
 
     # @snippet get
     def get(self, index):
+        # @step get-check
         if index < 0 or index >= self.size:
             raise IndexError("index out of range")
+        # @end
+        # @step get-read
         return self.items[index]
+        # @end
     # @end
 
     # @snippet insert
     def insert(self, index, value):
+        # @step insert-full
         if self.size == self.capacity:
             raise IndexError("array is full")
+        # @end
+        # @step insert-range
         if index < 0 or index > self.size:
             raise IndexError("index out of range")
+        # @end
         # Shift values one box to the right, starting from the end.
+        # @step insert-shift
         for i in range(self.size, index, -1):
             self.items[i] = self.items[i - 1]
+        # @end
+        # @step insert-write
         self.items[index] = value
+        # @end
+        # @step insert-size
         self.size += 1
+        # @end
     # @end
 
     # @snippet remove
     def remove(self, index):
+        # @step remove-range
         if index < 0 or index >= self.size:
             raise IndexError("index out of range")
+        # @end
+        # @step remove-read
         value = self.items[index]
+        # @end
         # Shift values one box to the left to close the gap.
+        # @step remove-shift
         for i in range(index, self.size - 1):
             self.items[i] = self.items[i + 1]
+        # @end
+        # @step remove-size
         self.size -= 1
+        # @end
+        # @step remove-return
         return value
+        # @end
     # @end
 
     # @snippet search
     def search(self, value):
+        # @step search-loop
         for i in range(self.size):
             if self.items[i] == value:
+        # @end
+                # @step search-found
                 return i
+                # @end
+        # @step search-missing
         return -1  # not found
+        # @end
     # @end
 
     def __str__(self):

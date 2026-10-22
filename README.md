@@ -7,11 +7,13 @@ Most people first understand an idea in the language they think in. Polyglot DSA
 data structures in **English, हिन्दी, ಕನ್ನಡ, தமிழ் and संस्कृतम्**, with the same working program in
 **Python, C++, Java, JavaScript and PHP**. Every lesson has a playground where you press
 buttons and watch the structure move, step by step, with each step explained in your
-language.
+language and the matching lines of code lighting up as it happens. Each playground has
+three missions (make the stack overflow, cause a collision in the hash map...); finish them
+to earn that lesson's sticker for your sticker sheet.
 
 **Website:** https://mark-alexander-hub.github.io/polyglot-dsa/
 
-![The lesson home page: five lesson cards (Array, Linked list, Stack, Queue, Heap) and a code-language picker](docs/screenshots/home.png)
+![The lesson home page: six lesson cards (Array, Linked list, Stack, Queue, Heap, Hash map) and a code-language picker](docs/screenshots/home.png)
 
 ![The Queue lesson: a playground with front and rear pointers on a circular array, a step-by-step log, then the lesson text](docs/screenshots/queue-lesson.png)
 
@@ -24,6 +26,7 @@ language.
 | 3 | Stack | [en](structures/stack/lesson/en.md) | [hi](structures/stack/lesson/hi.md) | [kn](structures/stack/lesson/kn.md) | [ta](structures/stack/lesson/ta.md) | [sa](structures/stack/lesson/sa.md) | [code](structures/stack/code) |
 | 4 | Queue | [en](structures/queue/lesson/en.md) | [hi](structures/queue/lesson/hi.md) | [kn](structures/queue/lesson/kn.md) | [ta](structures/queue/lesson/ta.md) | [sa](structures/queue/lesson/sa.md) | [code](structures/queue/code) |
 | 5 | Heap | [en](structures/heap/lesson/en.md) | [hi](structures/heap/lesson/hi.md) | [kn](structures/heap/lesson/kn.md) | [ta](structures/heap/lesson/ta.md) | [sa](structures/heap/lesson/sa.md) | [code](structures/heap/code) |
+| 6 | Hash map | [en](structures/hash-map/lesson/en.md) | [hi](structures/hash-map/lesson/hi.md) | [kn](structures/hash-map/lesson/kn.md) | [ta](structures/hash-map/lesson/ta.md) | [sa](structures/hash-map/lesson/sa.md) | [code](structures/hash-map/code) |
 
 > **The Hindi, Kannada, Tamil and Sanskrit lessons are drafts.** They follow our
 > [translation guide](docs/translation-guide.md) but have not yet been checked by native
@@ -58,6 +61,7 @@ structures/stack/
   code/javascript/stack.js
   code/php/stack.php
   illustration.svg        the hand-drawn scene on the lesson card (optional)
+  sticker.svg             the sticker earned by finishing the playground missions (optional)
   expected-output.txt     what every program must print
   visualizer.js           the playground
 site/                     page styles, scripts and interface text (site/i18n)

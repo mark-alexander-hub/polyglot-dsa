@@ -27,5 +27,10 @@
     "removedLast": "remove({index}): {value} अपनीतम्। एषा अन्तिमा value आसीत्, अतः किमपि न सारणीयम् आसीत्, size च इदानीं {size}।",
     "foundFirst": "search({value}): प्रथमे एव box इत्यस्मिन् लब्धा, index {index} इत्यत्र।",
     "resetDone": "रिक्तेन array इत्यनेन पुनः आरब्धम्।"
+  },
+  "missions": {
+    "full": "सर्वाणि box इत्येतानि पूरयत, ततः पुनः एकं insert कुरुत।",
+    "shift": "यदा array इत्यस्मिन् न्यूनातिन्यूनं त्रीणि values सन्ति, तदा index 0 इत्यत्र insert कुरुत।",
+    "missing": "यत् value array इत्यस्मिन् नास्ति, तस्य search कुरुत।"
   }
 }

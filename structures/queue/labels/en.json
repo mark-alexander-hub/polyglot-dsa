@@ -19,5 +19,10 @@
     "empty": "The queue is empty (count = 0), so there is nothing to take.",
     "ghost": "Faded numbers are old values. They stay in their box until an enqueue writes over them.",
     "resetDone": "Started again with an empty queue: front = 0 and count = 0."
+  },
+  "missions": {
+    "wrapRear": "Make the rear wrap around to box 0.",
+    "wrapFront": "Make the front wrap around to box 0.",
+    "full": "Fill the queue until enqueue refuses."
   }
 }

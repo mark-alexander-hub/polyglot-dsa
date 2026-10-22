@@ -19,5 +19,10 @@
     "empty": "queue खाली है (count = 0), इसलिए निकालने के लिए कुछ नहीं है।",
     "ghost": "हल्के रंग वाले numbers पुरानी values हैं। वे तब तक box में रहती हैं जब तक कोई enqueue उन पर नई value नहीं लिख देता।",
     "resetDone": "खाली queue के साथ फिर से शुरू किया: front = 0 और count = 0।"
+  },
+  "missions": {
+    "wrapRear": "Rear को घुमाकर box 0 पर ले आइए।",
+    "wrapFront": "Front को घुमाकर box 0 पर ले आइए।",
+    "full": "Queue को तब तक भरिए जब तक enqueue मना न कर दे।"
   }
 }

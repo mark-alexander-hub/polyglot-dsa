@@ -27,5 +27,10 @@
     "underflow": "heap ಖಾಲಿ ಇದೆ (count = 0), ತೆಗೆಯಲು ಏನೂ ಇಲ್ಲ. ಇದನ್ನು underflow ಎನ್ನುತ್ತಾರೆ.",
     "arrayNote": "ಮರದ ಕೆಳಗಿನ ಸಾಲು ಇದೇ heap array ಆಗಿ. Index i ನ parent (i - 1) / 2 ನಲ್ಲಿ, ಅದರ children 2i + 1 ಮತ್ತು 2i + 2 ನಲ್ಲಿ.",
     "resetDone": "ಖಾಲಿ heap ನೊಂದಿಗೆ ಮತ್ತೆ ಶುರು ಮಾಡಲಾಯಿತು."
+  },
+  "missions": {
+    "climb2": "ಒಂದೇ ಸಲಕ್ಕೆ ಎರಡು levels ಮೇಲೆ ಏರುವ value ಅನ್ನು insert ಮಾಡಿ.",
+    "sink2": "ಅತಿ ಚಿಕ್ಕ value ತೆಗೆಯಿರಿ, ಹೊಸ root ಎರಡು levels ಕೆಳಗೆ ಇಳಿಯುವುದನ್ನು ನೋಡಿ.",
+    "full": "ಏಳೂ slots ತುಂಬಿಸಿ, ನಂತರ ಇನ್ನೊಂದು insert ಮಾಡಿ."
   }
 }

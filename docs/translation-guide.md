@@ -13,7 +13,8 @@ a student, not like a government textbook. Read it once before you translate or 
    rear, head, tail, enqueue, dequeue, insert, delete, memory, loop, function, class,
    program, output, overflow, underflow, time complexity, `O(1)`, `O(n)`, `O(log n)`,
    LIFO, FIFO, heap, min-heap, max-heap, priority queue, root, parent, child, leaf, level,
-   swap, sift up, sift down, sort.
+   swap, sift up, sift down, sort, hash map, hash table, hash function, hash, bucket, key,
+   entry, chain, chaining, collision, load factor, rehash, put, get, remove.
 3. **Never translate code.** Code blocks, identifiers, program output and code
    comments stay exactly as they are in English.
 4. **Keep the special lines exactly as they are.** Lines like `<!-- code: push -->`
@@ -77,6 +78,13 @@ open an issue instead of changing it in one lesson only.
 | urgent | ज़रूरी | ತುರ್ತು | அவசரமான | अत्यावश्यकम् |
 | climb up / sink down (in a heap) | ऊपर चढ़ना / नीचे उतरना | ಮೇಲೆ ಏರುವುದು / ಕೆಳಗೆ ಇಳಿಯುವುದು | மேலே ஏறுவது / கீழே இறங்குவது | ऊर्ध्वम् आरोहणम् / अधः अवरोहणम् |
 | tree (shape) | पेड़ | ಮರ | மரம் | वृक्षः |
+| pigeonhole / slot (in a rack) | खाना | ಗೂಡು | அறை | कोष्ठः |
+| letter / envelope | चिट्ठी | ಪತ್ರ | கடிதம் | पत्रम् |
+| pair (key and value) | जोड़ी | ಜೋಡಿ | இணை | युग्मम् |
+| look up (find by key) | ढूँढ निकालना | ಹುಡುಕಿ ತೆಗೆಯುವುದು | தேடிக் கண்டுபிடிப்பது | अन्विष्य प्राप्तिः |
+| crowded | भीड़भाड़ वाला | ಕಿಕ್ಕಿರಿದ | நெரிசலான | संकीर्णम् |
+| spread out evenly | बराबर बँटा हुआ | ಸಮವಾಗಿ ಹಂಚಿದ | சமமாகப் பரவிய | समं विभक्तम् |
+| grow / double (the table) | बढ़ाना / दोगुना करना | ಬೆಳೆಸುವುದು / ದುಪ್ಪಟ್ಟು ಮಾಡುವುದು | வளர்ப்பது / இரட்டிப்பாக்குவது | वर्धनम् / द्विगुणीकरणम् |
 
 **Tamil note:** வரிசை means both *order* and *a queue of people*. Use the English word
 *queue* for the data structure, and வரிசையில் நிற்பது only for the real-life picture.

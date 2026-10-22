@@ -25,5 +25,10 @@
     "emptyList": "List खाली है (head = null)। पहले एक node जोड़िए।",
     "full": "इस playground के लिए इतने nodes काफ़ी हैं ({max})। पहले एक हटाइए।",
     "resetDone": "खाली list के साथ फिर से शुरू किया।"
+  },
+  "missions": {
+    "front": "जिस list में पहले से nodes हैं, उसके आगे एक node जोड़िए (add-first)।",
+    "walk": "कम से कम चार nodes वाली list के आख़िर में node जोड़िए (add-last), और steps गिनिए।",
+    "middle": "Chain के बीच से एक node हटाइए: न head, न आख़िरी node।"
   }
 }

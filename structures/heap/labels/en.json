@@ -27,5 +27,10 @@
     "underflow": "The heap is empty (count = 0), so there is nothing to take. This is underflow.",
     "arrayNote": "The row under the tree is the same heap as an array. The parent of index i is at (i - 1) / 2, its children at 2i + 1 and 2i + 2.",
     "resetDone": "Started again with an empty heap."
+  },
+  "missions": {
+    "climb2": "Insert a value that climbs two levels in one go.",
+    "sink2": "Take the minimum out and watch the new root sink two levels.",
+    "full": "Fill all seven slots, then insert one more."
   }
 }

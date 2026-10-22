@@ -19,31 +19,49 @@ public:
 
     // @snippet push
     void push(int value) {
+        // @step push-check
         if (top == capacity - 1) {
             throw std::overflow_error("stack is full");
         }
+        // @end
+        // @step push-move
         top++;
+        // @end
+        // @step push-write
         items[top] = value;
+        // @end
     }
     // @end
 
     // @snippet pop
     int pop() {
+        // @step pop-check
         if (top == -1) {
             throw std::underflow_error("stack is empty");
         }
+        // @end
+        // @step pop-read
         int value = items[top];
+        // @end
+        // @step pop-move
         top--;  // the old value stays in its box until a push overwrites it
+        // @end
+        // @step pop-return
         return value;
+        // @end
     }
     // @end
 
     // @snippet peek
     int peek() const {
+        // @step peek-check
         if (top == -1) {
             throw std::underflow_error("stack is empty");
         }
+        // @end
+        // @step peek-return
         return items[top];
+        // @end
     }
     // @end
 

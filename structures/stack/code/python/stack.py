@@ -13,26 +13,44 @@ class Stack:
 
     # @snippet push
     def push(self, value):
+        # @step push-check
         if self.top == self.capacity - 1:
             raise IndexError("stack is full")
+        # @end
+        # @step push-move
         self.top += 1
+        # @end
+        # @step push-write
         self.items[self.top] = value
+        # @end
     # @end
 
     # @snippet pop
     def pop(self):
+        # @step pop-check
         if self.top == -1:
             raise IndexError("stack is empty")
+        # @end
+        # @step pop-read
         value = self.items[self.top]
+        # @end
+        # @step pop-move
         self.top -= 1  # the old value stays in its box until a push overwrites it
+        # @end
+        # @step pop-return
         return value
+        # @end
     # @end
 
     # @snippet peek
     def peek(self):
+        # @step peek-check
         if self.top == -1:
             raise IndexError("stack is empty")
+        # @end
+        # @step peek-return
         return self.items[self.top]
+        # @end
     # @end
 
     def is_empty(self):

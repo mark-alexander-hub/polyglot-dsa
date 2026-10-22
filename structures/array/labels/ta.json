@@ -26,6 +26,11 @@
     "errEmpty": "{op}({index}): array காலியாக உள்ளது, அதனால் எந்த index-இலும் எதுவும் இல்லை.",
     "removedLast": "remove({index}): {value} நீக்கப்பட்டது. அது கடைசி value, அதனால் எதையும் நகர்த்த வேண்டியதில்லை, size இப்போது {size}.",
     "foundFirst": "search({value}): முதல் box-இலேயே, index {index}-இல் கிடைத்தது.",
-    "resetDone":"காலி array-உடன் மீண்டும் தொடங்கப்பட்டது."
+    "resetDone": "காலி array-உடன் மீண்டும் தொடங்கப்பட்டது."
+  },
+  "missions": {
+    "full": "எல்லா box-களையும் நிரப்புங்கள், பிறகு இன்னொரு insert செய்து பாருங்கள்.",
+    "shift": "Array-இல் குறைந்தது மூன்று values இருக்கும்போது index 0-இல் insert செய்யுங்கள்.",
+    "missing": "Array-இல் இல்லாத ஒரு value-ஐ search செய்யுங்கள்."
   }
 }

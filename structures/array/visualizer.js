@@ -85,15 +85,20 @@ VizKit.register('array', (ctx) => {
     }
     const value = valueBox.read();
     if (size === CAPACITY) {
+      ctx.spot('insert-full');
       ctx.say(t('errFull', { index, value, n: CAPACITY }), 'warn');
+      ctx.mission('full');
       await shake(cells);
       return;
     }
     if (index < 0 || index > size) {
+      ctx.spot('insert-range');
       await rangeError('insert', index, size);
       return;
     }
+    if (index === 0 && size >= 3) ctx.mission('shift');
     const count = size - index;
+    ctx.spot('insert-shift');
     ctx.say(count ? t('shiftRight', { index, value, count }) : t('noShift', { index, value }), 'info');
     for (let i = size; i > index; i--) {
       await ctx.flip(row, () => {
@@ -103,11 +108,13 @@ VizKit.register('array', (ctx) => {
       }, 300);
       await ctx.wait(80);
     }
+    ctx.spot('insert-write');
     await ctx.flip(row, () => {
       mem[index] = { value, key: `k${nextKey++}`, ghost: false };
       size++;
       render();
     });
+    ctx.spot('insert-size');
     ctx.say(t('inserted', { value, index, size }), 'ok');
     await ctx.pulse(cells[index], 'hit', 500);
   }
@@ -119,9 +126,11 @@ VizKit.register('array', (ctx) => {
       return;
     }
     if (index < 0 || index >= size) {
+      ctx.spot('remove-range');
       await rangeError('remove', index, size - 1);
       return;
     }
+    ctx.spot('remove-read');
     const value = mem[index].value;
     const cell = cells[index];
     const flying = el('div', {
@@ -134,6 +143,7 @@ VizKit.register('array', (ctx) => {
     render();
     await ctx.leave(flying, 0, -50);
     const count = size - 1 - index;
+    ctx.spot('remove-shift');
     for (let i = index; i < size - 1; i++) {
       await ctx.flip(row, () => {
         mem[i] = { ...mem[i + 1] };
@@ -142,8 +152,11 @@ VizKit.register('array', (ctx) => {
       }, 300);
       await ctx.wait(80);
     }
+    ctx.spot('remove-size');
     size--;
     render();
+    await ctx.wait(250);
+    ctx.spot('remove-return');
     ctx.say(count ? t('removed', { index, value, count, size }) : t('removedLast', { index, value, size }), 'ok');
     if (!ghostExplained) {
       ghostExplained = true;
@@ -158,9 +171,11 @@ VizKit.register('array', (ctx) => {
       return;
     }
     if (index < 0 || index >= size) {
+      ctx.spot('get-check');
       await rangeError('get', index, size - 1);
       return;
     }
+    ctx.spot('get-read');
     ctx.say(t('got', { index, value: mem[index].value }), 'ok');
     await ctx.pulse(cells[index], 'hit', 700);
   }
@@ -170,9 +185,11 @@ VizKit.register('array', (ctx) => {
     const value = valueBox.value === '' && size ? mem[Math.floor(Math.random() * size)].value : valueBox.read();
     valueBox.value = '';
     for (let i = 0; i < size; i++) {
+      ctx.spot('search-loop');
       cells[i].classList.add('hit');
       await ctx.wait(260);
       if (mem[i].value === value) {
+        ctx.spot('search-found');
         ctx.say(i ? t('found', { value, checked: i + 1, index: i }) : t('foundFirst', { value, index: i }), 'ok');
         await ctx.wait(700);
         cells[i].classList.remove('hit');
@@ -180,7 +197,9 @@ VizKit.register('array', (ctx) => {
       }
       cells[i].classList.remove('hit');
     }
+    ctx.spot('search-missing');
     ctx.say(t('notFound', { value, checked: size }), 'info');
+    ctx.mission('missing');
     await shake();
   }
 

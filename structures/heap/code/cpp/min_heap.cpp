@@ -26,40 +26,55 @@ public:
 
     // @snippet insert
     int insert(int value) {
+        // @step insert-check
         if (count == capacity) {
             throw std::overflow_error("heap is full");
         }
+        // @end
+        // @step insert-place
         items[count] = value;  // put it in the first free spot, at the end
         count++;
+        // @end
         return siftUp(count - 1);  // how many steps it climbed (for the demo)
     }
 
     int siftUp(int i) {
         int swaps = 0;
+        // @step insert-compare
         while (i > 0 && items[i] < items[parent(i)]) {
+        // @end
+            // @step insert-swap
             int p = parent(i);
             std::swap(items[i], items[p]);
             i = p;
             swaps++;
+            // @end
         }
+        // @step insert-return
         return swaps;
+        // @end
     }
     // @end
 
     // @snippet removeMin
     int removeMin() {
+        // @step removeMin-check
         if (count == 0) {
             throw std::underflow_error("heap is empty");
         }
+        // @end
+        // @step removeMin-take
         int smallest = items[0];
         count--;
         items[0] = items[count];  // the last value moves to the top...
+        // @end
         siftDown(0);              // ...and sinks to where it belongs
         return smallest;
     }
 
     void siftDown(int i) {
         while (true) {
+            // @step siftDown-compare
             int l = left(i);
             int r = right(i);
             int smallest = i;
@@ -69,21 +84,30 @@ public:
             if (r < count && items[r] < items[smallest]) {
                 smallest = r;
             }
+            // @end
+            // @step siftDown-stop
             if (smallest == i) {
                 return;
             }
+            // @end
+            // @step siftDown-swap
             std::swap(items[i], items[smallest]);
             i = smallest;
+            // @end
         }
     }
     // @end
 
     // @snippet peek
     int peek() const {
+        // @step peek-check
         if (count == 0) {
             throw std::underflow_error("heap is empty");
         }
+        // @end
+        // @step peek-read
         return items[0];
+        // @end
     }
     // @end
 

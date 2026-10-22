@@ -40,5 +40,16 @@
   "greeting": "नमस्ते!",
   "lessonOf": "{total} में से lesson {n}",
   "markDone": "मैंने ये lesson पूरा कर लिया",
-  "doneLabel": "पूरा!"
+  "doneLabel": "पूरा!",
+  "missions": "Missions",
+  "missionsHint": "तीनों पूरे कीजिए और इस lesson का sticker पाइए।",
+  "missionDone": "Mission पूरा हुआ: {text}",
+  "stickerEarned": "तीनों missions पूरे! आपको {title} का sticker मिला। यह lessons वाले page पर आपकी sticker sheet में है।",
+  "stickers": "Sticker sheet",
+  "stickersCount": "{total} में से {have} stickers",
+  "stickersAll": "पूरी sheet भर गई! आपने इस site का हर mission पूरा कर लिया।",
+  "stickerLocked": "यह sticker पाने के लिए lesson {n} के तीनों missions पूरे कीजिए।",
+  "codeFollow": "Code, एक-एक step करके",
+  "sound": "आवाज़ें",
+  "slow": "धीमी रफ़्तार"
 }
